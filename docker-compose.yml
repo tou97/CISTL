@@ -1,0 +1,17 @@
+services:
+  app:
+    image: python:3.12-slim
+    container_name: cistl
+    environment:
+      - PYTHONUNBUFFERED=1
+    working_dir: /usr/src/app
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8050:8050"
+    command: gunicorn --reload --bind 0.0.0.0:8050 --timeout 360 app:server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 8050
