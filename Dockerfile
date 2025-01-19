@@ -1,20 +1,13 @@
-FROM python:3.12-slim
+FROM node:22-alpine
 
-ENV PYTHONUNBUFFERED=1
+WORKDIR /app
 
-WORKDIR /usr/src/app
+COPY frontend/package.json ./
 
-COPY pyproject.toml poetry.lock /usr/src/app/
+RUN npm install
 
-RUN pip install --upgrade pip \
-    && pip install poetry \
-    && poetry config virtualenvs.create false \
-    && poetry install --no-dev --no-interaction --no-ansi
+COPY frontend/ ./frontend
 
-COPY /app /usr/src/app/
+EXPOSE 3000
 
-RUN mkdir -p /usr/src/app/assets/files
-
-# NEED TO UPDATE PORT
-# EXPOSE 8050
-# CMD ["gunicorn", "--bind", "0.0.0.0:8050", "--timeout", "360", "app:server"]
+CMD ["npm", "run", "dev"]
