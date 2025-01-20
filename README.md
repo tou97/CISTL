@@ -35,6 +35,7 @@ CISTL/
 ├── frontend/           # Frontend application (Next.js)
 ├── backend/            # Backend services
 ├── docker-compose.yml  # Configuration for local development
+├── Dockerfile          # Docker Artifact instructions
 └── README.md           # This documentation
 ```
 
