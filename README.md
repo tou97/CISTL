@@ -1,6 +1,6 @@
 # Church in St. Louis Web Application
 
-A web application designed to serve the Church in St. Louis. The app utilizes a modern frontend built with Next.js and a backend with TBD. It supports efficient deployment using Docker and local development with Docker Compose.
+A web application designed to serve the Church in St. Louis. The app utilizes a frontend built with Next.js and a backend with TBD. It supports efficient deployment using Docker and local development with Docker Compose.
 
 ---
 
@@ -31,10 +31,11 @@ A web application designed to serve the Church in St. Louis. The app utilizes a 
 ## 📦 Project Structure
 ```
 CISTL/
-├── frontend/         # Frontend application (Next.js)
-├── backend/          # Backend services
-├── docker-compose.yml # Configuration for local development
-└── README.md         # This documentation
+├── .github/            # Github Actions deployment
+├── frontend/           # Frontend application (Next.js)
+├── backend/            # Backend services
+├── docker-compose.yml  # Configuration for local development
+└── README.md           # This documentation
 ```
 
 ---
