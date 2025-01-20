@@ -51,4 +51,4 @@ Ensure the following are installed on your system:
 
 
 ## 💡 Deployment
-This project uses GitHub Actions to deploy the app to a Hetzner VPS whenever changes are merged into the `main` branch.
+This project uses GitHub Actions to deploy the app to a Hetzner VPS whenever changes are merged into the `main` branch, as well as adhering to trunk based development methodology. Read more here: https://trunkbaseddevelopment.com/
