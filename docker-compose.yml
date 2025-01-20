@@ -1,17 +1,13 @@
 services:
-  app:
-    image: python:3.12-slim
-    container_name: cistl
-    environment:
-      - PYTHONUNBUFFERED=1
-    working_dir: /usr/src/app
-    volumes:
-      - ./app:/usr/src/app
-    ports:
-      - "8050:8050"
-    command: gunicorn --reload --bind 0.0.0.0:8050 --timeout 360 app:server
+  frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
-    expose:
-      - 8050
+    container_name: CISTL
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true
