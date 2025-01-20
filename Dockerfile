@@ -10,4 +10,7 @@ COPY frontend/ .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+ARG NODE_ENV=production
+ENV NODE_ENV=$NODE_ENV
+
+CMD ["sh", "-c", "if [ \"$NODE_ENV\" = \"development\" ]; then npm run dev; else npm run start; fi"]
