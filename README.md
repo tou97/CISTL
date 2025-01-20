@@ -29,11 +29,13 @@ A web application designed to serve the Church in St. Louis. The app utilizes a 
 ---
 
 ## 📦 Project Structure
+```
 CISTL/
 ├── frontend/         # Frontend application (Next.js)
 ├── backend/          # Backend services
 ├── docker-compose.yml # Configuration for local development
 └── README.md         # This documentation
+```
 
 ---
 
