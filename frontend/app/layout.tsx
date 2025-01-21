@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css"
+import MenuButton from "@/components/layout/MenuButton";
+import Footer from "@/components/layout/Footer";
 
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 
@@ -33,7 +35,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
+        <MantineProvider>
+          {children}
+          <MenuButton />
+          <Footer />
+        </MantineProvider>
       </body>
     </html>
   );
