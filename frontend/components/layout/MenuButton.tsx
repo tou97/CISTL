@@ -36,7 +36,7 @@ const MenuButton: React.FC = () => {
           <NavLink label="Home" component="a" href="/" leftSection={<IconHome/>} />
           <NavLink label="About Us" component="a" href="/about" leftSection={<IconBible/>} />
           <NavLink label="Our Gatherings" component="a" href="/gatherings" leftSection={<IconUsersGroup/>} />
-          <NavLink label="Christians on Campus" component="a" href="/campus" leftSection={<IconSchool/>} />
+          <NavLink label="Christians on Campus" component="a" href="/campuses" leftSection={<IconSchool/>} />
           <NavLink label="Questions?" component="a" href="/contact" leftSection={<IconMessages/>} />
         </nav>
       </Drawer>
