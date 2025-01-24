@@ -14,6 +14,9 @@ const AboutUs = () => {
 
         {/* Who We Are Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
+            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Who We Are</div>
+          </div>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               We treasure the Holy Bible as God&apos;s revelation of Himself and His eternal purpose. Our beloved Jesus Christ is the center of all our gatherings.
@@ -22,13 +25,13 @@ const AboutUs = () => {
               Through prayer and fellowship with one another, we endeavor to grow spiritually both individually and as the Body of Christ. Our small-group church life provides opportunities to enjoy Christian companionship that encourages, strengthens, and sustains us to live the Christian life.
             </Text>
           </div>
-          <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Who We Are</div>
-          </div>
         </section>
 
         {/* Our Faith Section */}
         <section className="flex flex-col lg:flex-row-reverse items-center gap-12">
+          <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
+            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Faith</div>
+          </div>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               We hold the faith which is common to all the believers: (Titus 1:4)
@@ -61,13 +64,13 @@ const AboutUs = () => {
               </Text>
             </Box>
           </div>
-          <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Faith</div>
-          </div>
         </section>
 
         {/* Our Name Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
+            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Name</div>
+          </div>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               The Church in St. Louis isn&apos;t our name - it&apos;s our description. As such, it&apos;s an inclusive title, not an exclusive one. We gather together simply as believers of the Lord in this city. The first use of the word &quot;church&quot; in Acts refers to the believers in Jerusalem as simply &quot;the whole church&quot; (Acts 5:11), meaning the called out (congregation), or assembly (in Greek, &quot;ekklesia&quot;).
@@ -75,9 +78,6 @@ const AboutUs = () => {
             <Text size="lg" className="text-gray-600 leading-relaxed">
               In Acts 8:1, they were referred to as &quot;the church which was in Jerusalem.&quot; This is the first church established in the Bible in Acts and it included all the believers living in Jerusalem. The record concerning the establishment of the church in its locality is consistent throughout the New Testament (Acts 13:1; 14:23).
             </Text>
-          </div>
-          <div className="lg:w-1/2 bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Name</div>
           </div>
         </section>
       </Container>
