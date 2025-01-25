@@ -35,7 +35,7 @@ const mockdata = [
   },
 ];
 
-export function FeaturesCards() {
+const FeaturesCards = () => {
   const features = mockdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" padding="xl">
       <Image src={feature.image} alt={feature.title} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
