@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css"
-import MenuButton from "@/components/layout/MenuButton";
-import Footer from "@/components/layout/Footer";
+import MenuButton from "@/components/menu/MenuButton";
+import FooterSocial from "@/components/footer/FooterSocial";
 
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "The Church in St. Louis",
@@ -32,13 +21,11 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <MantineProvider>
           {children}
           <MenuButton />
-          <Footer />
+          <FooterSocial />
         </MantineProvider>
       </body>
     </html>

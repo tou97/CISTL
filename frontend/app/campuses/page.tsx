@@ -1,90 +1,72 @@
-import { Container, Title, Text, Divider, SimpleGrid, Card, CardSection, Image, Button } from '@mantine/core';
+'use client'
 
-const Campuses = () => {
+import {
+  Button,
+  Card,
+  Container,
+  Image,
+  SimpleGrid,
+  Text,
+  Title,
+} from '@mantine/core';
+import classes from './FeaturesCards.module.css';
+
+const mockdata = [
+  {
+    title: 'University of Missouri - St. Louis',
+    description:
+      'Short description.',
+    image: '/images/umsl.webp',
+    link: '/campuses/umsl',
+  },
+  {
+    title: 'Saint Louis University',
+    description:
+      'Short description.',
+    image: '/images/slu.webp',
+    link: '/campuses/slu',
+  },
+  {
+    title: 'Washington University - St. Louis',
+    description:
+      'Short description.',
+    image: '/images/washu.webp',
+    link: '/campuses/washu',
+  },
+];
+
+export function FeaturesCards() {
+  const features = mockdata.map((feature) => (
+    <Card key={feature.title} shadow="md" radius="md" padding="xl">
+      <Image src={feature.image} alt={feature.title} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+      <Text fz="lg" fw={500} mt="md">
+        {feature.title}
+      </Text>
+      <Text fz="sm" c="dimmed" mt="sm">
+        {feature.description}
+      </Text>
+      <Button component="a" href={feature.link} variant="light" color="blue" fullWidth mt="md" radius="md">
+        Learn More
+      </Button>
+    </Card>
+  ));
+
   return (
-    <div className="bg-gradient-to-b from-gray-50 via-white to-blue-50 min-h-screen py-16">
-      <Container size="lg" className="space-y-20">
-        {/* Hero Section */}
-        <section className="text-center py-20 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl shadow-lg">
-          <Title order={1} className="text-5xl font-extrabold mb-4">Our Work on College Campuses</Title>
-          <Text size="lg" className="opacity-90">
-            We are dedicated to fostering faith, community, and service among college students. We currently serve at three campuses, each with unique opportunities to grow and connect. Click on the cards below to learn more about our work at each campus.
-          </Text>
-        </section>
+    <Container size="lg" py="xl">
+      <Title order={2} className={classes.title} ta="center" mt="sm">
+        Christian Students on Campus
+      </Title>
 
-        {/* Campuses Section */}
-        <section>
-          <SimpleGrid cols={{ base: 1, lg: 3 }} spacing="lg">
-            {/* UMSL Campus Card */}
-            <Card shadow="sm" padding="lg" radius="md" withBorder style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <CardSection>
-                <Image src="/images/umsl.webp" alt="University of Missouri - St. Louis" height={200} />
-              </CardSection>
-              <Title order={4} className="mt-4 text-gray-800">University of Missouri - St. Louis</Title>
-              <Text size="sm" className="text-gray-600" mt="sm">
-                Weekly Bible Studies on...
-              </Text>
-              <Button component="a" mt="sm" variant="light" color="blue" href="/campuses/campus-a" fullWidth>
-                Learn more
-              </Button>
-            </Card>
+      <Text c="dimmed" className={classes.description} ta="center" mt="md">
+        Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
+        hunger drives it to try biting a Steel-type Pokémon.
+      </Text>
 
-            {/* Saint Louis University Campus Card */}
-            <Card shadow="sm" padding="lg" radius="md" withBorder style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <CardSection>
-                <Image src="/images/slu.webp" alt="Saint Louis University" height={200} />
-              </CardSection>
-              <Title order={4} className="mt-4 text-gray-800">Saint Louis University</Title>
-              <Text size="sm" className="text-gray-600" mt="sm">
-                Weekly Bible Studies on...
-              </Text>
-              <Button component="a" mt="sm" variant="light" color="blue" href="/campuses/campus-b" fullWidth>
-                Learn more
-              </Button>
-            </Card>
-
-            {/* Washington University Campus Card */}
-            <Card shadow="sm" padding="lg" radius="md" withBorder style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <CardSection>
-                <Image src="/images/washu.webp" alt="Washington University - St. Louis" height={200} />
-              </CardSection>
-              <Title order={4} className="mt-4 text-gray-800">Washington University - St. Louis</Title>
-              <Text size="sm" className="text-gray-600" mt="sm">
-                Weekly Bible Studies on...
-              </Text>
-              <Button component="a" mt="sm" variant="light" color="blue" href="/campuses/campus-c" fullWidth>
-                Learn more
-              </Button>
-            </Card>
-          </SimpleGrid>
-        </section>
-
-        <Divider my="xl" />
-
-        {/* Family Time Section */}
-        <section>
-          <Title order={2} ta="center" mt="xl" mb="lg" className="text-3xl font-semibold text-gray-800">
-            Family Time
-          </Title>
-          <Text size="lg" ta="center" className="text-gray-600 mb-8">
-            In addition to our campus-specific events, we host a bi-weekly &quot;family time&quot; that brings together students from all campuses. This is a time for fellowship tailored to encourage and equip college students in their faith journey.
-          </Text>
-        </section>
-
-        <Divider my="xl" />
-
-        {/* Conferences and Getaways Section */}
-        <section>
-          <Title order={2} ta="center" mt="xl" mb="lg" className="text-3xl font-semibold text-gray-800">
-            Conferences and Getaways
-          </Title>
-          <Text size="lg" ta="center" className="text-gray-600 mb-8">
-            We also provide opportunities for college-aged Christian believers to meet by organizing conferences and getaways with our sister clubs.
-          </Text>
-        </section>
-      </Container>
-    </div>
+      <SimpleGrid cols={{ base: 1, lg: 3}} spacing="xl" mt="xl">
+        {features}
+      </SimpleGrid>
+    </Container>
   );
-};
+}
 
-export default Campuses;
+export default FeaturesCards;
