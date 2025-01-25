@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Container,
+  Divider,
   Image,
   SimpleGrid,
   Text,
@@ -11,7 +12,7 @@ import {
 } from '@mantine/core';
 import classes from './FeaturesCards.module.css';
 
-const mockdata = [
+const campusdata = [
   {
     title: 'University of Missouri - St. Louis',
     description:
@@ -36,7 +37,7 @@ const mockdata = [
 ];
 
 const FeaturesCards = () => {
-  const features = mockdata.map((feature) => (
+  const features = campusdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" padding="xl">
       <Image src={feature.image} alt={feature.title} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
       <Text fz="lg" fw={500} mt="md">
@@ -56,7 +57,6 @@ const FeaturesCards = () => {
       <Title order={2} className={classes.title} ta="center" mt="sm">
         Christian Students on Campus
       </Title>
-
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
         Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
         hunger drives it to try biting a Steel-type Pokémon.
@@ -65,6 +65,18 @@ const FeaturesCards = () => {
       <SimpleGrid cols={{ base: 1, lg: 3}} spacing="xl" mt="xl">
         {features}
       </SimpleGrid>
+
+      <Divider mt="xl" />
+
+      <Title order={2} className={classes.title} ta="center" mt="md">
+        Family Time
+      </Title>
+
+      <Divider mt="xl" />
+
+      <Title order={2} className={classes.title} ta="center" mt="md">
+        Conferences
+      </Title>
     </Container>
   );
 }
