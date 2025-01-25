@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button, Drawer, NavLink } from '@mantine/core';
-import { IconHome, IconBible, IconUsersGroup, IconSchool, IconMessages} from '@tabler/icons-react';
+import { IconHome, IconBible, IconUsersGroup, IconSchool, IconMessages, IconMenu2} from '@tabler/icons-react';
 
 const MenuButton: React.FC = () => {
   const [opened, setOpened] = useState(false);
@@ -15,6 +15,7 @@ const MenuButton: React.FC = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={toggleMenu}
+          rightSection={<IconMenu2 />}
           size='lg'
           className="bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition"
         >
@@ -29,6 +30,9 @@ const MenuButton: React.FC = () => {
         padding="md"
         size="md"
         position="right"
+        offset={10}
+        radius="lg"
+        title="THE CHURCH IN ST. LOUIS"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4}}
         className="bg-white"
       >

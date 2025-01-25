@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, Container, Title, Text, List, ListItem, Divider, AccordionControl, AccordionPanel } from '@mantine/core';
+import { Accordion, AccordionItem, Container, Divider, Title, Text, List, ListItem, AccordionControl, AccordionPanel } from '@mantine/core';
 import { IconPoint } from '@tabler/icons-react';
 
 const beliefs = [
@@ -79,7 +79,7 @@ const beliefs = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-50 via-white to-blue-50 min-h-screen py-16">
+    <div className="min-h-screen py-16">
       <Container size="lg" className="space-y-20">
         {/* Hero Section */}
         <section className="text-center py-20 px-6 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white rounded-lg shadow-xl">
@@ -104,6 +104,8 @@ const AboutUs = () => {
           </div>
         </section>
 
+        <Divider mt="xl" />
+
         {/* Our Faith Section */}
         <section className="flex flex-col lg:flex-row-reverse items-center gap-12">
           <div className="lg:w-1/2 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-lg shadow-xl p-6">
@@ -124,6 +126,8 @@ const AboutUs = () => {
             </Accordion>
           </div>
         </section>
+
+        <Divider mt="xl" />
 
         {/* Our Name Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">

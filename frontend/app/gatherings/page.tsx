@@ -2,7 +2,7 @@ import { Container, Title, Text, Timeline, TimelineItem, Group } from '@mantine/
 
 const Gatherings = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-50 via-white to-blue-50 min-h-screen py-16">
+    <div className="min-h-screen py-16">
       <Container size="lg" className="space-y-20">
         {/* Hero Section */}
         <section className="text-center py-20 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl shadow-lg">
