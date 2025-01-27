@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from 'react';
-import { Button, Drawer, NavLink } from '@mantine/core';
+import { Button, Drawer, NavLink, useMantineTheme } from '@mantine/core';
 import { IconHome, IconBible, IconUsersGroup, IconSchool, IconMessages, IconMenu2} from '@tabler/icons-react';
 
 const MenuButton: React.FC = () => {
   const [opened, setOpened] = useState(false);
 
   const toggleMenu = () => setOpened((prev) => !prev);
+
+  const theme = useMantineTheme()
 
   return (
     <>
@@ -17,7 +19,14 @@ const MenuButton: React.FC = () => {
           onClick={toggleMenu}
           rightSection={<IconMenu2 />}
           size='lg'
-          className="bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition"
+          radius="xl"
+          c="wood"
+          color="offwhite"
+          styles={{
+            root: {
+              border: `1px solid ${theme.colors.wood[0]}`
+            }
+          }}
         >
         Menu
         </Button>
