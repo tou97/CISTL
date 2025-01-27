@@ -3,6 +3,7 @@ import "./globals.css";
 import "@mantine/core/styles.css"
 import MenuButton from "@/components/menu/MenuButton";
 import FooterSocial from "@/components/footer/FooterSocial";
+import { minimal_theme } from "./palette";
 
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 
@@ -22,7 +23,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>
+        <MantineProvider theme={minimal_theme}>
           {children}
           <MenuButton />
           <FooterSocial />
