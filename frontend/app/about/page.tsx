@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, Container, Divider, Title, Text, List, ListItem, AccordionControl, AccordionPanel } from '@mantine/core';
+import { Accordion, AccordionItem, Container, Divider, Title, Text, List, ListItem, AccordionControl, AccordionPanel, Flex } from '@mantine/core';
 import { IconPoint } from '@tabler/icons-react';
 
 const beliefs = [
@@ -82,18 +82,42 @@ const AboutUs = () => {
     <div className="min-h-screen py-16">
       <Container size="lg" className="space-y-20">
         {/* Hero Section */}
-        <section className="text-center py-20 px-6 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white rounded-lg shadow-xl">
+        <Container 
+          ta="center"
+          bg="olive"
+          c="white"
+          style={{
+            padding: '5rem 1.5rem',
+            borderRadius: '3rem',
+            boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)'
+          }}
+        >
           <Title order={1} className="text-5xl font-extrabold mb-4">About Us</Title>
           <Text size="lg" className="opacity-90">
             We are believers in the Lord Jesus Christ and meet together as the church in St. Louis. The church in St. Louis isn&apos;t our name; it&apos;s our description. We hold the faith that is revealed in the Bible and is common  to all genuine believers. We warmly welcome all guests and visitors.
           </Text>
-        </section>
+        </Container>
 
         {/* Who We Are Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">
-        <div className="lg:w-1/2 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Who We Are</div>
-          </div>
+          <Flex
+            direction="column"
+            justify="center"
+            align="center"
+            w={{ base: '100%', lg: '50%' }}
+            p="md"
+            bg="sky"
+            c="black"
+            ta="center"
+            style={{
+              borderRadius: '3rem',
+              boxShadow: 'xl',
+              fontSize: '2rem',
+              fontWeight: 800
+            }}
+          >
+            Who We Are
+          </Flex>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               We treasure the Holy Bible as God&apos;s revelation of Himself and His eternal purpose. Our beloved Jesus Christ is the center of all our gatherings.
@@ -108,9 +132,24 @@ const AboutUs = () => {
 
         {/* Our Faith Section */}
         <section className="flex flex-col lg:flex-row-reverse items-center gap-12">
-          <div className="lg:w-1/2 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Faith</div>
-          </div>
+          <Flex
+            direction="column"
+            justify="center"
+            align="center"
+            w={{ base: '100%', lg: '50%' }}
+            p="md"
+            bg="sky"
+            c="black"
+            ta="center"
+            style={{
+              borderRadius: '3rem',
+              boxShadow: 'xl',
+              fontSize: '2rem',
+              fontWeight: 800
+            }}
+          >
+            Our Faith
+          </Flex>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               We hold the faith which is common to all the believers: (Titus 1:4)
@@ -131,9 +170,24 @@ const AboutUs = () => {
 
         {/* Our Name Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-lg shadow-xl p-6">
-            <div className="h-full flex items-center justify-center text-white text-4xl font-extrabold">Our Name</div>
-          </div>
+          <Flex
+            direction="column"
+            justify="center"
+            align="center"
+            w={{ base: '100%', lg: '50%' }}
+            p="md"
+            bg="sky"
+            c="black"
+            ta="center"
+            style={{
+              borderRadius: '3rem',
+              boxShadow: 'xl',
+              fontSize: '2rem',
+              fontWeight: 800
+            }}
+          >
+            Our Name
+          </Flex>
           <div className="lg:w-1/2 space-y-6">
             <Text size="lg" className="text-gray-600 leading-relaxed">
               The church in St. Louis isn&apos;t our name - it&apos;s our description. As such, it&apos;s an inclusive title, not an exclusive one. We gather together simply as believers of the Lord in this city. The first use of the word &quot;church&quot; in Acts refers to the believers in Jerusalem as simply &quot;the whole church&quot; (Acts 5:11), meaning the called out (congregation), or assembly (in Greek, &quot;ekklesia&quot;).
