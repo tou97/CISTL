@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "@mantine/core/styles.css"
+import "@mantine/core/styles.css";
 import MenuButton from "@/components/menu/MenuButton";
 import FooterSocial from "@/components/footer/FooterSocial";
 import { minimal_theme } from "./palette";
 
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
+import {
+  ColorSchemeScript,
+  mantineHtmlProps,
+  MantineProvider,
+} from "@mantine/core";
 
 export const metadata: Metadata = {
   title: "The Church in St. Louis",

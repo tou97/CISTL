@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from 'react';
-import { Button, Drawer, NavLink, useMantineTheme } from '@mantine/core';
-import { IconHome, IconBible, IconUsersGroup, IconSchool, IconMessages, IconMenu2} from '@tabler/icons-react';
+import { useState } from "react";
+import { Button, Drawer, NavLink, useMantineTheme } from "@mantine/core";
+import {
+  IconHome,
+  IconBible,
+  IconUsersGroup,
+  IconSchool,
+  IconMessages,
+  IconMenu2,
+} from "@tabler/icons-react";
 
 const MenuButton: React.FC = () => {
   const [opened, setOpened] = useState(false);
 
   const toggleMenu = () => setOpened((prev) => !prev);
 
-  const theme = useMantineTheme()
+  const theme = useMantineTheme();
 
   return (
     <>
@@ -18,17 +25,17 @@ const MenuButton: React.FC = () => {
         <Button
           onClick={toggleMenu}
           rightSection={<IconMenu2 />}
-          size='lg'
+          size="lg"
           radius="xl"
           c="wood"
           color="offwhite"
           styles={{
             root: {
-              border: `1px solid ${theme.colors.wood[0]}`
-            }
+              border: `1px solid ${theme.colors.wood[0]}`,
+            },
           }}
         >
-        Menu
+          Menu
         </Button>
       </div>
 
@@ -42,15 +49,40 @@ const MenuButton: React.FC = () => {
         offset={10}
         radius="lg"
         title="THE CHURCH IN ST. LOUIS"
-        overlayProps={{ backgroundOpacity: 0.5, blur: 4}}
+        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         className="bg-white"
       >
         <nav className="flex flex-col gap-4">
-          <NavLink label="Home" component="a" href="/" leftSection={<IconHome/>} />
-          <NavLink label="About Us" component="a" href="/about" leftSection={<IconBible/>} />
-          <NavLink label="Our Gatherings" component="a" href="/gatherings" leftSection={<IconUsersGroup/>} />
-          <NavLink label="Christians Students on Campus" component="a" href="/campuses" leftSection={<IconSchool/>} />
-          <NavLink label="Questions?" component="a" href="/contact" leftSection={<IconMessages/>} />
+          <NavLink
+            label="Home"
+            component="a"
+            href="/"
+            leftSection={<IconHome />}
+          />
+          <NavLink
+            label="About Us"
+            component="a"
+            href="/about"
+            leftSection={<IconBible />}
+          />
+          <NavLink
+            label="Our Gatherings"
+            component="a"
+            href="/gatherings"
+            leftSection={<IconUsersGroup />}
+          />
+          <NavLink
+            label="Christians Students on Campus"
+            component="a"
+            href="/campuses"
+            leftSection={<IconSchool />}
+          />
+          <NavLink
+            label="Questions?"
+            component="a"
+            href="/contact"
+            leftSection={<IconMessages />}
+          />
         </nav>
       </Drawer>
     </>

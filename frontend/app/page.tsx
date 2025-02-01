@@ -1,4 +1,12 @@
-import { Button, Container, Title, Text, Grid, GridCol, Image } from '@mantine/core';
+import {
+  Button,
+  Container,
+  Title,
+  Text,
+  Grid,
+  GridCol,
+  Image,
+} from "@mantine/core";
 
 export default function Home() {
   return (
@@ -10,9 +18,7 @@ export default function Home() {
             <Title order={1} className="text-4xl md:text-6xl font-bold">
               Blah blah blah
             </Title>
-            <Text className="mt-4 text-lg md:text-xl">
-              Blah Blah Blah
-            </Text>
+            <Text className="mt-4 text-lg md:text-xl">Blah Blah Blah</Text>
             <Button
               variant="white"
               size="lg"
@@ -29,7 +35,7 @@ export default function Home() {
       <section className="py-16">
         <Container>
           <Grid>
-            <GridCol span={{ base: 12, md: 6}}>
+            <GridCol span={{ base: 12, md: 6 }}>
               <Image
                 src="https://placehold.co/600x400/EEE/31343C"
                 alt="Church community"
@@ -41,7 +47,8 @@ export default function Home() {
                 About Us
               </Title>
               <Text mt="md">
-                Little splurge about us and will link to page with more description.
+                Little splurge about us and will link to page with more
+                description.
               </Text>
               <Button
                 size="md"
