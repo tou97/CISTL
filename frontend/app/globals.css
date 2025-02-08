@@ -3,18 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Adobe Garamond Pro';
-    src: url('/fonts/AdobeGaramondPro-Regular.woff2') format('woff2'),
-         url('/fonts/AdobeGaramondPro-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
+     font-family: 'Adobe Garamond Pro';
+     src: url('/fonts/adobe-garamond-pro-2/AGaramondPro-Regular.woff2') format('woff2');
+     font-weight: 400;
+     font-style: normal;
+}
   
-  @font-face {
-    font-family: 'HK Grotesk';
-    src: url('/fonts/HKGrotesk-Regular.woff2') format('woff2'),
-         url('/fonts/HKGrotesk-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
+@font-face {
+     font-family: 'HK Grotesk';
+     src: url('/fonts/hk-groteks/HKGrotesk-Regular.woff2') format('woff2');
+     font-weight: 400;
+     font-style: normal;
+}
   
