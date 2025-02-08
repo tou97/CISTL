@@ -14,16 +14,22 @@ import classes from "./FeaturesCards.module.css";
 
 const campusdata = [
   {
-    title: "University of Missouri - St. Louis",
-    description: "Short description.",
-    image: "/images/umsl.webp",
-    link: "/campuses/umsl",
-  },
-  {
     title: "Saint Louis University",
     description: "Short description.",
     image: "/images/slu.webp",
     link: "/campuses/slu",
+  },
+  {
+    title: "St. Louis Community College - Meramec",
+    description: "Short description",
+    image: "/images/stlcc.webp",
+    link: "/campuses/stlcc",
+  },
+  {
+    title: "University of Missouri - St. Louis",
+    description: "Short description.",
+    image: "/images/umsl.webp",
+    link: "/campuses/umsl",
   },
   {
     title: "WashU",
@@ -35,18 +41,20 @@ const campusdata = [
 
 const FeaturesCards = () => {
   const features = campusdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" padding="xl">
+    <Card key={feature.title} shadow="md" radius="md" padding="xl" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Image
         src={feature.image}
         alt={feature.title}
         style={{ width: "100%", height: "auto", borderRadius: "8px" }}
       />
-      <Text fz="lg" fw={500} mt="md">
-        {feature.title}
-      </Text>
-      <Text fz="sm" c="dimmed" mt="sm">
-        {feature.description}
-      </Text>
+      <div style={{ flexGrow: 1 }}>
+        <Text fz="lg" fw={500} mt="md">
+          {feature.title}
+        </Text>
+        <Text fz="sm" c="dimmed" mt="sm">
+          {feature.description}
+        </Text>
+      </div>
       <Button
         component="a"
         href={feature.link}
@@ -59,6 +67,7 @@ const FeaturesCards = () => {
         Learn More
       </Button>
     </Card>
+
   ));
 
   return (
@@ -71,7 +80,7 @@ const FeaturesCards = () => {
         This happens when hunger drives it to try biting a Steel-type Pokémon.
       </Text>
 
-      <SimpleGrid cols={{ base: 1, lg: 3 }} spacing="xl" mt="xl">
+      <SimpleGrid cols={{ base: 1, lg: 4 }} spacing="xl" mt="xl">
         {features}
       </SimpleGrid>
 

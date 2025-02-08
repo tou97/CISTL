@@ -10,8 +10,9 @@ import {
 } from "@mantine/core";
 
 const scheduleData = [
-  { day: "Wednesday", time: "7:00 PM", activity: "Bible Study" },
-  { day: "Thursday", time: "5:30 PM", activity: "Family Time" },
+  { day: "Tuesday", time: "2:00 PM", activity: "Bible Study (a)" },
+  { day: "Wednesday", time: "12:00 PM", activity: "Bible Study (b)" },
+  { day: "Thursday", time: "6:00 PM", activity: "Family Time" },
 ];
 
 export default function HomePage() {

@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 
 const scheduleData = [
-  { day: "Thursday", time: "12:00 PM", activity: "Bible Study" },
+  { day: "Monday", time: "12:00 PM", activity: "Bible Study" },
   { day: "Thursday", time: "6:00 PM", activity: "Family Time" },
 ];
 
@@ -19,7 +19,7 @@ export default function HomePage() {
     <Container size="lg" my="xl">
       <Box style={{ position: "relative" }}>
         <Image
-          src="/images/washu_campus.webp"
+          src="/images/stlcc_campus.webp"
           alt="University Campus"
           h={600}
           fit="cover"
@@ -33,18 +33,11 @@ export default function HomePage() {
             width: "90%",
           }}
         >
-          <Card
-            shadow="lg"
-            padding="xl"
-            radius="lg"
-            ta="center"
-            c="#BD302C"
-            withBorder
-          >
-            <Title order={1} c="#BA0C2F">
-              WashU
+          <Card shadow="lg" padding="xl" radius="lg" ta="center" withBorder>
+            <Title order={1} c="#003A70">
+              St. Louis Community College - Meramec
             </Title>
-            <Text size="lg" mt="sm" c="#215732">
+            <Text size="lg" mt="sm" c="#00CCFF">
               Christian Students on Campus
             </Text>
           </Card>
