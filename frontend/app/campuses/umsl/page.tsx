@@ -1,84 +1,21 @@
-import {
-  Card,
-  Container,
-  Box,
-  Image,
-  Title,
-  Text,
-  Paper,
-  Table,
-} from "@mantine/core";
+import CampusPage, { CampusSchedule } from "../CampusPage";
 
-const scheduleData = [
+
+const scheduleData: CampusSchedule[] = [
   { day: "Tuesday", time: "2:00 PM", activity: "Bible Study (a)" },
   { day: "Wednesday", time: "12:00 PM", activity: "Bible Study (b)" },
   { day: "Thursday", time: "6:00 PM", activity: "Family Time" },
 ];
 
-export default function HomePage() {
+export default function UmslPage() {
   return (
-    <Container size="lg" my="xl">
-      <Box style={{ position: "relative" }}>
-        <Image
-          src="/images/umsl_campus.webp"
-          alt="University Campus"
-          h={600}
-          fit="cover"
-        />
-        <Box
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: "50%",
-            transform: "translate(-50%, 75%)",
-            width: "90%",
-          }}
-        >
-          <Card shadow="lg" padding="xl" radius="lg" ta="center" withBorder>
-            <Title order={1} c="#BD302C">
-              University of Missouri - St. Louis
-            </Title>
-            <Text size="lg" mt="sm" c="#F5B324">
-              Christian Students on Campus
-            </Text>
-          </Card>
-        </Box>
-      </Box>
-      <Box mt={150}>
-        <Title order={2} ta="center" mb="md">
-          Weekly Activities
-        </Title>
-        <Paper shadow="sm" p="md" radius="lg" withBorder>
-          <Table highlightOnHover>
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Time</th>
-                <th>Activity</th>
-              </tr>
-            </thead>
-            <tbody>
-              {scheduleData.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.day}</td>
-                  <td>{item.time}</td>
-                  <td>{item.activity}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Paper>
-      </Box>
-      <Box mt="xl">
-        <Paper shadow="xs" p="md" radius="lg" withBorder>
-          <Title order={3}>Get in Touch</Title>
-          <Text mt="sm">
-            Interested in learning more about our campus ministry or
-            volunteering? Contact us at{" "}
-            <a href="mailto:contact@yourchurch.org">contact@yourchurch.org</a>.
-          </Text>
-        </Paper>
-      </Box>
-    </Container>
-  );
+    <CampusPage
+      imageSrc="/images/umsl_campus.webp"
+      cardTitle="University of Missouri - St. Louis"
+      cardTitleColor="#BD302C"
+      cardSubtitle="Christian Students on Campus"
+      cardSubtitleColor="#F5B324"
+      scheduleData={scheduleData}
+    />
+  )
 }
