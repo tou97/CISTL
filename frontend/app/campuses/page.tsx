@@ -50,7 +50,18 @@ const campusdata = [
 
 const FeaturesCards = () => {
   const features = campusdata.map((feature) => (
-    <Card key={feature.title} bg="offwhite" shadow="lg" radius="xl" padding="lg" withBorder bd={`1px solid ${feature.maincolor}`} display="flex" flex="column" h="100%">
+    <Card
+      key={feature.title}
+      bg="offwhite"
+      shadow="lg"
+      radius="xl"
+      padding="lg"
+      withBorder
+      bd={`1px solid ${feature.maincolor}`}
+      display="flex"
+      flex="column"
+      h="100%"
+    >
       <Image
         src={feature.image}
         alt={feature.title}
@@ -77,45 +88,41 @@ const FeaturesCards = () => {
         Learn More
       </Button>
     </Card>
-
   ));
 
   return (
     <Container size="lg" py="xl">
-      <Paper
-        ta="center"
-        bg="olive"
-        c="offwhite"
-        radius="xl"
-        shadow="lg"
-        p="xl"
-      >
+      <Paper ta="center" bg="olive" c="offwhite" radius="xl" shadow="lg" p="xl">
         <Title order={1} mb="md">
           Christian Students on Campus
         </Title>
         <Text size="lg">
-          Christian Students on Campus is a vibrant and inclusive community of students who are passionate about living out their faith and making a positive impact on campus and beyond. Together, we seek to grow in our understanding of Christ, build meaningful relationships, and serve others with love and compassion. Whether through worship, Bible study, community outreach, or simply walking alongside one another in faith, we aim to create a welcoming space where students can explore and strengthen their relationship with God. Our mission is to be a light on campus, supporting one another in our spiritual journeys, and sharing the hope and grace of Jesus Christ with those around us.
+          Christian Students on Campus is a vibrant and inclusive community of
+          students who are passionate about living out their faith and making a
+          positive impact on campus and beyond. Together, we seek to grow in our
+          understanding of Christ, build meaningful relationships, and serve
+          others with love and compassion. Whether through worship, Bible study,
+          community outreach, or simply walking alongside one another in faith,
+          we aim to create a welcoming space where students can explore and
+          strengthen their relationship with God. Our mission is to be a light
+          on campus, supporting one another in our spiritual journeys, and
+          sharing the hope and grace of Jesus Christ with those around us.
         </Text>
       </Paper>
-      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
-      <Paper
-        bg="sky"
-        radius="xl"
-        shadow="lg"
-        p="xl"
-      >
+      <Divider size="sm" mt="lg" mb="lg" color="sky" />
+      <Paper bg="sky" radius="xl" shadow="lg" p="xl">
         <SimpleGrid cols={{ base: 1, lg: 4 }} spacing="lg">
           {features}
         </SimpleGrid>
       </Paper>
 
-      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
+      <Divider size="sm" mt="lg" mb="lg" color="sky" />
 
       <Title order={2} className={classes.title} ta="center" mt="md">
         Family Time
       </Title>
 
-      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
+      <Divider size="sm" mt="lg" mb="lg" color="sky" />
 
       <Title order={2} className={classes.title} ta="center" mt="md">
         Conferences

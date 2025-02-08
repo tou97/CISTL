@@ -12,7 +12,7 @@ import {
   TableTh,
   TableTbody,
   TableTd,
-} from '@mantine/core';
+} from "@mantine/core";
 
 export type CampusSchedule = {
   day: string;
@@ -34,25 +34,25 @@ export interface CampusPageProps {
 
 export default function CampusPage({
   imageSrc,
-  imageAlt = 'Campus Image',
+  imageAlt = "Campus Image",
   cardTitle,
   cardTitleColor,
   cardSubtitle,
   cardSubtitleColor,
   scheduleData,
-  scheduleTitle = 'Weekly Activities'
+  scheduleTitle = "Weekly Activities",
 }: CampusPageProps) {
   return (
     <Container size="lg" my="xl">
       <Box pos="relative">
-        <Image src={imageSrc} alt={imageAlt} h={600} fit="cover" radius="xl"/>
+        <Image src={imageSrc} alt={imageAlt} h={600} fit="cover" radius="xl" />
         <Box
           style={{
-            position: 'absolute',
+            position: "absolute",
             bottom: 0,
-            left: '50%',
-            transform: 'translate(-50%, 75%)',
-            width: '90%'
+            left: "50%",
+            transform: "translate(-50%, 75%)",
+            width: "90%",
           }}
         >
           <Card shadow="lg" padding="xl" radius="xl" ta="center" withBorder>
