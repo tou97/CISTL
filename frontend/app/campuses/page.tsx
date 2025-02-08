@@ -6,6 +6,7 @@ import {
   Container,
   Divider,
   Image,
+  Paper,
   SimpleGrid,
   Text,
   Title,
@@ -18,37 +19,46 @@ const campusdata = [
     description: "Short description.",
     image: "/images/slu.webp",
     link: "/campuses/slu",
+    maincolor: "#003DA5",
+    secondarycolor: "#C8C9C7",
   },
   {
     title: "St. Louis Community College - Meramec",
     description: "Short description",
     image: "/images/stlcc.webp",
     link: "/campuses/stlcc",
+    maincolor: "#003A70",
+    secondarycolor: "#00CCFF",
   },
   {
     title: "University of Missouri - St. Louis",
     description: "Short description.",
     image: "/images/umsl.webp",
     link: "/campuses/umsl",
+    maincolor: "#BD302C",
+    secondarycolor: "#F5B324",
   },
   {
     title: "WashU",
     description: "Short description.",
     image: "/images/washu.webp",
     link: "/campuses/washu",
+    maincolor: "#BA0C2F",
+    secondarycolor: "#215732",
   },
 ];
 
 const FeaturesCards = () => {
   const features = campusdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" padding="xl" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <Card key={feature.title} shadow="lg" radius="xl" padding="lg" withBorder bd={`1px solid ${feature.secondarycolor}`} display="flex" flex="column" h="100%">
       <Image
         src={feature.image}
         alt={feature.title}
         style={{ width: "100%", height: "auto", borderRadius: "8px" }}
       />
+      <Divider mt="sm" color="sky"></Divider>
       <div style={{ flexGrow: 1 }}>
-        <Text fz="lg" fw={500} mt="md">
+        <Text fz="lg" fw="700" mt="sm">
           {feature.title}
         </Text>
         <Text fz="sm" c="dimmed" mt="sm">
@@ -58,11 +68,11 @@ const FeaturesCards = () => {
       <Button
         component="a"
         href={feature.link}
-        variant="light"
-        color="blue"
+        c="white"
+        color={feature.maincolor}
         fullWidth
         mt="md"
-        radius="md"
+        radius="xl"
       >
         Learn More
       </Button>
@@ -72,25 +82,40 @@ const FeaturesCards = () => {
 
   return (
     <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm">
-        Christian Students on Campus
-      </Title>
-      <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        Every once in a while, you’ll see a Golbat that’s missing some fangs.
-        This happens when hunger drives it to try biting a Steel-type Pokémon.
-      </Text>
+      <Paper
+        ta="center"
+        bg="olive"
+        c="offwhite"
+        radius="xl"
+        shadow="lg"
+        p="xl"
+      >
+        <Title order={1} mb="md">
+          Christian Students on Campus
+        </Title>
+        <Text size="lg">
+          Christian Students on Campus is a vibrant and inclusive community of students who are passionate about living out their faith and making a positive impact on campus and beyond. Together, we seek to grow in our understanding of Christ, build meaningful relationships, and serve others with love and compassion. Whether through worship, Bible study, community outreach, or simply walking alongside one another in faith, we aim to create a welcoming space where students can explore and strengthen their relationship with God. Our mission is to be a light on campus, supporting one another in our spiritual journeys, and sharing the hope and grace of Jesus Christ with those around us.
+        </Text>
+      </Paper>
+      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
+      <Paper
+        bg="offwhite"
+        radius="xl"
+        shadow="lg"
+        p="xl"
+      >
+        <SimpleGrid cols={{ base: 1, lg: 4 }} spacing="lg">
+          {features}
+        </SimpleGrid>
+      </Paper>
 
-      <SimpleGrid cols={{ base: 1, lg: 4 }} spacing="xl" mt="xl">
-        {features}
-      </SimpleGrid>
-
-      <Divider mt="xl" />
+      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
 
       <Title order={2} className={classes.title} ta="center" mt="md">
         Family Time
       </Title>
 
-      <Divider mt="xl" />
+      <Divider size="sm" mt="lg" mb="lg" color="sky"/>
 
       <Title order={2} className={classes.title} ta="center" mt="md">
         Conferences

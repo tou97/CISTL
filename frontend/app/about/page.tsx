@@ -10,6 +10,7 @@ import {
   AccordionControl,
   AccordionPanel,
   Flex,
+  Paper,
 } from "@mantine/core";
 import { IconPoint } from "@tabler/icons-react";
 
@@ -158,15 +159,13 @@ const AboutUs = () => {
     <div className="min-h-screen py-16">
       <Container size="lg" className="space-y-20">
         {/* Hero Section */}
-        <Container
+        <Paper
           ta="center"
           bg="olive"
-          c="white"
-          style={{
-            padding: "5rem 1.5rem",
-            borderRadius: "3rem",
-            boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)",
-          }}
+          c="offwhite"
+          p="xl"
+          radius="xl"
+          shadow="lg"
         >
           <Title order={1} className="text-5xl font-extrabold mb-4">
             About Us
@@ -178,7 +177,7 @@ const AboutUs = () => {
             Bible and is common to all genuine believers. We warmly welcome all
             guests and visitors.
           </Text>
-        </Container>
+        </Paper>
 
         {/* Who We Are Section */}
         <section className="flex flex-col lg:flex-row items-center gap-12">

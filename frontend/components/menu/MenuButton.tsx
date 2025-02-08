@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Drawer, NavLink, useMantineTheme } from "@mantine/core";
+import { Button, Drawer, NavLink } from "@mantine/core";
 import {
   IconHome,
   IconBible,
@@ -16,8 +16,6 @@ const MenuButton: React.FC = () => {
 
   const toggleMenu = () => setOpened((prev) => !prev);
 
-  const theme = useMantineTheme();
-
   return (
     <>
       {/* Floating Button */}
@@ -29,11 +27,7 @@ const MenuButton: React.FC = () => {
           radius="xl"
           c="wood"
           color="offwhite"
-          styles={{
-            root: {
-              border: `1px solid ${theme.colors.wood[0]}`,
-            },
-          }}
+          bd="1px solid wood"
         >
           Menu
         </Button>
