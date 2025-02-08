@@ -39,7 +39,7 @@ const campusdata = [
     secondarycolor: "#F5B324",
   },
   {
-    title: "WashU",
+    title: "The Washington University",
     description: "Short description.",
     image: "/images/washu.webp",
     link: "/campuses/washu",
@@ -50,7 +50,7 @@ const campusdata = [
 
 const FeaturesCards = () => {
   const features = campusdata.map((feature) => (
-    <Card key={feature.title} shadow="lg" radius="xl" padding="lg" withBorder bd={`1px solid ${feature.secondarycolor}`} display="flex" flex="column" h="100%">
+    <Card key={feature.title} bg="offwhite" shadow="lg" radius="xl" padding="lg" withBorder bd={`1px solid ${feature.maincolor}`} display="flex" flex="column" h="100%">
       <Image
         src={feature.image}
         alt={feature.title}
@@ -58,10 +58,10 @@ const FeaturesCards = () => {
       />
       <Divider mt="sm" color="sky"></Divider>
       <div style={{ flexGrow: 1 }}>
-        <Text fz="lg" fw="700" mt="sm">
+        <Text size="lg" fw="700" mt="sm" c="olive">
           {feature.title}
         </Text>
-        <Text fz="sm" c="dimmed" mt="sm">
+        <Text size="sm" c="dimmed" mt="sm">
           {feature.description}
         </Text>
       </div>
@@ -99,7 +99,7 @@ const FeaturesCards = () => {
       </Paper>
       <Divider size="sm" mt="lg" mb="lg" color="sky"/>
       <Paper
-        bg="offwhite"
+        bg="sky"
         radius="xl"
         shadow="lg"
         p="xl"

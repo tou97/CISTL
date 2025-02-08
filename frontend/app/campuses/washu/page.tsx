@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <CampusPage
       imageSrc="/images/washu_campus.webp"
-      cardTitle="WashU"
+      cardTitle="The Washington University"
       cardTitleColor="#BA0C2F"
       cardSubtitle="Christian Students on Campus"
       cardSubtitleColor="#215732"
