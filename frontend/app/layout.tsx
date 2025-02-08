@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import MenuButton from "@/components/menu/MenuButton";
-import FooterSocial from "@/components/footer/FooterSocial";
+import FooterSocial from "@/components/footer/Footer";
 import { minimal_theme } from "./palette";
 
 import {
