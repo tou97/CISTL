@@ -5,6 +5,7 @@ import {
   Card,
   Title,
   Paper,
+  Space,
   Table,
   TableThead,
   TableTr,
@@ -43,8 +44,8 @@ export default function CampusPage({
 }: CampusPageProps) {
   return (
     <Container size="lg" my="xl">
-      <Box style={{ position: 'relative' }}>
-        <Image src={imageSrc} alt={imageAlt} h={600} fit="cover" />
+      <Box pos="relative">
+        <Image src={imageSrc} alt={imageAlt} h={600} fit="cover" radius="xl"/>
         <Box
           style={{
             position: 'absolute',
@@ -54,21 +55,22 @@ export default function CampusPage({
             width: '90%'
           }}
         >
-          <Card shadow="lg" padding="xl" radius="lg" ta="center" withBorder>
+          <Card shadow="lg" padding="xl" radius="xl" ta="center" withBorder>
             <Title order={1} c={cardTitleColor}>
               {cardTitle}
             </Title>
-            <Title order={3} mt="sm" c={cardSubtitleColor}>
+            <Title order={2} mt="sm" c={cardSubtitleColor}>
               {cardSubtitle}
             </Title>
           </Card>
         </Box>
       </Box>
-      <Box mt={150}>
+      <Space h="200"></Space>
+      <Box>
         <Title order={2} ta="center" mb="md">
           {scheduleTitle}
         </Title>
-        <Paper shadow="md" p="xl" radius="lg" withBorder>
+        <Paper shadow="md" p="xl" radius="xl" withBorder>
           <Table striped highlightOnHover verticalSpacing="sm">
             <TableThead>
               <TableTr>
