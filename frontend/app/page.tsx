@@ -1,10 +1,11 @@
 import {
+  Center,
   Container,
   Divider,
-  Grid,
-  GridCol,
+  Group,
   Image,
   Space,
+  Stack,
   Text,
   Title,
 } from "@mantine/core";
@@ -12,59 +13,61 @@ import {
 export default function Home() {
   return (
     <Container fluid>
-      <Grid pt={100} align="center">
-        <GridCol span={6}>
-          <Title order={1} ta="right" size="4vw" c="wood">
-            Truth, Life,
-          </Title>
-        </GridCol>
-        <GridCol span={6}>
-          <Divider size="xs" color="wood" />
-        </GridCol>
-      </Grid>
-      <Grid align="center">
-        <GridCol span={4}>
-          <Divider size="xs" color="wood" />
-        </GridCol>
-        <GridCol span={8}>
-          <Title order={1} ta="left" size="4vw" c="wood">
-            Church, Gospel
-          </Title>
-        </GridCol>
-      </Grid>
-      <Space h="5vh" />
-      <Image
-        pl={30}
-        pr={30}
-        src="/images/index_main.webp"
-        alt="Index Main"
-        h={600}
-      />
-      <Space h="5vh" />
-      <Grid pb={100}>
-        <GridCol span={4}></GridCol>
-        <GridCol span={8}>
-          <Grid align="center">
-            <GridCol span={2}>
-              <Title c="wood" order={1} size="4vh">
-                Who we are
-              </Title>
-            </GridCol>
-            <GridCol span={2}>
-              <Divider color="wood" size="xs" />
-            </GridCol>
-          </Grid>
-          <GridCol span={12}>
-            <Text c="wood" size="xl">
-              We are believers in the Lord Jesus Christ and meet together as the
-              church in St. Louis. The church in St. Louis isn&apos;t our name;
-              it&apos;s our description. We hold the faith that is revealed in
-              the Bible and is common to all genuine believers. We warmly
-              welcome all guests and visitors.
-            </Text>
-          </GridCol>
-        </GridCol>
-      </Grid>
+      <Space h="lg" />
+      <Group p="xl" grow preventGrowOverflow={false} wrap="nowrap">
+        <Title
+          ta="right"
+          pr="lg"
+          order={1}
+          textWrap="nowrap"
+          size="400%"
+          c="wood"
+        >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truth, Life,
+        </Title>
+        <Divider color="wood" w="10%" />
+      </Group>
+      <Group p="xl" grow preventGrowOverflow={false} wrap="nowrap">
+        <Divider color="wood" w="10%" />
+        <Title
+          ta="left"
+          pl="lg"
+          order={1}
+          textWrap="nowrap"
+          size="400%"
+          c="wood"
+        >
+          Church, Gospel
+        </Title>
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Image px="xl" src="/images/index_main.webp" alt="Index Main" h={800} />
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="xl" gap="xl" grow>
+        <Center>
+          <Image alt="Placeholder" bg="black" c="white" h={400} w={600} />
+        </Center>
+        <Stack justify="flex-start">
+          <Group wrap="nowrap">
+            <Title pr="lg" order={1} textWrap="nowrap" c="wood">
+              Who we are
+            </Title>
+            <Divider color="wood" w="15%" />
+            <Space />
+          </Group>
+          <Text c="wood" size="xl">
+            We are believers in the Lord Jesus Christ and meet together as the
+            church in St. Louis. The church in St. Louis isn&apos;t our name;
+            it&apos;s our description. We hold the faith that is revealed in the
+            Bible and is common to all genuine believers. We warmly welcome all
+            guests and visitors.
+          </Text>
+        </Stack>
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
     </Container>
   );
 }

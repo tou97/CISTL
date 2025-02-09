@@ -23,63 +23,70 @@ export function ClientAppShell({
 
   return (
     <AppShell
-      header={{ height: 60 }}
+      header={{ height: 125 }}
       navbar={{
         width: 300,
         breakpoint: "sm",
         collapsed: { desktop: true, mobile: !opened },
       }}
     >
-      <AppShellHeader p={60} bg="offwhite" withBorder={false}>
-        <Group justify="space-between">
-          <Group justify="flex-start">
-            <Burger
-              opened={opened}
-              onClick={toggle}
-              hiddenFrom="sm"
-              size="sm"
-              color="wood"
-            />
-            <Title c="wood">CISTL</Title>
-            <Stack align="flex-start" gap="0">
-              <Text c="wood" size="sm" fw={500}>
-                Church in
-              </Text>
-              <Text c="wood" size="sm" fw={500}>
-                St. Louis
-              </Text>
-            </Stack>
-          </Group>
-          <Group gap="xl" justify="flex-end">
-            <Anchor size="xl" fw={500} href="/about" c="wood">
-              About us
-            </Anchor>
-            <Anchor size="xl" fw={500} href="/gatherings" c="wood">
-              Our gatherings
-            </Anchor>
-            <Anchor size="xl" fw={500} href="/campuses" c="wood">
-              Campus Work
-            </Anchor>
-            <Anchor size="xl" fw={500} href="/contact" c="wood">
-              Contact us
-            </Anchor>
+      <AppShellHeader bg="offwhite" withBorder={false}>
+        <Group h="100%" px="md">
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="sm"
+            size="md"
+            color="wood"
+          />
+          <Group justify="space-between" px="md" flex={1}>
+            <Group>
+              <Title c="wood">CISTL</Title>
+              <Stack gap={0}>
+                <Text c="wood" size="sm">
+                  Church in
+                </Text>
+                <Text c="wood" size="sm">
+                  St. Louis
+                </Text>
+              </Stack>
+            </Group>
+            <Group ml="xl" gap="xl" px="xl" visibleFrom="sm">
+              <Anchor size="xl" href="/" c="wood">
+                Home
+              </Anchor>
+              <Anchor size="xl" href="/about" c="wood">
+                About us
+              </Anchor>
+              <Anchor size="xl" href="/gatherings" c="wood">
+                Our gatherings
+              </Anchor>
+              <Anchor size="xl" href="/campuses" c="wood">
+                Campus work
+              </Anchor>
+              <Anchor size="xl" href="/contact" c="wood">
+                Contact us
+              </Anchor>
+            </Group>
           </Group>
         </Group>
       </AppShellHeader>
 
-      <AppShellNavbar bg="offwhite" py="md" px={4}>
-        <Anchor size="xl" fw={500} href="/about" c="wood">
-          About us
-        </Anchor>
-        <Anchor size="xl" fw={500} href="/gatherings" c="wood">
-          Our gatherings
-        </Anchor>
-        <Anchor size="xl" fw={500} href="/campuses" c="wood">
-          Campus Work
-        </Anchor>
-        <Anchor size="xl" fw={500} href="/contact" c="wood">
-          Contact us
-        </Anchor>
+      <AppShellNavbar bg="offwhite" py="sm" px="sm">
+        <Stack gap="xs" pl="md">
+          <Anchor size="xl" href="/about" c="wood">
+            About us
+          </Anchor>
+          <Anchor size="xl" href="/gatherings" c="wood">
+            Our gatherings
+          </Anchor>
+          <Anchor size="xl" href="/campuses" c="wood">
+            Campus work
+          </Anchor>
+          <Anchor size="xl" href="/contact" c="wood">
+            Contact us
+          </Anchor>
+        </Stack>
       </AppShellNavbar>
 
       <AppShellMain bg="offwhite">{children}</AppShellMain>

@@ -1,11 +1,10 @@
 import {
   Accordion,
   AccordionItem,
-  Container,
   Center,
+  Container,
   Divider,
-  Grid,
-  GridCol,
+  Image,
   Title,
   Text,
   List,
@@ -160,76 +159,67 @@ const beliefs = [
 const AboutUs = () => {
   return (
     <Container fluid>
-      <Grid h={350} bg="olive" c="offwhite">
-        <GridCol span={6}>
-          <Center h={350}>
-            <Title order={1} size="4vw">
-              About us
-            </Title>
-          </Center>
-        </GridCol>
-        <GridCol span={6}>
-          <Center h={350}>
-            <Text size="xl" fw={500} pr={100}>
-              We are believers in the Lord Jesus Christ and meet together as the
-              church in St. Louis. The church in St. Louis isn&apos;t our name;
-              it&apos;s our description. We hold the faith that is revealed in
-              the Bible and is common to all genuine believers. We warmly
-              welcome all guests and visitors.
-            </Text>
-          </Center>
-        </GridCol>
-      </Grid>
-      <Space h={75} />
-      <Grid pl={50} pr={50}>
-        <GridCol span={6}>
-          <Text size="xl" c="wood">
-            <b>We treasure the Holy Bible</b> as God&apos;s revelation of
-            Himself and His eternal purpose. Our beloved Jesus Christ is the
-            center of all our gatherings.
-          </Text>
-          <Space h="xl" />
-          <Text size="xl" c="wood">
-            Through prayer and fellowship with one another, we endeavor to grow
-            spiritually both individually and as the Body of Christ. Our
-            small-group church life provides opportunities to enjoy Christian
-            companionship that encourages, strengthens, and sustains us to live
-            the Christian life.
-          </Text>
-        </GridCol>
-        <GridCol span={6}></GridCol>
-      </Grid>
-      <Space h={75} />
-      <Grid pl={50} pr={50} align="center">
-        <GridCol span={5}>
-          <Divider color="olive" size="xs" />
-        </GridCol>
-        <GridCol span={2}>
-          <Title ta="center" order={1} size="4vh" c="olive">
-            Our faith
-          </Title>
-        </GridCol>
-        <GridCol span={5}>
-          <Divider color="olive" size="xs" />
-        </GridCol>
-      </Grid>
-      <Space h={25} />
-      <Title order={1} size="3vh" c="olive" ta="center">
+      <Space bg="olive" h="lg" />
+      <Group bg="olive" py="xl" justify="center" grow>
+        <Title order={1} ta="center" c="offwhite">
+          About Us
+        </Title>
+        <Text c="offwhite" size="xl" px="xl">
+          We are believers in the Lord Jesus Christ and meet together as the
+          church in St. Louis. The church in St. Louis isn&apos;t our name;
+          it&apos;s our description. We hold the faith that is revealed in the
+          Bible and is common to all genuine believers. We warmly welcome all
+          guests and visitors.
+        </Text>
+      </Group>
+      <Space bg="olive" h="lg" />
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="xl" gap="xl" grow>
+        <Text size="xl" c="wood">
+          <b>We treasure the Holy Bible</b> as God&apos;s revelation of Himself
+          and His eternal purpose. Our beloved Jesus Christ is the center of all
+          our gatherings.
+          <br></br>
+          <br></br>
+          Through prayer and fellowship with one another, we endeavor to grow
+          spiritually both individually and as the Body of Christ. Our
+          small-group church life provides opportunities to enjoy Christian
+          companionship that encourages, strengthens, and sustains us to live
+          the Christian life.
+        </Text>
+        <Center>
+          <Image alt="Placeholder" />
+        </Center>
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
+        <Divider color="olive" />
+        <Title ta="center" order={1} c="olive">
+          Our faith
+        </Title>
+        <Divider color="olive" />
+      </Group>
+      <Space h="lg" />
+      <Title order={2} c="olive" ta="center">
         We hold the faith which is common to all the believers:
       </Title>
-      <Title order={1} size="3vh" c="olive" ta="center">
+      <Title order={2} c="olive" ta="center">
         (Titus 1:4)
       </Title>
-      <Space h={75} />
-      <Accordion pl={100} pr={100}>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Accordion px="lg">
         {beliefs.map((belief, index) => (
-          <AccordionItem p="lg" key={belief.value} value={belief.value}>
+          <AccordionItem p="sm" key={belief.value} value={belief.value}>
             <AccordionControl>
               <Group>
-                <Title order={1} size="2vh" c="olive">
-                  {index + 1}.
+                <Title order={3} c="olive">
+                  0{index + 1}.
                 </Title>
-                <Title order={1} size="2vh" c="olive">
+                <Space h="xl" />
+                <Title order={3} c="olive">
                   {belief.value}
                 </Title>
               </Group>
@@ -238,20 +228,40 @@ const AboutUs = () => {
           </AccordionItem>
         ))}
       </Accordion>
-      <Space h={75} />
-      <Grid pl={50} pr={50} align="center">
-        <GridCol span={5}>
-          <Divider color="olive" size="xs" />
-        </GridCol>
-        <GridCol span={2}>
-          <Title ta="center" order={1} size="4vh" c="olive">
-            Our name
-          </Title>
-        </GridCol>
-        <GridCol span={5}>
-          <Divider color="olive" size="xs" />
-        </GridCol>
-      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
+        <Divider color="olive" />
+        <Title ta="center" order={1} c="olive">
+          Our name
+        </Title>
+        <Divider color="olive" />
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="xl" gap="xl" grow>
+        <Center>
+          <Image alt="Placeholder" />
+        </Center>
+        <Text size="xl" c="wood">
+          <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
+          description. As such, it&apos;s an inclusive title, not an exclusive
+          one. We gather together simply as believers of the Lord in this city.
+          The first use of the word &quot;church&quot; in Acts refers to the
+          believers in Jerusalem as simply &quot;the whole church&quot; (Acts
+          5:11), meaning the called out (congregation), or assembly (in Greek,
+          &quot;ekklesia&quot;).
+          <br></br>
+          <br></br>
+          In Acts 8:1, they were referred to as &quot;the church which was in
+          Jerusalem.&quot; This is the first church established in the Bible in
+          Acts and it included all the believers living in Jerusalem. The record
+          concerning the establishment of the church in its locality is
+          consistent throughout the New Testament (Acts 13:1; 14:23).
+        </Text>
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
     </Container>
 
     // <section className="flex flex-col lg:flex-row items-center gap-12">
