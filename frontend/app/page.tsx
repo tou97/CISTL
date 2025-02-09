@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Center,
   Container,
@@ -10,37 +12,52 @@ import {
   Text,
   Title,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width: 48em)");
+
   return (
     <Container fluid>
       <Space h="lg" />
-      <Group p="xl" grow preventGrowOverflow={false} wrap="nowrap">
-        <Title
-          ta="right"
-          pr="lg"
-          order={1}
-          textWrap="nowrap"
-          size="375%"
-          c="wood"
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truth, Life,
-        </Title>
-        <Divider color="wood" w="10%" />
-      </Group>
-      <Group p="xl" grow preventGrowOverflow={false} wrap="nowrap">
-        <Divider color="wood" w="10%" />
-        <Title
-          ta="left"
-          pl="lg"
-          order={1}
-          textWrap="nowrap"
-          size="375%"
-          c="wood"
-        >
-          Church, Gospel
-        </Title>
-      </Group>
+      <Grid align="center" px="xl">
+        <GridCol span={{ base: 0, sm: "auto" }}>
+          <Space />
+        </GridCol>
+        <GridCol span={{ base: 9, sm: 4 }}>
+          <Title
+            order={1}
+            size={isMobile ? "250%" : "400%"}
+            ta="right"
+            textWrap="nowrap"
+            c="wood"
+          >
+            Truth, Life,
+          </Title>
+        </GridCol>
+        <GridCol span={{ base: "auto", sm: 6 }}>
+          <Divider color="wood" />
+        </GridCol>
+      </Grid>
+      <Grid align="center" px="xl">
+        <GridCol span={{ base: "auto", sm: 5 }}>
+          <Divider color="wood" />
+        </GridCol>
+        <GridCol span={{ base: 9, sm: 3 }}>
+          <Title
+            order={1}
+            size={isMobile ? "250%" : "400%"}
+            ta="left"
+            textWrap="nowrap"
+            c="wood"
+          >
+            Church, Gospel
+          </Title>
+        </GridCol>
+        <GridCol span={{ base: 0, sm: "auto" }}>
+          <Space />
+        </GridCol>
+      </Grid>
       <Space h="xl" />
       <Space h="xl" />
       <Image px="xl" src="/images/index_main.webp" alt="Index Main" h={800} />
