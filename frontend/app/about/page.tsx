@@ -1,9 +1,12 @@
+"use client";
+
 import {
   Accordion,
   AccordionItem,
-  Center,
   Container,
   Divider,
+  Grid,
+  GridCol,
   Image,
   Title,
   Text,
@@ -15,6 +18,7 @@ import {
   Group,
 } from "@mantine/core";
 import { IconPoint } from "@tabler/icons-react";
+import { useMediaQuery } from "@mantine/hooks";
 
 const beliefs = [
   {
@@ -157,41 +161,56 @@ const beliefs = [
 ];
 
 const AboutUs = () => {
+  const isMobile = useMediaQuery("(max-width: 48em)");
+
   return (
     <Container fluid>
-      <Space bg="olive" h="lg" />
-      <Group bg="olive" py="xl" justify="center" grow>
-        <Title order={1} ta="center" c="offwhite">
-          About Us
-        </Title>
-        <Text c="offwhite" size="xl" px="xl">
-          We are believers in the Lord Jesus Christ and meet together as the
-          church in St. Louis. The church in St. Louis isn&apos;t our name;
-          it&apos;s our description. We hold the faith that is revealed in the
-          Bible and is common to all genuine believers. We warmly welcome all
-          guests and visitors.
-        </Text>
-      </Group>
-      <Space bg="olive" h="lg" />
+      <Space bg="olive" h="xl" />
+      <Space bg="olive" h="xl" />
+      <Grid bg="olive" align="center" gutter="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={1} ta="center" c="offwhite">
+            About Us
+          </Title>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text
+            c="offwhite"
+            ta={isMobile ? "center" : "left"}
+            size="xl"
+            px="xl"
+          >
+            We are believers in the Lord Jesus Christ and meet together as the
+            church in St. Louis. The church in St. Louis isn&apos;t our name;
+            it&apos;s our description. We hold the faith that is revealed in the
+            Bible and is common to all genuine believers. We warmly welcome all
+            guests and visitors.
+          </Text>
+        </GridCol>
+      </Grid>
+      <Space bg="olive" h="xl" />
+      <Space bg="olive" h="xl" />
       <Space h="xl" />
       <Space h="xl" />
-      <Group px="xl" gap="xl" grow>
-        <Text size="xl" c="wood">
-          <b>We treasure the Holy Bible</b> as God&apos;s revelation of Himself
-          and His eternal purpose. Our beloved Jesus Christ is the center of all
-          our gatherings.
-          <br></br>
-          <br></br>
-          Through prayer and fellowship with one another, we endeavor to grow
-          spiritually both individually and as the Body of Christ. Our
-          small-group church life provides opportunities to enjoy Christian
-          companionship that encourages, strengthens, and sustains us to live
-          the Christian life.
-        </Text>
-        <Center>
-          <Image alt="Placeholder" />
-        </Center>
-      </Group>
+      <Grid align="center" gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
+            <b>We treasure the Holy Bible</b> as God&apos;s revelation of
+            Himself and His eternal purpose. Our beloved Jesus Christ is the
+            center of all our gatherings.
+            <br></br>
+            <br></br>
+            Through prayer and fellowship with one another, we endeavor to grow
+            spiritually both individually and as the Body of Christ. Our
+            small-group church life provides opportunities to enjoy Christian
+            companionship that encourages, strengthens, and sustains us to live
+            the Christian life.
+          </Text>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+      </Grid>
       <Space h="xl" />
       <Space h="xl" />
       <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
@@ -208,7 +227,6 @@ const AboutUs = () => {
       <Title order={2} c="olive" ta="center">
         (Titus 1:4)
       </Title>
-      <Space h="xl" />
       <Space h="xl" />
       <Accordion px="lg">
         {beliefs.map((belief, index) => (
@@ -239,145 +257,32 @@ const AboutUs = () => {
       </Group>
       <Space h="xl" />
       <Space h="xl" />
-      <Group px="xl" gap="xl" grow>
-        <Center>
-          <Image alt="Placeholder" />
-        </Center>
-        <Text size="xl" c="wood">
-          <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
-          description. As such, it&apos;s an inclusive title, not an exclusive
-          one. We gather together simply as believers of the Lord in this city.
-          The first use of the word &quot;church&quot; in Acts refers to the
-          believers in Jerusalem as simply &quot;the whole church&quot; (Acts
-          5:11), meaning the called out (congregation), or assembly (in Greek,
-          &quot;ekklesia&quot;).
-          <br></br>
-          <br></br>
-          In Acts 8:1, they were referred to as &quot;the church which was in
-          Jerusalem.&quot; This is the first church established in the Bible in
-          Acts and it included all the believers living in Jerusalem. The record
-          concerning the establishment of the church in its locality is
-          consistent throughout the New Testament (Acts 13:1; 14:23).
-        </Text>
-      </Group>
+      <Grid align="center" px="xl" gutter="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
+            <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
+            description. As such, it&apos;s an inclusive title, not an exclusive
+            one. We gather together simply as believers of the Lord in this
+            city. The first use of the word &quot;church&quot; in Acts refers to
+            the believers in Jerusalem as simply &quot;the whole church&quot;
+            (Acts 5:11), meaning the called out (congregation), or assembly (in
+            Greek, &quot;ekklesia&quot;).
+            <br></br>
+            <br></br>
+            In Acts 8:1, they were referred to as &quot;the church which was in
+            Jerusalem.&quot; This is the first church established in the Bible
+            in Acts and it included all the believers living in Jerusalem. The
+            record concerning the establishment of the church in its locality is
+            consistent throughout the New Testament (Acts 13:1; 14:23).
+          </Text>
+        </GridCol>
+      </Grid>
       <Space h="xl" />
       <Space h="xl" />
     </Container>
-
-    // <section className="flex flex-col lg:flex-row items-center gap-12">
-    //   <Flex
-    //     direction="column"
-    //     justify="center"
-    //     align="center"
-    //     w={{ base: "100%", lg: "50%" }}
-    //     p="md"
-    //     bg="sky"
-    //     c="black"
-    //     ta="center"
-    //     style={{
-    //       borderRadius: "3rem",
-    //       boxShadow: "xl",
-    //       fontSize: "2rem",
-    //       fontWeight: 800,
-    //     }}
-    //   >
-    //     Who We Are
-    //   </Flex>
-    //   <div className="lg:w-1/2 space-y-6">
-    //     <Text size="lg" className="text-gray-600 leading-relaxed">
-    //       We treasure the Holy Bible as God&apos;s revelation of Himself and
-    //       His eternal purpose. Our beloved Jesus Christ is the center of all
-    //       our gatherings.
-    //     </Text>
-    //     <Text size="lg" className="text-gray-600 leading-relaxed">
-    //       Through prayer and fellowship with one another, we endeavor to grow
-    //       spiritually both individually and as the Body of Christ. Our
-    //       small-group church life provides opportunities to enjoy Christian
-    //       companionship that encourages, strengthens, and sustains us to live
-    //       the Christian life.
-    //     </Text>
-    //   </div>
-    // </section>
-
-    // <Divider mt="xl" />
-
-    // {/* Our Faith Section */}
-    // <section className="flex flex-col lg:flex-row-reverse items-center gap-12">
-    //   <Flex
-    //     direction="column"
-    //     justify="center"
-    //     align="center"
-    //     w={{ base: "100%", lg: "50%" }}
-    //     p="md"
-    //     bg="sky"
-    //     c="black"
-    //     ta="center"
-    //     style={{
-    //       borderRadius: "3rem",
-    //       boxShadow: "xl",
-    //       fontSize: "2rem",
-    //       fontWeight: 800,
-    //     }}
-    //   >
-    //     Our Faith
-    //   </Flex>
-    //   <div className="lg:w-1/2 space-y-6">
-    //     <Text size="lg" className="text-gray-600 leading-relaxed">
-    //       We hold the faith which is common to all the believers: (Titus 1:4)
-    //     </Text>
-    //     <Divider my="sm" />
-    //     <Accordion>
-    //       {beliefs.map((belief) => (
-    //         <AccordionItem key={belief.value} value={belief.value}>
-    //           <AccordionControl>{belief.value}</AccordionControl>
-    //           <AccordionPanel>{belief.description}</AccordionPanel>
-    //         </AccordionItem>
-    //       ))}
-    //     </Accordion>
-    //   </div>
-    // </section>
-
-    // <Divider mt="xl" />
-
-    // {/* Our Name Section */}
-    // <section className="flex flex-col lg:flex-row items-center gap-12">
-    //   <Flex
-    //     direction="column"
-    //     justify="center"
-    //     align="center"
-    //     w={{ base: "100%", lg: "50%" }}
-    //     p="md"
-    //     bg="sky"
-    //     c="black"
-    //     ta="center"
-    //     style={{
-    //       borderRadius: "3rem",
-    //       boxShadow: "xl",
-    //       fontSize: "2rem",
-    //       fontWeight: 800,
-    //     }}
-    //   >
-    //     Our Name
-    //   </Flex>
-    //   <div className="lg:w-1/2 space-y-6">
-    //     <Text size="lg" className="text-gray-600 leading-relaxed">
-    //       The church in St. Louis isn&apos;t our name - it&apos;s our
-    //       description. As such, it&apos;s an inclusive title, not an exclusive
-    //       one. We gather together simply as believers of the Lord in this
-    //       city. The first use of the word &quot;church&quot; in Acts refers to
-    //       the believers in Jerusalem as simply &quot;the whole church&quot;
-    //       (Acts 5:11), meaning the called out (congregation), or assembly (in
-    //       Greek, &quot;ekklesia&quot;).
-    //     </Text>
-    //     <Text size="lg" className="text-gray-600 leading-relaxed">
-    //       In Acts 8:1, they were referred to as &quot;the church which was in
-    //       Jerusalem.&quot; This is the first church established in the Bible
-    //       in Acts and it included all the believers living in Jerusalem. The
-    //       record concerning the establishment of the church in its locality is
-    //       consistent throughout the New Testament (Acts 13:1; 14:23).
-    //     </Text>
-    //   </div>
-    // </section>
   );
 };
 

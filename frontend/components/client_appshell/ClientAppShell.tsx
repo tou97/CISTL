@@ -26,7 +26,7 @@ export function ClientAppShell({
       header={{ height: 125 }}
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: "md",
         collapsed: { desktop: true, mobile: !opened },
       }}
     >
@@ -35,7 +35,7 @@ export function ClientAppShell({
           <Burger
             opened={opened}
             onClick={toggle}
-            hiddenFrom="sm"
+            hiddenFrom="md"
             size="md"
             color="wood"
           />
@@ -51,7 +51,7 @@ export function ClientAppShell({
                 </Text>
               </Stack>
             </Group>
-            <Group ml="xl" gap="xl" px="xl" visibleFrom="sm">
+            <Group ml="xl" gap="xl" px="xl" visibleFrom="md">
               <Anchor size="xl" href="/" c="wood">
                 Home
               </Anchor>
@@ -74,6 +74,9 @@ export function ClientAppShell({
 
       <AppShellNavbar bg="offwhite" py="sm" px="sm">
         <Stack gap="xs" pl="md">
+          <Anchor size="xl" href="/" c="wood">
+            Home
+          </Anchor>
           <Anchor size="xl" href="/about" c="wood">
             About us
           </Anchor>

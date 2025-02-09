@@ -2,10 +2,11 @@ import {
   Center,
   Container,
   Divider,
+  Grid,
+  GridCol,
   Group,
   Image,
   Space,
-  Stack,
   Text,
   Title,
 } from "@mantine/core";
@@ -20,7 +21,7 @@ export default function Home() {
           pr="lg"
           order={1}
           textWrap="nowrap"
-          size="400%"
+          size="375%"
           c="wood"
         >
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truth, Life,
@@ -34,7 +35,7 @@ export default function Home() {
           pl="lg"
           order={1}
           textWrap="nowrap"
-          size="400%"
+          size="375%"
           c="wood"
         >
           Church, Gospel
@@ -45,16 +46,18 @@ export default function Home() {
       <Image px="xl" src="/images/index_main.webp" alt="Index Main" h={800} />
       <Space h="xl" />
       <Space h="xl" />
-      <Group px="xl" gap="xl" grow>
-        <Center>
-          <Image alt="Placeholder" bg="black" c="white" h={400} w={600} />
-        </Center>
-        <Stack justify="flex-start">
+      <Grid px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Center>
+            <Image alt="Placeholder" bg="black" c="white" h={400} w={600} />
+          </Center>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
           <Group wrap="nowrap">
             <Title pr="lg" order={1} textWrap="nowrap" c="wood">
               Who we are
             </Title>
-            <Divider color="wood" w="15%" />
+            <Divider color="wood" w="20%" />
             <Space />
           </Group>
           <Text c="wood" size="xl">
@@ -64,8 +67,8 @@ export default function Home() {
             Bible and is common to all genuine believers. We warmly welcome all
             guests and visitors.
           </Text>
-        </Stack>
-      </Group>
+        </GridCol>
+      </Grid>
       <Space h="xl" />
       <Space h="xl" />
     </Container>
