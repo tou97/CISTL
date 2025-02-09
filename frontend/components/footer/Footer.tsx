@@ -1,6 +1,6 @@
 import { Container, Text } from "@mantine/core";
 
-export function FooterSocial() {
+export function Footer() {
   return (
     <Container p="md" bg="wood" fluid>
       <Text ta="left" pl="xl" size="sm" c="white">
@@ -10,4 +10,4 @@ export function FooterSocial() {
   );
 }
 
-export default FooterSocial;
+export default Footer;

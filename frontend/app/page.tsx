@@ -1,67 +1,70 @@
 import {
-  Button,
   Container,
-  Title,
-  Text,
+  Divider,
   Grid,
   GridCol,
   Image,
+  Space,
+  Text,
+  Title,
 } from "@mantine/core";
 
 export default function Home() {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section */}
-      <header className="bg-blue-600 text-white py-20">
-        <Container>
-          <div className="text-center">
-            <Title order={1} className="text-4xl md:text-6xl font-bold">
-              Blah blah blah
-            </Title>
-            <Text className="mt-4 text-lg md:text-xl">Blah Blah Blah</Text>
-            <Button
-              variant="white"
-              size="lg"
-              mt="lg"
-              className="mt-8 shadow-lg hover:shadow-xl transition"
-            >
-              Get Involved
-            </Button>
-          </div>
-        </Container>
-      </header>
-
-      {/* About Section */}
-      <section className="py-16">
-        <Container>
-          <Grid>
-            <GridCol span={{ base: 12, md: 6 }}>
-              <Image
-                src="https://placehold.co/600x400/EEE/31343C"
-                alt="Church community"
-                className="rounded-lg shadow-lg"
-              />
-            </GridCol>
-            <GridCol span={{ base: 12, md: 6 }}>
-              <Title order={2} className="text-3xl font-semibold">
-                About Us
+    <Container fluid>
+      <Grid pt={100} align="center">
+        <GridCol span={6}>
+          <Title order={1} ta="right" size="4vw" c="wood">
+            Truth, Life,
+          </Title>
+        </GridCol>
+        <GridCol span={6}>
+          <Divider size="xs" color="wood" />
+        </GridCol>
+      </Grid>
+      <Grid align="center">
+        <GridCol span={4}>
+          <Divider size="xs" color="wood" />
+        </GridCol>
+        <GridCol span={8}>
+          <Title order={1} ta="left" size="4vw" c="wood">
+            Church, Gospel
+          </Title>
+        </GridCol>
+      </Grid>
+      <Space h="5vh" />
+      <Image
+        pl={30}
+        pr={30}
+        src="/images/index_main.webp"
+        alt="Index Main"
+        h={600}
+      />
+      <Space h="5vh" />
+      <Grid pb={100}>
+        <GridCol span={4}></GridCol>
+        <GridCol span={8}>
+          <Grid align="center">
+            <GridCol span={2}>
+              <Title c="wood" order={1} size="4vh">
+                Who we are
               </Title>
-              <Text mt="md">
-                Little splurge about us and will link to page with more
-                description.
-              </Text>
-              <Button
-                size="md"
-                variant="outline"
-                mt="lg"
-                className="hover:bg-blue-600 hover:text-white transition"
-              >
-                Learn More
-              </Button>
+            </GridCol>
+            <GridCol span={2}>
+              <Divider color="wood" size="xs" />
             </GridCol>
           </Grid>
-        </Container>
-      </section>
-    </div>
+          <GridCol span={12}>
+            <Text c="wood" size="xl">
+              We are believers in the Lord Jesus Christ and meet together as the
+              church in St. Louis. The church in St. Louis isn&apos;t our name;
+              it&apos;s our description. We hold the faith that is revealed in
+              the Bible and is common to all genuine believers. We warmly
+              welcome all guests and visitors.
+            </Text>
+          </GridCol>
+        </GridCol>
+      </Grid>
+    </Container>
   );
 }

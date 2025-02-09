@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "@mantine/core/styles.css";
-import MenuButton from "@/components/menu/MenuButton";
-import FooterSocial from "@/components/footer/Footer";
 import { minimal_theme } from "./palette";
+import ClientAppShell from "@/components/client_appshell/ClientAppShell";
+import Footer from "@/components/footer/Footer";
 
 import {
   ColorSchemeScript,
@@ -28,9 +28,8 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={minimal_theme}>
-          {children}
-          <MenuButton />
-          <FooterSocial />
+          <ClientAppShell>{children}</ClientAppShell>
+          <Footer />
         </MantineProvider>
       </body>
     </html>
