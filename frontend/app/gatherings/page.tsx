@@ -1,77 +1,101 @@
+"use client";
+
 import {
   Container,
+  Grid,
+  GridCol,
+  Image,
   Title,
   Text,
-  Timeline,
-  TimelineItem,
-  Group,
+  Space,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 const Gatherings = () => {
+  const isMobile = useMediaQuery("(max-width: 48em)");
+
   return (
-    <div className="min-h-screen py-16">
-      <Container size="lg" className="space-y-20">
-        {/* Hero Section */}
-        <section className="text-center py-20 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl shadow-lg">
-          <Title order={1} className="text-5xl font-extrabold mb-4">
-            Gatherings
+    <Container fluid>
+      <Space bg="sky" h="xl" />
+      <Space bg="sky" h="xl" />
+      <Grid bg="sky" align="center" gutter="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={1} ta="center" c="offwhite">
+            Our gatherings
           </Title>
-          <Text size="lg" className="opacity-90">
-            Join us for our weekly gatherings and special events! Here’s our
-            schedule:
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text
+            c="offwhite"
+            ta={isMobile ? "center" : "left"}
+            size="xl"
+            px="xl"
+          >
+            Join us for weekly gatherings and special events!
+            <br />
+            Here&apos;s our schedule:
           </Text>
-        </section>
-
-        {/* Timeline Section */}
-        <section>
-          <Timeline active={1} bulletSize={24} lineWidth={2}>
-            <TimelineItem title="Sunday Service" className="text-gray-800">
-              <Text c="dimmed" size="sm">
-                Every Sunday at 9:00 AM and 11:00 AM
-              </Text>
-              <Text size="xs" mt={4}>
-                Location: Main Sanctuary
-              </Text>
-            </TimelineItem>
-
-            <TimelineItem title="Midweek Bible Study" className="text-gray-800">
-              <Text c="dimmed" size="sm">
-                Wednesdays at 7:00 PM
-              </Text>
-              <Text size="xs" mt={4}>
-                Location: Fellowship Hall
-              </Text>
-            </TimelineItem>
-
-            <TimelineItem title="Youth Group" className="text-gray-800">
-              <Text c="dimmed" size="sm">
-                Fridays at 6:30 PM
-              </Text>
-              <Text size="xs" mt={4}>
-                Location: Youth Center
-              </Text>
-            </TimelineItem>
-
-            <TimelineItem title="Community Outreach" className="text-gray-800">
-              <Text c="dimmed" size="sm">
-                First Saturday of every month at 10:00 AM
-              </Text>
-              <Text size="xs" mt={4}>
-                Location: Meet at the church parking lot
-              </Text>
-            </TimelineItem>
-          </Timeline>
-        </section>
-
-        {/* Contact Section */}
-        <Group justify="center" mt="lg">
-          <Text size="sm" ta="center" c="dimmed">
-            For more details or to volunteer, contact us at (123) 456-7890 or
-            email@church.org
+        </GridCol>
+      </Grid>
+      <Space bg="sky" h="xl" />
+      <Space bg="sky" h="xl" />
+      <Space h="xl" />
+      <Space h="xl" />
+      <Grid gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={2} c="wood">
+            Sunday service
+          </Title>
+          <Space h="md" />
+          <Text size="xl" c="wood">
+            Every Sunday at 10:00 AM until 12:00 PM
+            <br />
+            Location: Meeting hall
           </Text>
-        </Group>
-      </Container>
-    </div>
+        </GridCol>
+      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Grid gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={2} c="wood">
+            Prayer meeting
+          </Title>
+          <Space h="md" />
+          <Text size="xl" c="wood">
+            Every Tuesday at 7:30 PM until 8:30 PM
+            <br />
+            Location: Various homes
+          </Text>
+        </GridCol>
+      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Grid gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={2} c="wood">
+            Small group meetings
+          </Title>
+          <Space h="md" />
+          <Text size="xl" c="wood">
+            Every Friday, times vary depending on group
+            <br />
+            Location: Various homes
+          </Text>
+        </GridCol>
+      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
+    </Container>
   );
 };
 

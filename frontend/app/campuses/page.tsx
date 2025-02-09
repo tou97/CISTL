@@ -3,132 +3,179 @@
 import {
   Button,
   Card,
+  CardSection,
+  Center,
   Container,
   Divider,
+  Grid,
+  GridCol,
+  Group,
   Image,
-  Paper,
-  SimpleGrid,
-  Text,
   Title,
+  Text,
+  Space,
 } from "@mantine/core";
-import classes from "./FeaturesCards.module.css";
+import { useMediaQuery } from "@mantine/hooks";
 
-const campusdata = [
-  {
-    title: "Saint Louis University",
-    description: "Short description.",
-    image: "/images/slu.webp",
-    link: "/campuses/slu",
-    maincolor: "#003DA5",
-    secondarycolor: "#C8C9C7",
-  },
-  {
-    title: "St. Louis Community College - Meramec",
-    description: "Short description",
-    image: "/images/stlcc.webp",
-    link: "/campuses/stlcc",
-    maincolor: "#003A70",
-    secondarycolor: "#00CCFF",
-  },
-  {
-    title: "University of Missouri - St. Louis",
-    description: "Short description.",
-    image: "/images/umsl.webp",
-    link: "/campuses/umsl",
-    maincolor: "#BD302C",
-    secondarycolor: "#F5B324",
-  },
-  {
-    title: "The Washington University",
-    description: "Short description.",
-    image: "/images/washu.webp",
-    link: "/campuses/washu",
-    maincolor: "#BA0C2F",
-    secondarycolor: "#215732",
-  },
-];
-
-const FeaturesCards = () => {
-  const features = campusdata.map((feature) => (
-    <Card
-      key={feature.title}
-      bg="offwhite"
-      shadow="lg"
-      radius="xl"
-      padding="lg"
-      withBorder
-      bd={`1px solid ${feature.maincolor}`}
-      display="flex"
-      flex="column"
-      h="100%"
-    >
-      <Image
-        src={feature.image}
-        alt={feature.title}
-        style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-      />
-      <Divider mt="sm" color="sky"></Divider>
-      <div style={{ flexGrow: 1 }}>
-        <Text size="lg" fw="700" mt="sm" c="olive">
-          {feature.title}
-        </Text>
-        <Text size="sm" c="dimmed" mt="sm">
-          {feature.description}
-        </Text>
-      </div>
-      <Button
-        component="a"
-        href={feature.link}
-        c="white"
-        color={feature.maincolor}
-        fullWidth
-        mt="md"
-        radius="xl"
-      >
-        Learn More
-      </Button>
-    </Card>
-  ));
+const Gatherings = () => {
+  const isMobile = useMediaQuery("(max-width: 48em)");
 
   return (
-    <Container size="lg" py="xl">
-      <Paper ta="center" bg="olive" c="offwhite" radius="xl" shadow="lg" p="xl">
-        <Title order={1} mb="md">
-          Christian Students on Campus
+    <Container fluid>
+      <Space bg="wood" h="xl" />
+      <Space bg="wood" h="xl" />
+      <Grid bg="wood" align="center" gutter="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={1} ta="center" c="offwhite">
+            Christian Students on Campus
+          </Title>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text
+            c="offwhite"
+            ta={isMobile ? "center" : "left"}
+            size="xl"
+            px="xl"
+          >
+            Our mission is to be a light on campus, supporting one another in
+            our spiritual journeys, and sharing the hope and grace of Jesus
+            Christ with those around us.
+          </Text>
+        </GridCol>
+      </Grid>
+      <Space bg="wood" h="xl" />
+      <Space bg="wood" h="xl" />
+      <Space h="xl" />
+      <Space h="xl" />
+      <Grid align="center" gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text size="xl" c="wood">
+            <b>Christian Students on Campus</b> is a vibrant and inclusive
+            community of students who are passionate about living out their
+            faith and making a positive impact on campus and beyond. Together,
+            we seek to grow in our understanding of Christ, build meaningful
+            relationships, and server others with love and compassion. Whether
+            through worship, Bible Study, community outreach, or simply walking
+            alongside one another in faith, we aim to create a welcoming space
+            where students can explore and strengthen their relationship with
+            God.
+          </Text>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+        </GridCol>
+      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
+        <Divider color="wood" />
+        <Title ta="center" order={1} c="wood">
+          Campuses
         </Title>
-        <Text size="lg">
-          Christian Students on Campus is a vibrant and inclusive community of
-          students who are passionate about living out their faith and making a
-          positive impact on campus and beyond. Together, we seek to grow in our
-          understanding of Christ, build meaningful relationships, and serve
-          others with love and compassion. Whether through worship, Bible study,
-          community outreach, or simply walking alongside one another in faith,
-          we aim to create a welcoming space where students can explore and
-          strengthen their relationship with God. Our mission is to be a light
-          on campus, supporting one another in our spiritual journeys, and
-          sharing the hope and grace of Jesus Christ with those around us.
-        </Text>
-      </Paper>
-      <Divider size="sm" mt="lg" mb="lg" color="sky" />
-      <Paper bg="sky" radius="xl" shadow="lg" p="xl">
-        <SimpleGrid cols={{ base: 1, lg: 4 }} spacing="lg">
-          {features}
-        </SimpleGrid>
-      </Paper>
-
-      <Divider size="sm" mt="lg" mb="lg" color="sky" />
-
-      <Title order={2} className={classes.title} ta="center" mt="md">
-        Family Time
-      </Title>
-
-      <Divider size="sm" mt="lg" mb="lg" color="sky" />
-
-      <Title order={2} className={classes.title} ta="center" mt="md">
-        Conferences
-      </Title>
+        <Divider color="wood" />
+      </Group>
+      <Space h="xl" />
+      <Space h="xl" />
+      <Grid align="center" gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Card radius="lg">
+            <CardSection pb="lg">
+              <Center>
+                <Image
+                  src="/images/slu.webp"
+                  alt="Saint Louis University"
+                  h={160}
+                  w={300}
+                />
+              </Center>
+            </CardSection>
+            <Title c="wood" order={3}>
+              Saint Louis University
+            </Title>
+            <Space h="md" />
+            <Button
+              color="wood"
+              c="offwhite"
+              component="a"
+              href="/campuses/slu"
+            >
+              Learn more
+            </Button>
+          </Card>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Card radius="lg">
+            <CardSection pb="lg">
+              <Center>
+                <Image
+                  src="/images/stlcc.webp"
+                  alt="St. Louis Community College - Meramec"
+                  h={160}
+                  w={300}
+                />
+              </Center>
+            </CardSection>
+            <Title c="wood" order={3}>
+              St. Louis Community College - Meramec
+            </Title>
+            <Space h="md" />
+            <Button
+              color="wood"
+              c="offwhite"
+              component="a"
+              href="/campuses/stlcc"
+            >
+              Learn more
+            </Button>
+          </Card>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Card radius="lg">
+            <CardSection pb="lg">
+              <Center>
+                <Image src="/images/washu.webp" alt="WashU" h={160} w={300} />
+              </Center>
+            </CardSection>
+            <Title c="wood" order={3}>
+              The Washington University
+            </Title>
+            <Space h="md" />
+            <Button
+              color="wood"
+              c="offwhite"
+              component="a"
+              href="/campuses/washu"
+            >
+              Learn more
+            </Button>
+          </Card>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Card radius="lg">
+            <CardSection pb="lg">
+              <Center>
+                <Image src="/images/umsl.webp" alt="UMSL" h={160} w={300} />
+              </Center>
+            </CardSection>
+            <Title c="wood" order={3}>
+              University of Missouri - St. Louis
+            </Title>
+            <Space h="md" />
+            <Button
+              color="wood"
+              c="offwhite"
+              component="a"
+              href="/campuses/umsl"
+            >
+              Learn more
+            </Button>
+          </Card>
+        </GridCol>
+      </Grid>
+      <Space h="xl" />
+      <Space h="xl" />
     </Container>
   );
 };
 
-export default FeaturesCards;
+export default Gatherings;
