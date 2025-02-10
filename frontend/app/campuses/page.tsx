@@ -62,7 +62,14 @@ const Gatherings = () => {
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
       </Grid>
       <Space h="xl" />
@@ -78,7 +85,7 @@ const Gatherings = () => {
       <Space h="xl" />
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg">
+          <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
                 <Image
@@ -94,8 +101,10 @@ const Gatherings = () => {
             </Title>
             <Space h="md" />
             <Button
-              color="wood"
-              c="offwhite"
+              color="offwhite"
+              c="wood"
+              bd="1px solid wood"
+              radius="lg"
               component="a"
               href="/campuses/slu"
             >
@@ -104,7 +113,7 @@ const Gatherings = () => {
           </Card>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg">
+          <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
                 <Image
@@ -120,8 +129,10 @@ const Gatherings = () => {
             </Title>
             <Space h="md" />
             <Button
-              color="wood"
-              c="offwhite"
+              color="offwhite"
+              c="wood"
+              bd="1px solid wood"
+              radius="lg"
               component="a"
               href="/campuses/stlcc"
             >
@@ -130,7 +141,7 @@ const Gatherings = () => {
           </Card>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg">
+          <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
                 <Image src="/images/washu.webp" alt="WashU" h={160} w={300} />
@@ -141,8 +152,10 @@ const Gatherings = () => {
             </Title>
             <Space h="md" />
             <Button
-              color="wood"
-              c="offwhite"
+              color="offwhite"
+              c="wood"
+              bd="1px solid wood"
+              radius="lg"
               component="a"
               href="/campuses/washu"
             >
@@ -151,7 +164,7 @@ const Gatherings = () => {
           </Card>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg">
+          <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
                 <Image src="/images/umsl.webp" alt="UMSL" h={160} w={300} />
@@ -162,8 +175,10 @@ const Gatherings = () => {
             </Title>
             <Space h="md" />
             <Button
-              color="wood"
-              c="offwhite"
+              color="offwhite"
+              c="wood"
+              bd="1px solid wood"
+              radius="lg"
               component="a"
               href="/campuses/umsl"
             >

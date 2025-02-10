@@ -60,13 +60,24 @@ export default function Home() {
       </Grid>
       <Space h="xl" />
       <Space h="xl" />
-      <Image px="xl" src="/images/index_main.webp" alt="Index Main" h={800} />
+      <Image
+        px="xl"
+        radius="lg"
+        src="/images/index_main.webp"
+        alt="Index Main"
+        h={800}
+      />
       <Space h="xl" />
       <Space h="xl" />
       <Grid px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image alt="Placeholder" bg="black" c="white" h={400} w={600} />
+            <Image
+              src="https://placehold.co/600x400"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>

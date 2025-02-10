@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Center,
   Container,
   Grid,
   GridCol,
@@ -43,7 +44,14 @@ const Gatherings = () => {
       <Space h="xl" />
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={2} c="wood">
@@ -61,7 +69,14 @@ const Gatherings = () => {
       <Space h="xl" />
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={2} c="wood">
@@ -79,7 +94,14 @@ const Gatherings = () => {
       <Space h="xl" />
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={2} c="wood">

@@ -3,6 +3,7 @@
 import {
   Accordion,
   AccordionItem,
+  Center,
   Container,
   Divider,
   Grid,
@@ -208,7 +209,16 @@ const AboutUs = () => {
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              bg="black"
+              c="white"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
       </Grid>
       <Space h="xl" />
@@ -232,12 +242,12 @@ const AboutUs = () => {
         {beliefs.map((belief, index) => (
           <AccordionItem p="sm" key={belief.value} value={belief.value}>
             <AccordionControl>
-              <Group>
+              <Group wrap="nowrap">
                 <Title order={3} c="olive">
                   0{index + 1}.
                 </Title>
                 <Space h="xl" />
-                <Title order={3} c="olive">
+                <Title order={3} c="olive" pr="md">
                   {belief.value}
                 </Title>
               </Group>
@@ -259,7 +269,16 @@ const AboutUs = () => {
       <Space h="xl" />
       <Grid align="center" px="xl" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Image bg="black" c="white" alt="Placeholder" h={400} w={600} />
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              bg="black"
+              c="white"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
