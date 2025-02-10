@@ -10,7 +10,6 @@ import {
   Group,
   Stack,
   Text,
-  Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
@@ -41,7 +40,9 @@ export function ClientAppShell({
           />
           <Group justify="space-between" px="md" flex={1}>
             <Group>
-              <Title c="wood">CISTL</Title>
+              <Anchor size="2rem" fw={700} c="wood" href="/" underline="never">
+                CISTL
+              </Anchor>
               <Stack gap={0}>
                 <Text c="wood" size="sm">
                   Church in
@@ -52,9 +53,6 @@ export function ClientAppShell({
               </Stack>
             </Group>
             <Group ml="xl" gap="xl" px="xl" visibleFrom="md">
-              <Anchor size="xl" href="/" c="wood">
-                Home
-              </Anchor>
               <Anchor size="xl" href="/about" c="wood">
                 About us
               </Anchor>
@@ -74,9 +72,6 @@ export function ClientAppShell({
 
       <AppShellNavbar bg="offwhite" py="sm" px="sm">
         <Stack gap="xs" pl="md">
-          <Anchor size="xl" href="/" c="wood">
-            Home
-          </Anchor>
           <Anchor size="xl" href="/about" c="wood">
             About us
           </Anchor>

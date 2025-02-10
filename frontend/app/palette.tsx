@@ -3,7 +3,7 @@ import { colorsTuple, createTheme } from "@mantine/core";
 export const minimal_theme = createTheme({
   colors: {
     offwhite: colorsTuple("#FDFAF1"),
-    sky: colorsTuple("#D1DADB"),
+    sky: colorsTuple("#90B7BB"),
     wood: colorsTuple("#A58870"),
     olive: colorsTuple("#657060"),
   },

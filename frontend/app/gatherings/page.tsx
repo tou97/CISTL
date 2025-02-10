@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Center,
   Container,
@@ -10,11 +8,8 @@ import {
   Text,
   Space,
 } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 
 const Gatherings = () => {
-  const isMobile = useMediaQuery("(max-width: 48em)");
-
   return (
     <Container fluid>
       <Space bg="sky" h="xl" />
@@ -26,12 +21,7 @@ const Gatherings = () => {
           </Title>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text
-            c="offwhite"
-            ta={isMobile ? "center" : "left"}
-            size="xl"
-            px="xl"
-          >
+          <Text c="offwhite" ta="justify" size="xl" px="xl">
             Join us for weekly gatherings and special events!
             <br />
             Here&apos;s our schedule:

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Accordion,
   AccordionItem,
@@ -19,7 +17,6 @@ import {
   Group,
 } from "@mantine/core";
 import { IconPoint } from "@tabler/icons-react";
-import { useMediaQuery } from "@mantine/hooks";
 
 const beliefs = [
   {
@@ -138,8 +135,6 @@ const beliefs = [
 ];
 
 const AboutUs = () => {
-  const isMobile = useMediaQuery("(max-width: 48em)");
-
   return (
     <Container fluid>
       <Space bg="olive" h="xl" />
@@ -153,12 +148,7 @@ const AboutUs = () => {
           </Title>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text
-            c="offwhite"
-            ta={isMobile ? "center" : "left"}
-            size="xl"
-            px="xl"
-          >
+          <Text c="offwhite" ta="justify" size="xl" px="xl">
             We are believers in the Lord Jesus Christ and meet together as the
             church in St. Louis. The church in St. Louis isn&apos;t our name;
             it&apos;s our description. We hold the faith that is revealed in the
@@ -177,7 +167,7 @@ const AboutUs = () => {
       {/* Introduction */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
+          <Text size="xl" ta="justify" c="wood">
             <b>We treasure the Holy Bible</b> as God&apos;s revelation of
             Himself and His eternal purpose. Our beloved Jesus Christ is the
             center of all our gatherings.
@@ -277,7 +267,7 @@ const AboutUs = () => {
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
+          <Text size="xl" ta="justify" c="wood">
             <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
             description. As such, it&apos;s an inclusive title, not an exclusive
             one. We gather together simply as believers of the Lord in this

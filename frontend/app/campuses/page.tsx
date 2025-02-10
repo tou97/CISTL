@@ -15,12 +15,9 @@ import {
   Text,
   Space,
 } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 const Gatherings = () => {
-  const isMobile = useMediaQuery("(max-width: 48em)");
-
   return (
     <Container fluid>
       <Space bg="wood" h="xl" />
@@ -33,12 +30,7 @@ const Gatherings = () => {
           </Title>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text
-            c="offwhite"
-            ta={isMobile ? "center" : "left"}
-            size="xl"
-            px="xl"
-          >
+          <Text c="offwhite" ta="justify" size="xl" px="xl">
             Our mission is to be a light on campus, supporting one another in
             our spiritual journeys, and sharing the hope and grace of Jesus
             Christ with those around us.
@@ -54,7 +46,7 @@ const Gatherings = () => {
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" c="wood">
+          <Text size="xl" ta="justify" c="wood">
             <b>Christian Students on Campus</b> is a vibrant and inclusive
             community of students who are passionate about living out their
             faith and making a positive impact on campus and beyond. Together,
@@ -106,13 +98,13 @@ const Gatherings = () => {
                 />
               </Center>
             </CardSection>
-            <Title c="wood" order={3}>
+            <Title c="wood" ta="center" order={3}>
               Saint Louis University
             </Title>
-            <Text c="wood" size="lg">
+            <Text c="wood" ta="center" size="lg">
               Filler text about the school or club goes here
             </Text>
-            <Space h="xl" />
+            <Space h="lg" />
             <Center>
               <Button
                 color="offwhite"
@@ -121,7 +113,7 @@ const Gatherings = () => {
                 radius="lg"
                 component="a"
                 href="/campuses/slu"
-                w="50%"
+                w="75%"
                 leftSection={<IconSchool />}
                 rightSection={<IconArrowRight />}
               >
@@ -144,13 +136,13 @@ const Gatherings = () => {
                 />
               </Center>
             </CardSection>
-            <Title c="wood" order={3}>
+            <Title c="wood" ta="center" order={3}>
               St. Louis Community College - Meramec
             </Title>
-            <Text c="wood" size="lg">
+            <Text c="wood" ta="center" size="lg">
               Filler text about the school or club goes here
             </Text>
-            <Space h="xl" />
+            <Space h="lg" />
             <Center>
               <Button
                 color="offwhite"
@@ -159,7 +151,7 @@ const Gatherings = () => {
                 radius="lg"
                 component="a"
                 href="/campuses/stlcc"
-                w="50%"
+                w="75%"
                 leftSection={<IconSchool />}
                 rightSection={<IconArrowRight />}
               >
@@ -177,13 +169,13 @@ const Gatherings = () => {
                 <Image src="/images/washu.webp" alt="WashU" h={160} w={300} />
               </Center>
             </CardSection>
-            <Title c="wood" order={3}>
+            <Title c="wood" ta="center" order={3}>
               The Washington University
             </Title>
-            <Text c="wood" size="lg">
+            <Text c="wood" ta="center" size="lg">
               Filler text about the school or club goes here
             </Text>
-            <Space h="xl" />
+            <Space h="lg" />
             <Center>
               <Button
                 color="offwhite"
@@ -192,7 +184,7 @@ const Gatherings = () => {
                 radius="lg"
                 component="a"
                 href="/campuses/washu"
-                w="50%"
+                w="75%"
                 leftSection={<IconSchool />}
                 rightSection={<IconArrowRight />}
               >
@@ -210,13 +202,13 @@ const Gatherings = () => {
                 <Image src="/images/umsl.webp" alt="UMSL" h={160} w={300} />
               </Center>
             </CardSection>
-            <Title c="wood" order={3}>
+            <Title c="wood" ta="center" order={3}>
               University of Missouri - St. Louis
             </Title>
-            <Text c="wood" size="lg">
+            <Text c="wood" ta="center" size="lg">
               Filler text about the school or club goes here
             </Text>
-            <Space h="xl" />
+            <Space h="lg" />
             <Center>
               <Button
                 color="offwhite"
@@ -225,7 +217,7 @@ const Gatherings = () => {
                 radius="lg"
                 component="a"
                 href="/campuses/umsl"
-                w="50%"
+                w="75%"
                 leftSection={<IconSchool />}
                 rightSection={<IconArrowRight />}
               >
