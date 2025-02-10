@@ -21,10 +21,10 @@ export default function Home() {
     <Container fluid>
       <Space h="lg" />
       <Grid align="center" px="xl">
-        <GridCol span={{ base: 0, sm: "auto" }}>
+        <GridCol span={{ base: 0, md: "auto" }}>
           <Space />
         </GridCol>
-        <GridCol span={{ base: 9, sm: 4 }}>
+        <GridCol span={{ base: 9, md: 4 }}>
           <Title
             order={1}
             size={isMobile ? "250%" : "400%"}
@@ -35,15 +35,15 @@ export default function Home() {
             Truth, Life,
           </Title>
         </GridCol>
-        <GridCol span={{ base: "auto", sm: 6 }}>
+        <GridCol span={{ base: "auto", md: 6 }}>
           <Divider color="wood" />
         </GridCol>
       </Grid>
       <Grid align="center" px="xl">
-        <GridCol span={{ base: "auto", sm: 5 }}>
+        <GridCol span={{ base: "auto", md: 5 }}>
           <Divider color="wood" />
         </GridCol>
-        <GridCol span={{ base: 9, sm: 3 }}>
+        <GridCol span={{ base: 9, md: 3 }}>
           <Title
             order={1}
             size={isMobile ? "250%" : "400%"}
@@ -54,7 +54,7 @@ export default function Home() {
             Church, Gospel
           </Title>
         </GridCol>
-        <GridCol span={{ base: 0, sm: "auto" }}>
+        <GridCol span={{ base: 0, md: "auto" }}>
           <Space />
         </GridCol>
       </Grid>
