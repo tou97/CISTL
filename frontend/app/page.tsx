@@ -16,10 +16,13 @@ import { useMediaQuery } from "@mantine/hooks";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 48em)");
+  const titleSize = isMobile ? "250%" : "400%";
 
   return (
     <Container fluid>
       <Space h="lg" />
+
+      {/* Banner */}
       <Grid align="center" px="xl">
         <GridCol span={{ base: 0, md: "auto" }}>
           <Space />
@@ -27,7 +30,7 @@ export default function Home() {
         <GridCol span={{ base: 9, md: 4 }}>
           <Title
             order={1}
-            size={isMobile ? "250%" : "400%"}
+            size={titleSize}
             ta="right"
             textWrap="nowrap"
             c="wood"
@@ -46,7 +49,7 @@ export default function Home() {
         <GridCol span={{ base: 9, md: 3 }}>
           <Title
             order={1}
-            size={isMobile ? "250%" : "400%"}
+            size={titleSize}
             ta="left"
             textWrap="nowrap"
             c="wood"
@@ -58,8 +61,11 @@ export default function Home() {
           <Space />
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
+
+      {/* Church group Photo */}
       <Image
         px="xl"
         radius="lg"
@@ -67,8 +73,11 @@ export default function Home() {
         alt="Index Main"
         h={800}
       />
+
       <Space h="xl" />
       <Space h="xl" />
+
+      {/* Who we are Section */}
       <Grid px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
@@ -97,6 +106,7 @@ export default function Home() {
           </Text>
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
     </Container>

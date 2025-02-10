@@ -16,6 +16,7 @@ import {
   Space,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 const Gatherings = () => {
   const isMobile = useMediaQuery("(max-width: 48em)");
@@ -24,6 +25,7 @@ const Gatherings = () => {
     <Container fluid>
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
+
       <Grid bg="wood" align="center" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
@@ -43,10 +45,13 @@ const Gatherings = () => {
           </Text>
         </GridCol>
       </Grid>
+
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
+
       <Space h="xl" />
       <Space h="xl" />
+
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Text size="xl" c="wood">
@@ -72,8 +77,10 @@ const Gatherings = () => {
           </Center>
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
+
       <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
         <Divider color="wood" />
         <Title ta="center" order={1} c="wood">
@@ -81,9 +88,12 @@ const Gatherings = () => {
         </Title>
         <Divider color="wood" />
       </Group>
+
       <Space h="xl" />
       <Space h="xl" />
+
       <Grid align="center" gutter="xl" px="xl">
+        {/* SLU */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
@@ -99,19 +109,29 @@ const Gatherings = () => {
             <Title c="wood" order={3}>
               Saint Louis University
             </Title>
-            <Space h="md" />
-            <Button
-              color="offwhite"
-              c="wood"
-              bd="1px solid wood"
-              radius="lg"
-              component="a"
-              href="/campuses/slu"
-            >
-              Learn more
-            </Button>
+            <Text c="wood" size="lg">
+              Filler text about the school or club goes here
+            </Text>
+            <Space h="xl" />
+            <Center>
+              <Button
+                color="offwhite"
+                c="wood"
+                bd="1px solid wood"
+                radius="lg"
+                component="a"
+                href="/campuses/slu"
+                w="50%"
+                leftSection={<IconSchool />}
+                rightSection={<IconArrowRight />}
+              >
+                Learn more
+              </Button>
+            </Center>
           </Card>
         </GridCol>
+
+        {/* STLCC */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
@@ -127,19 +147,29 @@ const Gatherings = () => {
             <Title c="wood" order={3}>
               St. Louis Community College - Meramec
             </Title>
-            <Space h="md" />
-            <Button
-              color="offwhite"
-              c="wood"
-              bd="1px solid wood"
-              radius="lg"
-              component="a"
-              href="/campuses/stlcc"
-            >
-              Learn more
-            </Button>
+            <Text c="wood" size="lg">
+              Filler text about the school or club goes here
+            </Text>
+            <Space h="xl" />
+            <Center>
+              <Button
+                color="offwhite"
+                c="wood"
+                bd="1px solid wood"
+                radius="lg"
+                component="a"
+                href="/campuses/stlcc"
+                w="50%"
+                leftSection={<IconSchool />}
+                rightSection={<IconArrowRight />}
+              >
+                Learn more
+              </Button>
+            </Center>
           </Card>
         </GridCol>
+
+        {/* WashU */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
@@ -150,19 +180,29 @@ const Gatherings = () => {
             <Title c="wood" order={3}>
               The Washington University
             </Title>
-            <Space h="md" />
-            <Button
-              color="offwhite"
-              c="wood"
-              bd="1px solid wood"
-              radius="lg"
-              component="a"
-              href="/campuses/washu"
-            >
-              Learn more
-            </Button>
+            <Text c="wood" size="lg">
+              Filler text about the school or club goes here
+            </Text>
+            <Space h="xl" />
+            <Center>
+              <Button
+                color="offwhite"
+                c="wood"
+                bd="1px solid wood"
+                radius="lg"
+                component="a"
+                href="/campuses/washu"
+                w="50%"
+                leftSection={<IconSchool />}
+                rightSection={<IconArrowRight />}
+              >
+                Learn more
+              </Button>
+            </Center>
           </Card>
         </GridCol>
+
+        {/* UMSL */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
@@ -173,20 +213,29 @@ const Gatherings = () => {
             <Title c="wood" order={3}>
               University of Missouri - St. Louis
             </Title>
-            <Space h="md" />
-            <Button
-              color="offwhite"
-              c="wood"
-              bd="1px solid wood"
-              radius="lg"
-              component="a"
-              href="/campuses/umsl"
-            >
-              Learn more
-            </Button>
+            <Text c="wood" size="lg">
+              Filler text about the school or club goes here
+            </Text>
+            <Space h="xl" />
+            <Center>
+              <Button
+                color="offwhite"
+                c="wood"
+                bd="1px solid wood"
+                radius="lg"
+                component="a"
+                href="/campuses/umsl"
+                w="50%"
+                leftSection={<IconSchool />}
+                rightSection={<IconArrowRight />}
+              >
+                Learn more
+              </Button>
+            </Center>
           </Card>
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
     </Container>

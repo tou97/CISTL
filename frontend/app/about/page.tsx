@@ -25,139 +25,115 @@ const beliefs = [
   {
     value:
       "The Bible is the complete divine revelation inspired word by word by God through the Holy Spirit.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>2 Pet. 1:21:</b> For no prophecy was ever borne by the will of man,
-          but men spoke from God while being borne by the Holy Spirit.
-        </ListItem>
-        <ListItem c="wood">
-          <b>2 Tim. 3:16:</b> All Scripture is God-breathed and profitable for
-          teaching, for conviction, for correction, for instruction in
-          righteousness,
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "2 Pet. 1:21",
+        text: "For no prophecy was ever borne by the will of man, but men spoke from God while being borne by the Holy Spirit.",
+      },
+      {
+        ref: "2 Tim. 3:16",
+        text: "All Scripture is God-breathed and profitable for teaching, for conviction, for correction, for instruction in righteousness,",
+      },
+    ],
   },
   {
     value:
       "God is uniquely one, yet triune - the Father, the Son, and the Spirit.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>1 Tim. 2:5:</b> For there is one God and one Mediator of God and
-          men, the man Christ Jesus,
-        </ListItem>
-        <ListItem c="wood">
-          <b>Matt. 28:19:</b> Go therefore and disciple all the nations,
-          baptizing them into the name of the Father and of the Son and of the
-          Holy Spirit,
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "1 Tim. 2:5",
+        text: "For there is one God and one Mediator of God and men, the man Christ Jesus,",
+      },
+      {
+        ref: "Matt. 28:19",
+        text: "Go therefore and disciple all the nations, baptizing them into the name of the Father and of the Son and of the Holy Spirit,",
+      },
+    ],
   },
   {
     value:
       "The Son of God, even God Himself, was incarnated to be a man by the name of Jesus Christ.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>John 1:1:</b> In the beginning was the Word, and the Word was with
-          God, and the Word was God.
-        </ListItem>
-        <ListItem c="wood">
-          <b>John 1:14:</b> And the Word became flesh and tabernacled among us
-          (and we beheld His glory, glory as of the only Begotten from the
-          Father), full of grace and reality.
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "John 1:1",
+        text: "In the beginning was the Word, and the Word was with God, and the Word was God.",
+      },
+      {
+        ref: "John 1:14",
+        text: "And the Word became flesh and tabernacled among us (and we beheld His glory, glory as of the only Begotten from the Father), full of grace and reality.",
+      },
+    ],
   },
   {
     value:
       "Christ died on the cross for our sins, shedding His blood for our redemption.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>1 Pet. 2:24:</b> Who Himself bore up our sins in His body on the
-          tree, in order that we, having died to sins, might live to
-          righteousness; by whose bruise you were healed.
-        </ListItem>
-        <ListItem c="wood">
-          <b>Eph. 1:7:</b> In whom we have redemption through His blood, the
-          forgiveness of offenses, according to the riches of His grace,
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "1 Pet. 2:24",
+        text: "Who Himself bore up our sins in His body on the tree, in order that we, having died to sins, might live to righteousness; by whose bruise you were healed.",
+      },
+      {
+        ref: "Eph. 1:7",
+        text: "In whom we have redemption through His blood, the forgiveness of offenses, according to the riches of His grace,",
+      },
+    ],
   },
   {
     value: "Christ resurrected from among the dead on the third day.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>1 Cor. 15:4:</b> And that He was buried, and that He has been
-          raised on the third day according to the Scriptures;
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "1 Cor. 15:4",
+        text: "And that He was buried, and that He has been raised on the third day according to the Scriptures;",
+      },
+    ],
   },
   {
     value: "Christ ascended to the right hand of God to be Lord of all.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>Acts 1:9:</b> And when He had said these things, while they were
-          looking on, He was lifted up, and a cloud took Him away from their
-          sight.
-        </ListItem>
-        <ListItem c="wood">
-          <b>Acts 2:33:</b> Therefore having been exalted to the right hand of
-          God and having received the promise of the Holy Spirit from the
-          Father, He has poured out this which you both see and hear.
-        </ListItem>
-        <ListItem c="wood">
-          <b>Acts 2:36:</b> Therefore let all the house of Israel know assuredly
-          that God has made Him both Lord and Christ, this Jesus whom you have
-          crucified.
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "Acts 1:9",
+        text: "And when He had said these things, while they were looking on, He was lifted up, and a cloud took Him away from their sight.",
+      },
+      {
+        ref: "Acts 2:33",
+        text: "Therefore having been exalted to the right hand of God and having received the promise of the Holy Spirit from the Father, He has poured out this which you both see and hear.",
+      },
+      {
+        ref: "Acts 2:36",
+        text: "Therefore let all the house of Israel know assuredly that God has made Him both Lord and Christ, this Jesus whom you have crucified.",
+      },
+    ],
   },
   {
     value:
       "Whenever any person repents to God and believes in the Lord Jesus Christ, he is regenerated (born again) and becomes a living member of the one Body of Christ.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>Acts 20:21:</b> Solemnly testifying both to Jews and to Greeks
-          repentance unto God and faith in our Lord Jesus.
-        </ListItem>
-        <ListItem c="wood">
-          <b>John 3:3:</b> Jesus answered and said to him, Truly, truly, I say
-          to you, Unless one is born anew, he cannot see the kingdom of God.
-        </ListItem>
-        <ListItem c="wood">
-          <b>Eph. 1:22-23:</b> And He subjected all things under His feet and
-          gave Him to be Head over all things to the church, Which is His Body,
-          the fullness of the One who fills all in all.
-        </ListItem>
-        <ListItem c="wood">
-          <b>Rom. 12:5:</b> So we who are many are one Body in Christ, and
-          individually members one of another.
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "Acts 20:21",
+        text: "Solemnly testifying both to Jews and to Greeks repentance unto God and faith in our Lord Jesus.",
+      },
+      {
+        ref: "John 3:3",
+        text: "Jesus answered and said to him, Truly, truly, I say to you, Unless one is born anew, he cannot see the kingdom of God.",
+      },
+      {
+        ref: "Eph. 1:22-23",
+        text: "And He subjected all things under His feet and gave Him to be Head over all things to the church, Which is His Body, the fullness of the One who fills all in all.",
+      },
+      {
+        ref: "Rom. 12:5",
+        text: "So we who are many are one Body in Christ, and individually members one of another.",
+      },
+    ],
   },
   {
     value: "Christ is coming again to receive His believers to Himself.",
-    description: (
-      <List withPadding icon={<IconPoint />} spacing="md">
-        <ListItem c="wood">
-          <b>1 Thes. 2:19:</b>For what is our hope or joy or crown of boasting
-          before our Lord Jesus at His coming? Are not even you?
-        </ListItem>
-      </List>
-    ),
+    verses: [
+      {
+        ref: "1 Thes. 2:19",
+        text: "For what is our hope or joy or crown of boasting before our Lord Jesus at His coming? Are not even you?",
+      },
+    ],
   },
 ];
 
@@ -168,6 +144,8 @@ const AboutUs = () => {
     <Container fluid>
       <Space bg="olive" h="xl" />
       <Space bg="olive" h="xl" />
+
+      {/* Banner */}
       <Grid bg="olive" align="center" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
@@ -189,10 +167,14 @@ const AboutUs = () => {
           </Text>
         </GridCol>
       </Grid>
+
       <Space bg="olive" h="xl" />
       <Space bg="olive" h="xl" />
+
       <Space h="xl" />
       <Space h="xl" />
+
+      {/* Introduction */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Text size="xl" ta={isMobile ? "center" : "left"} c="wood">
@@ -221,8 +203,11 @@ const AboutUs = () => {
           </Center>
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
+
+      {/* Verses */}
       <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
         <Divider color="olive" />
         <Title ta="center" order={1} c="olive">
@@ -246,18 +231,29 @@ const AboutUs = () => {
                 <Title order={3} c="olive">
                   0{index + 1}.
                 </Title>
-                <Space h="xl" />
+                <Space h="lg" />
                 <Title order={3} c="olive" pr="md">
                   {belief.value}
                 </Title>
               </Group>
             </AccordionControl>
-            <AccordionPanel>{belief.description}</AccordionPanel>
+            <AccordionPanel>
+              <List withPadding icon={<IconPoint />} spacing="sm" size="lg">
+                {belief.verses.map((verse) => (
+                  <ListItem key={verse.ref} c="wood">
+                    <b>{verse.ref}:</b> {verse.text}
+                  </ListItem>
+                ))}
+              </List>
+            </AccordionPanel>
           </AccordionItem>
         ))}
       </Accordion>
+
       <Space h="xl" />
       <Space h="xl" />
+
+      {/* Our name */}
       <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
         <Divider color="olive" />
         <Title ta="center" order={1} c="olive">
@@ -299,6 +295,7 @@ const AboutUs = () => {
           </Text>
         </GridCol>
       </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
     </Container>
