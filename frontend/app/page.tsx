@@ -97,7 +97,7 @@ export default function Home() {
             <Divider color="wood" w="20%" />
             <Space />
           </Group>
-          <Text c="wood" size="xl">
+          <Text c="wood" size="xl" ta="justify">
             We are believers in the Lord Jesus Christ and meet together as the
             church in St. Louis. The church in St. Louis isn&apos;t our name;
             it&apos;s our description. We hold the faith that is revealed in the
