@@ -3,12 +3,13 @@
 import {
   AppShell,
   AppShellHeader,
-  AppShellAside,
+  AppShellNavbar,
   AppShellMain,
   Anchor,
   Burger,
   Group,
   Stack,
+  Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
@@ -22,7 +23,7 @@ export function ClientAppShell({
   return (
     <AppShell
       header={{ height: 125 }}
-      aside={{
+      navbar={{
         width: 300,
         breakpoint: "md",
         collapsed: { desktop: true, mobile: !opened },
@@ -30,18 +31,25 @@ export function ClientAppShell({
     >
       <AppShellHeader bg="offwhite" withBorder={false}>
         <Group h="100%" px="md">
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="md"
+            size="md"
+            color="wood"
+          />
           <Group justify="space-between" px="md" flex={1}>
             <Group>
               <Anchor size="2rem" fw={700} c="wood" href="/" underline="never">
                 CISTL
               </Anchor>
               <Stack gap={0}>
-                <Anchor c="wood" size="sm" href="/" underline="never">
+                <Text c="wood" size="sm">
                   Church in
-                </Anchor>
-                <Anchor c="wood" size="sm" href="/" underline="never">
+                </Text>
+                <Text c="wood" size="sm">
                   St. Louis
-                </Anchor>
+                </Text>
               </Stack>
             </Group>
             <Group ml="xl" gap="xl" px="xl" visibleFrom="md">
@@ -59,17 +67,10 @@ export function ClientAppShell({
               </Anchor>
             </Group>
           </Group>
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            hiddenFrom="md"
-            size="md"
-            color="wood"
-          />
         </Group>
       </AppShellHeader>
 
-      <AppShellAside bg="offwhite" py="sm" px="sm">
+      <AppShellNavbar bg="offwhite" py="sm" px="sm">
         <Stack gap="xs" pl="md">
           <Anchor size="xl" href="/about" c="wood">
             About us
@@ -84,7 +85,7 @@ export function ClientAppShell({
             Contact us
           </Anchor>
         </Stack>
-      </AppShellAside>
+      </AppShellNavbar>
 
       <AppShellMain bg="offwhite">{children}</AppShellMain>
     </AppShell>
