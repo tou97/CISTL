@@ -6,6 +6,7 @@ export const minimal_theme = createTheme({
     sky: colorsTuple("#90B7BB"),
     wood: colorsTuple("#A58870"),
     olive: colorsTuple("#657060"),
+    berry: colorsTuple("#A57071"),
   },
   fontFamily: "HK Grotesk, sans-serif",
   headings: { fontFamily: "Adobe Garamond Pro, serif" },
