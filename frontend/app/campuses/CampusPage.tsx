@@ -40,7 +40,7 @@ export default function CampusPage({
   cardTitle,
   cardTitleColor,
   cardSubtitle,
-  cardSubtitleColor,
+  // cardSubtitleColor,
   scheduleData,
 }: CampusPageProps) {
   return (
