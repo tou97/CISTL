@@ -17,7 +17,7 @@ import {
 } from "@mantine/core";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
-const Gatherings = () => {
+const Campuses = () => {
   return (
     <Container fluid>
       <Space bg="wood" h="xl" />
@@ -234,4 +234,4 @@ const Gatherings = () => {
   );
 };
 
-export default Gatherings;
+export default Campuses;

@@ -1,8 +1,9 @@
 import {
+  Center,
   Container,
-  Box,
   Image,
-  Card,
+  Grid,
+  GridCol,
   Title,
   Paper,
   Space,
@@ -12,6 +13,7 @@ import {
   TableTh,
   TableTbody,
   TableTd,
+  Text,
 } from "@mantine/core";
 
 export type CampusSchedule = {
@@ -40,59 +42,79 @@ export default function CampusPage({
   cardSubtitle,
   cardSubtitleColor,
   scheduleData,
-  scheduleTitle = "Weekly Activities",
 }: CampusPageProps) {
   return (
-    <Container size="lg" my="xl">
-      <Box pos="relative">
-        <Image src={imageSrc} alt={imageAlt} h={600} fit="cover" radius="xl" />
-        <Box
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: "50%",
-            transform: "translate(-50%, 75%)",
-            width: "90%",
-          }}
-        >
-          <Card shadow="lg" padding="xl" radius="xl" ta="center" withBorder>
-            <Title order={1} c={cardTitleColor}>
-              {cardTitle}
+    <Container fluid>
+      <Space bg={cardTitleColor} h="xl" />
+      <Space bg={cardTitleColor} h="xl" />
+
+      <Grid bg={cardTitleColor} align="center" gutter="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Title order={1} c="offwhite" ta="center" px="xl">
+            {cardTitle}
+          </Title>
+          <Title order={2} c="offwhite" ta="center" px="xl">
+            {cardSubtitle}
+          </Title>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text c="offwhite" ta="justify" size="xl" px="xl">
+            Club and campus description goes here maybe?
+          </Text>
+        </GridCol>
+      </Grid>
+
+      <Space bg={cardTitleColor} h="xl" />
+      <Space bg={cardTitleColor} h="xl" />
+
+      <Space h="xl"></Space>
+      <Space h="xl"></Space>
+
+      <Grid align="center" gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Paper shadow="xl" p="lg" radius="lg" withBorder bd="1px solid wood">
+            <Title order={2} ta="justify" c="wood">
+              Weekly Activities
             </Title>
-            <Title order={2} mt="sm" c={cardSubtitleColor}>
-              {cardSubtitle}
-            </Title>
-          </Card>
-        </Box>
-      </Box>
-      <Space h="200"></Space>
-      <Box>
-        <Title order={2} ta="center" mb="md">
-          {scheduleTitle}
-        </Title>
-        <Paper shadow="md" p="xl" radius="xl" withBorder>
-          <Table striped highlightOnHover verticalSpacing="sm">
-            <TableThead>
-              <TableTr>
-                <TableTh>Day</TableTh>
-                <TableTh>Time</TableTh>
-                <TableTh>Activity</TableTh>
-                <TableTh>Description</TableTh>
-              </TableTr>
-            </TableThead>
-            <TableTbody>
-              {scheduleData.map((item, index) => (
-                <TableTr key={index}>
-                  <TableTd>{item.day}</TableTd>
-                  <TableTd>{item.time}</TableTd>
-                  <TableTd>{item.activity}</TableTd>
-                  <TableTd>{item.description}</TableTd>
+            <Space h="lg" />
+            <Table
+              striped
+              stripedColor="offwhite"
+              verticalSpacing="sm"
+              ta="justify"
+              c="wood"
+              borderColor="wood"
+            >
+              <TableThead>
+                <TableTr>
+                  <TableTh>Day</TableTh>
+                  <TableTh>Time</TableTh>
+                  <TableTh>Activity</TableTh>
+                  <TableTh>Description</TableTh>
                 </TableTr>
-              ))}
-            </TableTbody>
-          </Table>
-        </Paper>
-      </Box>
+              </TableThead>
+              <TableTbody>
+                {scheduleData.map((item, index) => (
+                  <TableTr key={index}>
+                    <TableTd>{item.day}</TableTd>
+                    <TableTd>{item.time}</TableTd>
+                    <TableTd>{item.activity}</TableTd>
+                    <TableTd>{item.description}</TableTd>
+                  </TableTr>
+                ))}
+              </TableTbody>
+            </Table>
+          </Paper>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Center>
+            <Image src={imageSrc} alt={imageAlt} h={400} w={600} />
+          </Center>
+        </GridCol>
+      </Grid>
+
+      <Space h="xl"></Space>
+      <Space h="xl"></Space>
     </Container>
   );
 }

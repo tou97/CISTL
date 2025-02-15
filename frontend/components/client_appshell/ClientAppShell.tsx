@@ -9,7 +9,6 @@ import {
   Burger,
   Group,
   Stack,
-  Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
@@ -44,12 +43,12 @@ export function ClientAppShell({
                 CISTL
               </Anchor>
               <Stack gap={0}>
-                <Text c="wood" size="sm">
+                <Anchor c="wood" size="sm" href="/" underline="never">
                   Church in
-                </Text>
-                <Text c="wood" size="sm">
+                </Anchor>
+                <Anchor c="wood" size="sm" href="/" underline="never">
                   St. Louis
-                </Text>
+                </Anchor>
               </Stack>
             </Group>
             <Group ml="xl" gap="xl" px="xl" visibleFrom="md">
