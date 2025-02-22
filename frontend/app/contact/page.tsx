@@ -69,7 +69,7 @@ const ContactUs = () => {
       {/* Contact Form */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Paper shadow="xl" p="lg" radius="lg" withBorder bd="1px solid wood">
+          <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
             <form onSubmit={form.onSubmit(handleSubmit)}>
               <TextInput
                 label="Name"

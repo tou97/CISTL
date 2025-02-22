@@ -72,7 +72,7 @@ export default function CampusPage({
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Paper shadow="xl" p="lg" radius="lg" withBorder bd="1px solid wood">
+          <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
             <Title order={2} ta="justify" c="wood">
               Weekly Activities
             </Title>
