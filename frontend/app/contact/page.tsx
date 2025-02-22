@@ -112,8 +112,6 @@ const ContactUs = () => {
               bg="black"
               c="white"
               alt="Placeholder"
-              h={400}
-              w={600}
             />
           </Center>
         </GridCol>

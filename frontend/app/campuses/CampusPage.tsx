@@ -108,7 +108,7 @@ export default function CampusPage({
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src={imageSrc} alt={imageAlt} h={400} w={600} />
+            <Image src={imageSrc} alt={imageAlt} />
           </Center>
         </GridCol>
       </Grid>

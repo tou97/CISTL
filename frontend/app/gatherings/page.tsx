@@ -28,7 +28,7 @@ const Gatherings = () => {
             check out our{" "}
             <a
               href="/campuses"
-              className="font-bold underline inline-flex items-center"
+              className="font-bold underline inline-flex items-center text-[#FDFAF1] visited:text-[#FDFAF1]"
             >
               campus page
             </a>
@@ -43,12 +43,7 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image
-              src="https://placehold.co/600x400"
-              alt="Placeholder"
-              h={400}
-              w={600}
-            />
+            <Image src="https://placehold.co/600x400" alt="Placeholder" />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -68,12 +63,7 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image
-              src="https://placehold.co/600x400"
-              alt="Placeholder"
-              h={400}
-              w={600}
-            />
+            <Image src="https://placehold.co/600x400" alt="Placeholder" />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -93,12 +83,7 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image
-              src="https://placehold.co/600x400"
-              alt="Placeholder"
-              h={400}
-              w={600}
-            />
+            <Image src="https://placehold.co/600x400" alt="Placeholder" />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -118,12 +103,7 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image
-              src="https://placehold.co/600x400"
-              alt="Placeholder"
-              h={400}
-              w={600}
-            />
+            <Image src="https://placehold.co/600x400" alt="Placeholder" />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>

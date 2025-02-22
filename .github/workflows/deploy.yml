@@ -44,5 +44,6 @@ jobs:
             docker stop cistl_container || true
             docker rm cistl_container|| true
             docker run -d --name cistl_container -p 3000:3000 \
+              -e NODE_ENV="production" \
               ${{ secrets.DOCKER_USERNAME }}/cistl-app:latest
             docker image prune -af
