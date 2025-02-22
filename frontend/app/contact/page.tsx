@@ -5,6 +5,7 @@ import {
   Container,
   Grid,
   GridCol,
+  Image,
   Paper,
   Title,
   Text,
@@ -14,7 +15,6 @@ import {
   Button,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 
 const ContactUs = () => {
   const form = useForm({
@@ -42,17 +42,11 @@ const ContactUs = () => {
     form.reset();
   };
 
-  const contactInfo = [
-    { icon: IconMail, text: "contact@yourcompany.com" },
-    { icon: IconPhone, text: "+1 (555) 123-4567" },
-    { icon: IconMapPin, text: "123 Business Street, City, Country" },
-  ];
-
   return (
     <Container fluid>
-      <Space bg="berry" h="xl" />
-      <Space bg="berry" h="xl" />
-      <Grid bg="berry" align="center" gutter="xl">
+      <Space bg="terracotta" h="xl" />
+      <Space bg="terracotta" h="xl" />
+      <Grid bg="terracotta" align="center" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             Contact us
@@ -61,13 +55,13 @@ const ContactUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Text c="offwhite" ta="justify" size="xl" px="xl">
             Have questions? We&apos;d love to hear from you. Send us a message
-            and we&apos;ll respond as soon as possible.
+            and we&apos;ll respond as soon as we can!
           </Text>
         </GridCol>
       </Grid>
 
-      <Space bg="berry" h="xl" />
-      <Space bg="berry" h="xl" />
+      <Space bg="terracotta" h="xl" />
+      <Space bg="terracotta" h="xl" />
 
       <Space h="xl" />
       <Space h="xl" />
@@ -112,19 +106,16 @@ const ContactUs = () => {
           </Paper>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          {contactInfo.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 16,
-              }}
-            >
-              <item.icon size={24} style={{ marginRight: 12 }} />
-              <Text>{item.text}</Text>
-            </div>
-          ))}
+          <Center>
+            <Image
+              src="https://placehold.co/600x400"
+              bg="black"
+              c="white"
+              alt="Placeholder"
+              h={400}
+              w={600}
+            />
+          </Center>
         </GridCol>
       </Grid>
 

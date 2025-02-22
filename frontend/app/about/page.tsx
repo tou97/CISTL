@@ -16,7 +16,7 @@ import {
   AccordionPanel,
   Group,
 } from "@mantine/core";
-import { IconPoint } from "@tabler/icons-react";
+import { IconCaretRightFilled } from "@tabler/icons-react";
 
 const AboutUs = () => {
   const beliefs = [
@@ -149,11 +149,11 @@ const AboutUs = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Text c="offwhite" ta="justify" size="xl" px="xl">
-            We are believers in the Lord Jesus Christ and meet together as the
-            church in St. Louis. The church in St. Louis isn&apos;t our name;
-            it&apos;s our description. We hold the faith that is revealed in the
-            Bible and is common to all genuine believers. We warmly welcome all
-            guests and visitors.
+            We are a community of people in St. Louis who believe in Jesus
+            Christ. We simply see ourselves as a local expression of the
+            Christian church, holding to the core faith found in the Bible that
+            unites all believers. Whoever you are, wherever you&apos;re form, we
+            warmly welcome you to join us and discover more.
           </Text>
         </GridCol>
       </Grid>
@@ -228,7 +228,12 @@ const AboutUs = () => {
               </Group>
             </AccordionControl>
             <AccordionPanel>
-              <List withPadding icon={<IconPoint />} spacing="sm" size="lg">
+              <List
+                withPadding
+                icon={<IconCaretRightFilled />}
+                spacing="sm"
+                size="lg"
+              >
                 {belief.verses.map((verse) => (
                   <ListItem key={verse.ref} c="wood">
                     <b>{verse.ref}:</b> {verse.text}

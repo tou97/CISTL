@@ -59,7 +59,13 @@ export function ClientAppShell({
                 Our gatherings
               </Anchor>
               <Anchor size="xl" href="/campuses" c="wood">
-                Campus work
+                Campus students
+              </Anchor>
+              <Anchor size="xl" href="/youth" c="wood">
+                Youth
+              </Anchor>
+              <Anchor size="xl" href="/children" c="wood">
+                Children
               </Anchor>
               <Anchor size="xl" href="/contact" c="wood">
                 Contact us
@@ -78,7 +84,13 @@ export function ClientAppShell({
             Our gatherings
           </Anchor>
           <Anchor size="xl" href="/campuses" c="wood">
-            Campus work
+            Campus students
+          </Anchor>
+          <Anchor size="xl" href="/youth" c="wood">
+            Youth
+          </Anchor>
+          <Anchor size="xl" href="/children" c="wood">
+            Children
           </Anchor>
           <Anchor size="xl" href="/contact" c="wood">
             Contact us

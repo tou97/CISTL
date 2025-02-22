@@ -31,9 +31,12 @@ const Campuses = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Text c="offwhite" ta="justify" size="xl" px="xl">
-            Our mission is to be a light on campus, supporting one another in
-            our spiritual journeys, and sharing the hope and grace of Jesus
-            Christ with those around us.
+            Hey students! We&apos;re a community of college students across the
+            St. Louis area who are exploring life and faith together. We&apos;re
+            simply students who believe in Jesus and want to connect with others
+            on campus. Wherever you are in your journey - curious, questioning,
+            or committed - you&apos;re welcome to join us and find friends,
+            support, and a place to belong.
           </Text>
         </GridCol>
       </Grid>
@@ -47,15 +50,15 @@ const Campuses = () => {
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Text size="xl" ta="justify" c="wood">
-            <b>Christian Students on Campus</b> is a vibrant and inclusive
-            community of students who are passionate about living out their
-            faith and making a positive impact on campus and beyond. Together,
-            we seek to grow in our understanding of Christ, build meaningful
-            relationships, and server others with love and compassion. Whether
-            through worship, Bible Study, community outreach, or simply walking
-            alongside one another in faith, we aim to create a welcoming space
-            where students can explore and strengthen their relationship with
-            God.
+            <b>Christian Students on Campus</b> is all about being a welcoming
+            community for students like you across the St. Louis area!
+            We&apos;re just students exploring what it means to follow Jesus and
+            do life together in college. Whether you&apos;re curious about
+            faith, have lots of questions, or are already committed to following
+            Christ, you&apos;ll find a place with us. We connect through things
+            like hanging out, studying the Bible, serving our campuses, and just
+            supporting each other as we navigate college. Our aim is simple: to
+            create a space where everyone feels welcome to explore their faith.
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
