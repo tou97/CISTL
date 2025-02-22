@@ -7,6 +7,7 @@ A web application designed to serve the Church in St. Louis. The app utilizes a 
 ## 📚 Table of Contents
 - [🛠️ Technology Stack](#️-technology-stack)
 - [📦 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
 - [💡 Deployment](#-deployment)
 
 ---
@@ -15,7 +16,6 @@ A web application designed to serve the Church in St. Louis. The app utilizes a 
 ### **Frontend**:
 - **Framework**: [Next.js](https://nextjs.org/) with TypeScript
 - **UI Components**: [Mantine](https://mantine.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
 ### **Backend**:
 - **Framework**: TBD
@@ -39,6 +39,19 @@ CISTL/
 ```
 
 ---
+
+## 🚀 Getting Started
+### Prerequisites
+Ensure the following are installed on your system:
+- Docker
+
+### Local Development with Docker Compose
+- `docker compose up --build` to start the application.
+- `docker compose down` to remove the application.
+
+
+---
+
 
 ## 💡 Deployment
 This project uses GitHub Actions to deploy the app to a Hetzner VPS whenever changes are merged into the `main` branch, as well as adhering to trunk based development methodology. Read more here: https://trunkbaseddevelopment.com/
