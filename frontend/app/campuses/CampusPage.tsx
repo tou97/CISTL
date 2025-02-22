@@ -1,7 +1,6 @@
 import {
   Center,
   Container,
-  Image,
   Grid,
   GridCol,
   Title,
@@ -15,6 +14,7 @@ import {
   TableTd,
   Text,
 } from "@mantine/core";
+import Image from "next/image";
 
 export type CampusSchedule = {
   day: string;
@@ -108,7 +108,7 @@ export default function CampusPage({
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src={imageSrc} alt={imageAlt} />
+            <Image src={imageSrc} width={600} height={400} alt={imageAlt} />
           </Center>
         </GridCol>
       </Grid>

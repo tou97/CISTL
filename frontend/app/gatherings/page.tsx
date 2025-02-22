@@ -3,11 +3,11 @@ import {
   Container,
   Grid,
   GridCol,
-  Image,
   Title,
   Text,
   Space,
 } from "@mantine/core";
+import Image from "next/image";
 
 const Gatherings = () => {
   return (
@@ -43,7 +43,12 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src="https://placehold.co/600x400" alt="Placeholder" />
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />{" "}
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -63,7 +68,12 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src="https://placehold.co/600x400" alt="Placeholder" />
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />{" "}
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -83,7 +93,12 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src="https://placehold.co/600x400" alt="Placeholder" />
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />{" "}
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -103,7 +118,12 @@ const Gatherings = () => {
       <Grid gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src="https://placehold.co/600x400" alt="Placeholder" />
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />{" "}
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>

@@ -5,7 +5,6 @@ import {
   Container,
   Grid,
   GridCol,
-  Image,
   Paper,
   Title,
   Text,
@@ -15,6 +14,7 @@ import {
   Button,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import Image from "next/image";
 
 const ContactUs = () => {
   const form = useForm({
@@ -108,9 +108,9 @@ const ContactUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="https://placehold.co/600x400"
-              bg="black"
-              c="white"
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
               alt="Placeholder"
             />
           </Center>

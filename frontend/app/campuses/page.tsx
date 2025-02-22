@@ -10,11 +10,11 @@ import {
   Grid,
   GridCol,
   Group,
-  Image,
   Title,
   Text,
   Space,
 } from "@mantine/core";
+import Image from "next/image";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 const Campuses = () => {
@@ -63,7 +63,12 @@ const Campuses = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src="https://placehold.co/600x400" alt="Placeholder" />
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />{" "}
           </Center>
         </GridCol>
       </Grid>
@@ -91,8 +96,8 @@ const Campuses = () => {
                 <Image
                   src="/images/slu.webp"
                   alt="Saint Louis University"
-                  h={160}
-                  w={300}
+                  height={160}
+                  width={300}
                 />
               </Center>
             </CardSection>
@@ -129,8 +134,8 @@ const Campuses = () => {
                 <Image
                   src="/images/stlcc.webp"
                   alt="St. Louis Community College - Meramec"
-                  h={160}
-                  w={300}
+                  height={160}
+                  width={300}
                 />
               </Center>
             </CardSection>
@@ -164,7 +169,12 @@ const Campuses = () => {
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
-                <Image src="/images/washu.webp" alt="WashU" h={160} w={300} />
+                <Image
+                  src="/images/washu.webp"
+                  alt="WashU"
+                  height={160}
+                  width={300}
+                />
               </Center>
             </CardSection>
             <Title c="wood" ta="center" order={3}>
@@ -197,7 +207,12 @@ const Campuses = () => {
           <Card radius="lg" bd="1px solid wood">
             <CardSection pb="lg">
               <Center>
-                <Image src="/images/umsl.webp" alt="UMSL" h={160} w={300} />
+                <Image
+                  src="/images/umsl.webp"
+                  alt="UMSL"
+                  height={160}
+                  width={300}
+                />
               </Center>
             </CardSection>
             <Title c="wood" ta="center" order={3}>

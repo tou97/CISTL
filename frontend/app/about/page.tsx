@@ -6,7 +6,6 @@ import {
   Divider,
   Grid,
   GridCol,
-  Image,
   Title,
   Text,
   List,
@@ -16,6 +15,8 @@ import {
   AccordionPanel,
   Group,
 } from "@mantine/core";
+
+import Image from "next/image";
 import { IconCaretRightFilled } from "@tabler/icons-react";
 
 const AboutUs = () => {
@@ -183,9 +184,9 @@ const AboutUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="https://placehold.co/600x400"
-              bg="black"
-              c="white"
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
               alt="Placeholder"
             />
           </Center>
@@ -260,9 +261,9 @@ const AboutUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="https://placehold.co/600x400"
-              bg="black"
-              c="white"
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
               alt="Placeholder"
             />
           </Center>
