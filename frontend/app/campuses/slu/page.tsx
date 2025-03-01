@@ -2,14 +2,14 @@ import CampusPage, { CampusSchedule } from "../CampusPage";
 
 const scheduleData: CampusSchedule[] = [
   {
-    day: "Thursday",
+    day: "Thursdays",
     time: "6:00 PM",
     activity: "Family Time",
     description:
       "Family Time is a time for the students across all our different campuses to come together to enjoy the Lord and His Word together in a more intimate setting.",
   },
   {
-    day: "Friday",
+    day: "Fridays",
     time: "12:00 PM",
     activity: "Bible Study",
     description:

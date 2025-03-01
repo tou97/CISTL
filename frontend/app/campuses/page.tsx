@@ -69,7 +69,7 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
     <Space h="lg" />
     <Center>
       <Button
-        color="offwhite"
+        bg="offwhite"
         c="wood"
         bd="1px solid wood"
         radius="lg"
@@ -78,6 +78,8 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
         w="75%"
         leftSection={<IconSchool />}
         rightSection={<IconArrowRight />}
+        variant="outline"
+        className="standard-button"
       >
         Learn more
       </Button>

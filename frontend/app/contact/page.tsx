@@ -14,6 +14,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import Image from "next/image";
+import { IconMessages } from "@tabler/icons-react";
 
 // Contact page component
 const ContactUs = () => {
@@ -94,11 +95,13 @@ const ContactUs = () => {
               <Center>
                 <Button
                   type="submit"
-                  color="offwhite"
+                  bg="offwhite"
                   c="wood"
                   bd="1px solid wood"
                   radius="lg"
                   w="75%"
+                  leftSection={<IconMessages />}
+                  className="standard-button"
                 >
                   Send Message
                 </Button>

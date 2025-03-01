@@ -4,17 +4,15 @@ import {
   Grid,
   GridCol,
   Title,
-  Paper,
   Space,
-  Table,
-  TableThead,
-  TableTr,
-  TableTh,
-  TableTbody,
-  TableTd,
+  Stack,
+  Card,
+  Group,
+  Badge,
   Text,
 } from "@mantine/core";
 import Image from "next/image";
+import { IconClock, IconCalendar } from "@tabler/icons-react";
 
 // Schedule data structure
 export type CampusSchedule = {
@@ -45,9 +43,7 @@ export default function CampusPage({
   cardTitle,
   cardTitleColor,
   cardSubtitle,
-  // cardSubtitleColor,
   scheduleData,
-  scheduleTitle = "Weekly Activities",
 }: CampusPageProps) {
   return (
     <Container fluid>
@@ -79,39 +75,28 @@ export default function CampusPage({
       {/* Content section */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
-            <Title order={2} ta="justify" c="wood">
-              {scheduleTitle}
-            </Title>
-            <Space h="lg" />
-            <Table
-              striped
-              stripedColor="offwhite"
-              verticalSpacing="sm"
-              ta="justify"
-              c="wood"
-              borderColor="wood"
-            >
-              <TableThead>
-                <TableTr>
-                  <TableTh>Day</TableTh>
-                  <TableTh>Time</TableTh>
-                  <TableTh>Activity</TableTh>
-                  <TableTh>Description</TableTh>
-                </TableTr>
-              </TableThead>
-              <TableTbody>
-                {scheduleData.map((item, index) => (
-                  <TableTr key={index}>
-                    <TableTd>{item.day}</TableTd>
-                    <TableTd>{item.time}</TableTd>
-                    <TableTd>{item.activity}</TableTd>
-                    <TableTd>{item.description}</TableTd>
-                  </TableTr>
-                ))}
-              </TableTbody>
-            </Table>
-          </Paper>
+          <Stack gap="md">
+            {scheduleData.map((item, index) => (
+              <Card
+                key={index}
+                p="md"
+                radius="lg"
+                withBorder
+                bd="1px solid wood"
+              >
+                <Group mb="xs">
+                  <IconCalendar />
+                  <Text fw={600}>{item.day}</Text>
+                  <Badge bg={cardTitleColor}>{item.activity}</Badge>
+                </Group>
+                <Group mb="xs">
+                  <IconClock />
+                  <Text fw={600}>{item.time}</Text>
+                </Group>
+                <Text size="sm">{item.description}</Text>
+              </Card>
+            ))}
+          </Stack>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>

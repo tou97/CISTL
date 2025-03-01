@@ -16,3 +16,12 @@
      font-style: normal;
 }
   
+
+.standard-button {
+     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.standard-button:hover {
+     background-color: #A58870 !important;
+     color: #FDFAF1 !important;
+}
