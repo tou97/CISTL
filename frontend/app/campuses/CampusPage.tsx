@@ -16,6 +16,7 @@ import {
 } from "@mantine/core";
 import Image from "next/image";
 
+// Schedule data structure
 export type CampusSchedule = {
   day: string;
   time: string;
@@ -23,6 +24,7 @@ export type CampusSchedule = {
   description: string;
 };
 
+// Component props
 export interface CampusPageProps {
   imageSrc: string;
   imageAlt?: string;
@@ -34,6 +36,9 @@ export interface CampusPageProps {
   scheduleTitle?: string;
 }
 
+/**
+ * Campus page displaying header information and weekly schedule
+ */
 export default function CampusPage({
   imageSrc,
   imageAlt = "Campus Image",
@@ -42,12 +47,13 @@ export default function CampusPage({
   cardSubtitle,
   // cardSubtitleColor,
   scheduleData,
+  scheduleTitle = "Weekly Activities",
 }: CampusPageProps) {
   return (
     <Container fluid>
+      {/* Header section */}
       <Space bg={cardTitleColor} h="xl" />
       <Space bg={cardTitleColor} h="xl" />
-
       <Grid bg={cardTitleColor} align="center" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} c="offwhite" ta="center" px="xl">
@@ -63,18 +69,19 @@ export default function CampusPage({
           </Text>
         </GridCol>
       </Grid>
-
       <Space bg={cardTitleColor} h="xl" />
       <Space bg={cardTitleColor} h="xl" />
 
-      <Space h="xl"></Space>
-      <Space h="xl"></Space>
+      {/* Spacing between sections */}
+      <Space h="xl" />
+      <Space h="xl" />
 
+      {/* Content section */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
             <Title order={2} ta="justify" c="wood">
-              Weekly Activities
+              {scheduleTitle}
             </Title>
             <Space h="lg" />
             <Table
@@ -113,8 +120,9 @@ export default function CampusPage({
         </GridCol>
       </Grid>
 
-      <Space h="xl"></Space>
-      <Space h="xl"></Space>
+      {/* Bottom spacing */}
+      <Space h="xl" />
+      <Space h="xl" />
     </Container>
   );
 }

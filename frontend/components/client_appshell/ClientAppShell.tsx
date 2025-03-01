@@ -1,5 +1,4 @@
 "use client";
-
 import {
   AppShell,
   AppShellHeader,
@@ -12,11 +11,22 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
-export function ClientAppShell({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// Navigation links used in both header and mobile navbar
+const NAV_LINKS = [
+  { label: "About us", href: "/about" },
+  { label: "Our gatherings", href: "/gatherings" },
+  { label: "Campus students", href: "/campuses" },
+  { label: "Youth", href: "/youth" },
+  { label: "Children", href: "/children" },
+  { label: "Contact us", href: "/contact" },
+];
+
+/**
+ * Main application shell component with responsive layout
+ */
+import { ReactNode } from "react";
+
+export function ClientAppShell({ children }: { children: ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
 
   return (
@@ -28,6 +38,7 @@ export function ClientAppShell({
         collapsed: { desktop: true, mobile: !opened },
       }}
     >
+      {/* Header with logo and desktop navigation */}
       <AppShellHeader bg="offwhite" withBorder={false}>
         <Group h="100%" px="md">
           <Burger
@@ -38,6 +49,7 @@ export function ClientAppShell({
             color="wood"
           />
           <Group justify="space-between" px="md" flex={1}>
+            {/* Logo section */}
             <Group>
               <Anchor size="2rem" fw={700} c="wood" href="/" underline="never">
                 CISTL
@@ -51,53 +63,31 @@ export function ClientAppShell({
                 </Anchor>
               </Stack>
             </Group>
+
+            {/* Desktop navigation */}
             <Group ml="xl" gap="xl" px="xl" visibleFrom="md">
-              <Anchor size="xl" href="/about" c="wood">
-                About us
-              </Anchor>
-              <Anchor size="xl" href="/gatherings" c="wood">
-                Our gatherings
-              </Anchor>
-              <Anchor size="xl" href="/campuses" c="wood">
-                Campus students
-              </Anchor>
-              <Anchor size="xl" href="/youth" c="wood">
-                Youth
-              </Anchor>
-              <Anchor size="xl" href="/children" c="wood">
-                Children
-              </Anchor>
-              <Anchor size="xl" href="/contact" c="wood">
-                Contact us
-              </Anchor>
+              {NAV_LINKS.map((link) => (
+                <Anchor key={link.href} size="xl" href={link.href} c="wood">
+                  {link.label}
+                </Anchor>
+              ))}
             </Group>
           </Group>
         </Group>
       </AppShellHeader>
 
+      {/* Mobile navigation sidebar */}
       <AppShellNavbar bg="offwhite" py="sm" px="sm">
         <Stack gap="xs" pl="md">
-          <Anchor size="xl" href="/about" c="wood">
-            About us
-          </Anchor>
-          <Anchor size="xl" href="/gatherings" c="wood">
-            Our gatherings
-          </Anchor>
-          <Anchor size="xl" href="/campuses" c="wood">
-            Campus students
-          </Anchor>
-          <Anchor size="xl" href="/youth" c="wood">
-            Youth
-          </Anchor>
-          <Anchor size="xl" href="/children" c="wood">
-            Children
-          </Anchor>
-          <Anchor size="xl" href="/contact" c="wood">
-            Contact us
-          </Anchor>
+          {NAV_LINKS.map((link) => (
+            <Anchor key={link.href} size="xl" href={link.href} c="wood">
+              {link.label}
+            </Anchor>
+          ))}
         </Stack>
       </AppShellNavbar>
 
+      {/* Main content area */}
       <AppShellMain bg="offwhite">{children}</AppShellMain>
     </AppShell>
   );

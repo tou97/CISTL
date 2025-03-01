@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Center,
   Container,
@@ -16,7 +15,9 @@ import {
 import { useForm } from "@mantine/form";
 import Image from "next/image";
 
+// Contact page component
 const ContactUs = () => {
+  // Form setup and validation
   const form = useForm({
     initialValues: {
       name: "",
@@ -31,19 +32,19 @@ const ContactUs = () => {
     },
   });
 
-  interface ContactFormValues {
+  // Handle form submission
+  const handleSubmit = (values: {
     name: string;
     email: string;
     message: string;
-  }
-
-  const handleSubmit = (values: ContactFormValues) => {
+  }) => {
     console.log(values);
     form.reset();
   };
 
   return (
     <Container fluid>
+      {/* Header section with terracotta background */}
       <Space bg="terracotta" h="xl" />
       <Space bg="terracotta" h="xl" />
       <Grid bg="terracotta" align="center" gutter="xl">
@@ -59,14 +60,14 @@ const ContactUs = () => {
           </Text>
         </GridCol>
       </Grid>
-
       <Space bg="terracotta" h="xl" />
       <Space bg="terracotta" h="xl" />
 
+      {/* Spacing between sections */}
       <Space h="xl" />
       <Space h="xl" />
 
-      {/* Contact Form */}
+      {/* Contact Form and Image */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
@@ -117,6 +118,7 @@ const ContactUs = () => {
         </GridCol>
       </Grid>
 
+      {/* Bottom spacing */}
       <Space h="xl" />
       <Space h="xl" />
     </Container>

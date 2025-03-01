@@ -17,9 +17,79 @@ import {
 import Image from "next/image";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
+// Campus data for rendering cards
+const campusData = [
+  {
+    id: "slu",
+    name: "Saint Louis University",
+    image: "/images/slu.webp",
+    description: "Filler text about the school or club goes here",
+  },
+  {
+    id: "stlcc",
+    name: "St. Louis Community College - Meramec",
+    image: "/images/stlcc.webp",
+    description: "Filler text about the school or club goes here",
+  },
+  {
+    id: "washu",
+    name: "The Washington University",
+    image: "/images/washu.webp",
+    description: "Filler text about the school or club goes here",
+  },
+  {
+    id: "umsl",
+    name: "University of Missouri - St. Louis",
+    image: "/images/umsl.webp",
+    description: "Filler text about the school or club goes here",
+  },
+];
+
+// Renders a campus card with image, title, description and link
+interface Campus {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+}
+
+const CampusCard = ({ campus }: { campus: Campus }) => (
+  <Card radius="lg" bd="1px solid wood">
+    <CardSection>
+      <Center>
+        <Image src={campus.image} alt={campus.name} height={160} width={300} />
+      </Center>
+    </CardSection>
+    <Title c="wood" ta="center" order={3}>
+      {campus.name}
+    </Title>
+    <Text c="wood" ta="center" size="lg">
+      {campus.description}
+    </Text>
+    <Space h="lg" />
+    <Center>
+      <Button
+        color="offwhite"
+        c="wood"
+        bd="1px solid wood"
+        radius="lg"
+        component="a"
+        href={`/campuses/${campus.id}`}
+        w="75%"
+        leftSection={<IconSchool />}
+        rightSection={<IconArrowRight />}
+      >
+        Learn more
+      </Button>
+    </Center>
+  </Card>
+);
+
+// Main component that displays information about Christian students on campuses
 const Campuses = () => {
   return (
     <Container fluid>
+      {/* Hero section */}
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
 
@@ -44,6 +114,7 @@ const Campuses = () => {
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
 
+      {/* About section */}
       <Space h="xl" />
       <Space h="xl" />
 
@@ -68,7 +139,7 @@ const Campuses = () => {
               width={600}
               height={400}
               alt="Placeholder"
-            />{" "}
+            />
           </Center>
         </GridCol>
       </Grid>
@@ -76,6 +147,7 @@ const Campuses = () => {
       <Space h="xl" />
       <Space h="xl" />
 
+      {/* Campuses section title */}
       <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
         <Divider color="wood" />
         <Title ta="center" order={1} c="wood">
@@ -87,158 +159,13 @@ const Campuses = () => {
       <Space h="xl" />
       <Space h="xl" />
 
+      {/* Campus cards grid */}
       <Grid align="center" gutter="xl" px="xl">
-        {/* SLU */}
-        <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg" bd="1px solid wood">
-            <CardSection pb="lg">
-              <Center>
-                <Image
-                  src="/images/slu.webp"
-                  alt="Saint Louis University"
-                  height={160}
-                  width={300}
-                />
-              </Center>
-            </CardSection>
-            <Title c="wood" ta="center" order={3}>
-              Saint Louis University
-            </Title>
-            <Text c="wood" ta="center" size="lg">
-              Filler text about the school or club goes here
-            </Text>
-            <Space h="lg" />
-            <Center>
-              <Button
-                color="offwhite"
-                c="wood"
-                bd="1px solid wood"
-                radius="lg"
-                component="a"
-                href="/campuses/slu"
-                w="75%"
-                leftSection={<IconSchool />}
-                rightSection={<IconArrowRight />}
-              >
-                Learn more
-              </Button>
-            </Center>
-          </Card>
-        </GridCol>
-
-        {/* STLCC */}
-        <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg" bd="1px solid wood">
-            <CardSection pb="lg">
-              <Center>
-                <Image
-                  src="/images/stlcc.webp"
-                  alt="St. Louis Community College - Meramec"
-                  height={160}
-                  width={300}
-                />
-              </Center>
-            </CardSection>
-            <Title c="wood" ta="center" order={3}>
-              St. Louis Community College - Meramec
-            </Title>
-            <Text c="wood" ta="center" size="lg">
-              Filler text about the school or club goes here
-            </Text>
-            <Space h="lg" />
-            <Center>
-              <Button
-                color="offwhite"
-                c="wood"
-                bd="1px solid wood"
-                radius="lg"
-                component="a"
-                href="/campuses/stlcc"
-                w="75%"
-                leftSection={<IconSchool />}
-                rightSection={<IconArrowRight />}
-              >
-                Learn more
-              </Button>
-            </Center>
-          </Card>
-        </GridCol>
-
-        {/* WashU */}
-        <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg" bd="1px solid wood">
-            <CardSection pb="lg">
-              <Center>
-                <Image
-                  src="/images/washu.webp"
-                  alt="WashU"
-                  height={160}
-                  width={300}
-                />
-              </Center>
-            </CardSection>
-            <Title c="wood" ta="center" order={3}>
-              The Washington University
-            </Title>
-            <Text c="wood" ta="center" size="lg">
-              Filler text about the school or club goes here
-            </Text>
-            <Space h="lg" />
-            <Center>
-              <Button
-                color="offwhite"
-                c="wood"
-                bd="1px solid wood"
-                radius="lg"
-                component="a"
-                href="/campuses/washu"
-                w="75%"
-                leftSection={<IconSchool />}
-                rightSection={<IconArrowRight />}
-              >
-                Learn more
-              </Button>
-            </Center>
-          </Card>
-        </GridCol>
-
-        {/* UMSL */}
-        <GridCol span={{ base: 12, md: 6 }}>
-          <Card radius="lg" bd="1px solid wood">
-            <CardSection pb="lg">
-              <Center>
-                <Image
-                  src="/images/umsl.webp"
-                  alt="UMSL"
-                  height={160}
-                  width={300}
-                />
-              </Center>
-            </CardSection>
-            <Title c="wood" ta="center" order={3}>
-              University of Missouri - St. Louis
-            </Title>
-            <Text c="wood" ta="center" size="lg">
-              Filler text about the school or club goes here
-            </Text>
-            <Space h="lg" />
-            <Center>
-              <Button
-                color="offwhite"
-                c="wood"
-                bd="1px solid wood"
-                radius="lg"
-                component="a"
-                href="/campuses/umsl"
-                w="75%"
-                leftSection={<IconSchool />}
-                rightSection={<IconArrowRight />}
-              >
-                Learn more
-              </Button>
-            </Center>
-          </Card>
-        </GridCol>
+        {campusData.map((campus) => (
+          <GridCol key={campus.id} span={{ base: 12, md: 6 }}>
+            <CampusCard campus={campus} />
+          </GridCol>
+        ))}
       </Grid>
 
       <Space h="xl" />
