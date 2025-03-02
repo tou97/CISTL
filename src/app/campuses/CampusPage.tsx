@@ -46,7 +46,14 @@ export default function CampusPage({
   scheduleData,
 }: CampusPageProps) {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       {/* Header section */}
       <Space bg={cardTitleColor} h="xl" />
       <Space bg={cardTitleColor} h="xl" />

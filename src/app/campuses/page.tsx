@@ -90,7 +90,14 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 // Main component that displays information about Christian students on campuses
 const Campuses = () => {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       {/* Hero section */}
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />

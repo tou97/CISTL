@@ -23,7 +23,14 @@ export default function Home() {
   const titleSize = isMobile ? "250%" : "400%";
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       <Space h={SPACING_LG} />
 
       {/* Banner Section */}

@@ -6,14 +6,14 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY frontend/package.json frontend/package-lock.json* ./
+COPY src/package.json src/package-lock.json* ./
 RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY frontend/ .
+COPY src/ .
 
 RUN npm run build
 

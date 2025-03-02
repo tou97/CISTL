@@ -44,7 +44,14 @@ const ContactUs = () => {
   };
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       {/* Header section with terracotta background */}
       <Space bg="terracotta" h="xl" />
       <Space bg="terracotta" h="xl" />

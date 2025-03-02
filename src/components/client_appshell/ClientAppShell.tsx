@@ -54,14 +54,17 @@ export function ClientAppShell({ children }: { children: ReactNode }) {
               <Anchor size="2rem" fw={700} c="wood" href="/" underline="never">
                 CISTL
               </Anchor>
-              <Stack gap={0}>
-                <Anchor c="wood" size="sm" href="/" underline="never">
-                  Church in
-                </Anchor>
-                <Anchor c="wood" size="sm" href="/" underline="never">
-                  St. Louis
-                </Anchor>
-              </Stack>
+              <Anchor
+                c="wood"
+                size="md"
+                href="/"
+                underline="never"
+                style={{ lineHeight: "1" }}
+              >
+                Church in
+                <br />
+                St. Louis
+              </Anchor>
             </Group>
 
             {/* Desktop navigation */}

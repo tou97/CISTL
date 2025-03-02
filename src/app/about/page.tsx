@@ -150,7 +150,14 @@ const SectionTitle = ({ title }: { title: string }) => (
 // Main component
 const AboutUs = () => {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       {/* Banner Section */}
       <Space bg="olive" h="xl" />
       <Space bg="olive" h="xl" />

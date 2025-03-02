@@ -1,6 +1,5 @@
-# Church in St. Louis Web Application
-
-A web application designed to serve the Church in St. Louis. The app utilizes a frontend built with Next.js and a backend with TBD. It supports efficient deployment using Docker and local development with Docker Compose.
+# 🙏 Church in St. Louis Web Application
+A modern, responsive web application serving the Church in St. Louis community. Built with Next.js at its core, this application combines beautiful UI with powerful functionality, all while maintaining an efficient deployment pipeline through Docker.
 
 ---
 
@@ -13,28 +12,20 @@ A web application designed to serve the Church in St. Louis. The app utilizes a 
 ---
 
 ## 🛠️ Technology Stack
-### **Frontend**:
-- **Framework**: [Next.js](https://nextjs.org/) with TypeScript
-- **UI Components**: [Mantine](https://mantine.dev/)
-
-### **Backend**:
-- **Framework**: TBD
-- **Database**: TBD
-
-### **Containerization**:
-- **Docker**: Containerizes the app for consistent environments.
-- **Docker Compose**: Manages multi-container setups for local development.
+- **Framework**: [Next.js](https://nextjs.org/) with TypeScript - Powering both frontend and API routes
+- **UI Components**: [Mantine](https://mantine.dev/) - For accessible UI elements
+- **Data Fetching**: Next.js API routes handling Google service integrations
+- **Containerization**: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
 
 ---
 
 ## 📦 Project Structure
 ```
 CISTL/
-├── .github/            # Github Actions deployment
-├── frontend/           # Frontend application (Next.js)
-├── backend/            # Backend services
+├── .github/            # Github Actions deployment workflows
+├── src/                # Application source code
 ├── docker-compose.yml  # Configuration for local development
-├── Dockerfile          # Docker Artifact instructions
+├── Dockerfile          # Docker build instructions
 └── README.md           # This documentation
 ```
 
@@ -49,9 +40,9 @@ Ensure the following are installed on your system:
 - `docker compose up --build` to start the application.
 - `docker compose down` to remove the application.
 
+Visit http://localhost:3000 to see your application in action!
 
 ---
 
-
 ## 💡 Deployment
-This project uses GitHub Actions to deploy the app to a Hetzner VPS whenever changes are merged into the `main` branch, as well as adhering to trunk based development methodology. Read more here: https://trunkbaseddevelopment.com/
+This project embraces modern DevOps practices with GitHub Actions automatically deploying to a Hetzner VPS whenever changes are merged into the main branch. We follow trunk-based development methodology for streamlined collaboration and continuous delivery.

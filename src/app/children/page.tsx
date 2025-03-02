@@ -2,7 +2,14 @@ import { Container, Grid, GridCol, Title, Text, Space } from "@mantine/core";
 
 const Children = () => {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       <Space bg="rose" h="xl" />
       <Space bg="rose" h="xl" />
 

@@ -3,20 +3,33 @@ import {
   Container,
   Grid,
   GridCol,
+  Group,
+  Stack,
   Title,
   Text,
   Space,
 } from "@mantine/core";
 import Image from "next/image";
+import {
+  IconCalendar,
+  IconMapPin,
+  IconFileDescription,
+} from "@tabler/icons-react";
 
 // GatheringItem component for displaying individual gathering information
 interface GatheringItemProps {
   title: string;
   schedule: string;
   location: string;
+  description: string;
 }
 
-const GatheringItem = ({ title, schedule, location }: GatheringItemProps) => (
+const GatheringItem = ({
+  title,
+  schedule,
+  location,
+  description,
+}: GatheringItemProps) => (
   <Grid gutter="xl" px="xl">
     <GridCol span={{ base: 12, md: 6 }}>
       <Center>
@@ -29,15 +42,38 @@ const GatheringItem = ({ title, schedule, location }: GatheringItemProps) => (
       </Center>
     </GridCol>
     <GridCol span={{ base: 12, md: 6 }}>
-      <Title order={2} c="wood">
-        {title}
-      </Title>
-      <Space h="md" />
-      <Text size="xl" c="wood">
-        {schedule}
-        <br />
-        Location: {location}
-      </Text>
+      <Stack gap="md">
+        <Title order={2} c="wood">
+          {title}
+        </Title>
+        <Group gap="sm" wrap="nowrap">
+          <IconCalendar
+            color="#A58870"
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="wood">
+            {schedule}
+          </Text>
+        </Group>
+        <Group gap="sm" wrap="nowrap">
+          <IconMapPin
+            color="#A58870"
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="wood">
+            {location}
+          </Text>
+        </Group>
+        <Group gap="sm" wrap="nowrap" align="flex-start">
+          <IconFileDescription
+            color="#A58870"
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="wood">
+            {description}
+          </Text>
+        </Group>
+      </Stack>
     </GridCol>
   </Grid>
 );
@@ -48,28 +84,42 @@ const Gatherings = () => {
   const gatheringsData = [
     {
       title: "Sunday service",
-      schedule: "Every Sunday from 10:00 AM until 12:00 PM",
+      schedule: "Sundays from 10:00 AM until 12:00 PM",
       location: "Meeting hall",
+      description: "Description",
     },
     {
       title: "Prayer meeting",
-      schedule: "Every Tuesday from 7:30 PM until 8:30 PM",
+      schedule: "Tuesdays from 7:30 PM until 8:30 PM",
       location: "Various homes",
+      description:
+        "Gather with others to petition and pray for the Lord's interest on the earth",
     },
     {
       title: "Small group meetings",
-      schedule: "Every Friday, times vary depending on group",
+      schedule: "Fridays, times vary depending on group",
       location: "Various homes",
+      description:
+        "Get connected with a home group in your area and enjoy fellowship with others",
     },
     {
       title: "Young peoples meeting",
-      schedule: "Every Saturday from 5:30 PM until 8:30 PM",
+      schedule: "Saturdays from 5:30 PM until 8:00 PM",
       location: "Various homes",
+      description:
+        "Our middle and high schoolers enjoy singing hymns and getting into God's word together",
     },
   ];
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        overflow: "hidden",
+      }}
+    >
       {/* Header section with blue background */}
       <Space bg="sky" h="xl" />
       <Space bg="sky" h="xl" />
@@ -109,6 +159,7 @@ const Gatherings = () => {
             title={gathering.title}
             schedule={gathering.schedule}
             location={gathering.location}
+            description={gathering.description}
           />
           {index < gatheringsData.length - 1 && (
             <>
