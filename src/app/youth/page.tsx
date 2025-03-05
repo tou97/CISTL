@@ -1,6 +1,103 @@
-import { Container, Grid, GridCol, Title, Text, Space } from "@mantine/core";
+import {
+  Container,
+  Grid,
+  GridCol,
+  Title,
+  Text,
+  Space,
+  Center,
+  Divider,
+  Group,
+  Stack,
+} from "@mantine/core";
+import Image from "next/image";
+import {
+  IconCalendar,
+  IconMapPin,
+  IconFileDescription,
+} from "@tabler/icons-react";
+import { minimal_theme } from "../palette";
+
+// EventItem component for rendering individual events
+interface EventItemProps {
+  title: string;
+  schedule: string;
+  location: string;
+  description: string;
+}
+
+const EventItem = ({ title, schedule, location, description }: EventItemProps) => (
+  <Grid gutter="xl" px="xl">
+    <GridCol span={{ base: 12, md: 6 }}>
+      <Center>
+        <Image
+          src="/images/600_400.webp"
+          width={600}
+          height={400}
+          alt="Event Placeholder"
+        />
+      </Center>
+    </GridCol>
+    <GridCol span={{ base: 12, md: 6 }}>
+      <Stack gap="md">
+        <Title order={2} c="lavender">
+          {title}
+        </Title>
+        <Group gap="sm" wrap="nowrap">
+          <IconCalendar
+            color={minimal_theme.colors!.lavender![5]} 
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="lavender">
+            {schedule}
+          </Text>
+        </Group>
+        <Group gap="sm" wrap="nowrap">
+          <IconMapPin
+            color={minimal_theme.colors!.lavender![5]} 
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="lavender">
+            {location}
+          </Text>
+        </Group>
+        <Group gap="sm" wrap="nowrap" align="flex-start">
+          <IconFileDescription
+            color={minimal_theme.colors!.lavender![5]} 
+            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+          />
+          <Text size="xl" c="lavender">
+            {description}
+          </Text>
+        </Group>
+      </Stack>
+    </GridCol>
+  </Grid>
+);
 
 const Youth = () => {
+  // Data for the events
+  const eventsData = [
+    {
+      title: "Young People's Meeting",
+      schedule: "Saturdays from 5:30 PM until 8:00 PM",
+      location: "Various homes",
+      description: "A time to gather weekly",
+    },
+    {
+      title: "Winter Getaway",
+      schedule: "February (Weekend TBD)",
+      location: "Grafton Getaway",
+      description: "A time to get away from our normal schedules and concecrate to the Lord",
+    },
+    {
+      title: "SSOT",
+      schedule: "July (Full Week)",
+      location: "Campground",
+      description: "A week of enjoyment and training in spiritual capacity",
+    },
+  ];
+
   return (
     <Container
       fluid
@@ -33,6 +130,68 @@ const Youth = () => {
 
       <Space bg="lavender" h="xl" />
       <Space bg="lavender" h="xl" />
+
+      {/* About section */}
+      <Space h="xl" />
+      <Space h="xl" />
+
+      <Grid align="center" gutter="xl" px="xl">
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Text size="xl" ta="justify" c="lavender">
+            <b>Staying Connected</b> — each week, we come together to enjoy 
+            dinner, sing, and explore spiritual and practical topics that are 
+            meaningful and relevant to our youth. These gatherings provide a 
+            welcoming, supportive space where youth can form connections, share 
+            experiences, and encourage one another. Whether it&apos;s through music, 
+            sharing takeaways, or simply being there for one another, our aim is 
+            to create a gathering where each young person feels at home and able 
+            to grow spiritually and personally.
+          </Text>
+        </GridCol>
+        <GridCol span={{ base: 12, md: 6 }}>
+          <Center>
+            <Image
+              src="/images/600_400.webp"
+              width={600}
+              height={400}
+              alt="Placeholder"
+            />
+          </Center>
+        </GridCol>
+      </Grid>
+
+      <Space h="xl" />
+      <Space h="xl" />
+
+      {/* Events section title */}
+      <Group px="lg" grow preventGrowOverflow={false} wrap="nowrap">
+        <Divider color="lavender" />
+        <Title ta="center" order={1} c="lavender">
+          Events
+        </Title>
+        <Divider color="lavender" />
+      </Group>
+
+      <Space h="xl" />
+      <Space h="xl" />
+
+      {/* Render events */}
+      {eventsData.map((event, index) => (
+        <div key={index}>
+          <EventItem
+            title={event.title}
+            schedule={event.schedule}
+            location={event.location}
+            description={event.description}
+          />
+          {index < eventsData.length - 1 && (
+            <>
+              <Space h="xl" />
+              <Space h="xl" />
+            </>
+          )}
+        </div>
+      ))}
 
       <Space h="xl" />
       <Space h="xl" />
