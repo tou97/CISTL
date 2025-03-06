@@ -1,35 +1,25 @@
-# Base Go builder
-FROM golang:1.24-alpine AS base
+# backend/Dockerfile
+FROM golang:1.24-alpine
 WORKDIR /app
-COPY go.mod go.sum* ./
-RUN go mod download
-
-# Development image
-FROM base AS development
-ENV GO_ENV=development
-RUN go install github.com/air-verse/air@latest
+# Build argument to determine environment
+ARG GO_ENV=production
+ENV GO_ENV=${GO_ENV}
+# Install Air for development only (using the correct package path)
+RUN if [ "$GO_ENV" != "production" ]; then \
+        go install github.com/air-verse/air@latest; \
+    fi
+# Copy go mod file
+COPY go.mod ./
+# Copy source code
 COPY . .
-CMD ["air", "-c", ".air.toml"]
+# Build the application in production mode
+RUN if [ "$GO_ENV" = "production" ]; then \
+        CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o api-server .; \
+    fi
+# Set the appropriate command based on environment
+CMD if [ "$GO_ENV" = "production" ]; then \
+        ./api-server; \
+    else \
+        air -c .air.toml; \
+    fi
 EXPOSE 8080
-
-# Build production binary
-FROM base AS builder
-COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o api-server .
-
-# Production image (using minimal alpine)
-FROM alpine:latest AS production
-WORKDIR /app
-ENV GO_ENV=production
-# Add basic security and runtime dependencies
-RUN apk --no-cache add ca-certificates tzdata && \
-    adduser -D appuser
-# Copy only the built binary
-COPY --from=builder /app/api-server .
-# Use non-root user
-USER appuser
-CMD ["./api-server"]
-EXPOSE 8080
-
-# Default to production for backward compatibility
-FROM ${GO_ENV:-production}
