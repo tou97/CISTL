@@ -1,37 +1,34 @@
+ARG NODE_ENV=development
+
+# Base stage
 FROM node:23-alpine AS base
-
-# Install dependencies only when needed
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
-
-# Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-RUN npm ci
 
-# Rebuild the source code only when needed
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Development image
+FROM base AS development
+ENV NODE_ENV=development
+RUN npm install && npm cache clean --force
 COPY . .
+CMD ["npm", "run", "dev"]
+EXPOSE 3000
 
+# Production build stage
+FROM base AS builder
+ENV NODE_ENV=production
+RUN npm ci && npm cache clean --force
+COPY . .
 RUN npm run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+# Production image
+FROM node:23-alpine AS production
 WORKDIR /app
-
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
+ENV NODE_ENV=production
+COPY --from=builder /app/node_modules ./node_modules
+# Copy the entire app directory to handle different build output paths
+COPY --from=builder /app ./
+CMD ["node", "server.js"]
 EXPOSE 3000
-ENV PORT=3000
-ENV NODE_ENV=$NODE_ENV
-ENV HOSTNAME="0.0.0.0"
 
-CMD if [ "$NODE_ENV" = "development" ]; then \
-    npm run dev; \
-    else \
-    node server.js; \
-fi
+# Default to development for local builds
+FROM ${NODE_ENV:-development}
