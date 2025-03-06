@@ -16,7 +16,7 @@ EXPOSE 3000
 # Production build stage
 FROM base AS builder
 ENV NODE_ENV=production
-RUN npm ci && npm cache clean --force
+RUN npm ci --include=dev && npm cache clean --force
 COPY . .
 RUN npm run build
 
