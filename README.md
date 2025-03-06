@@ -12,10 +12,10 @@ A modern, responsive web application serving the Church in St. Louis community. 
 ---
 
 ## 🛠️ Technology Stack
-- **Framework**: [Next.js](https://nextjs.org/) with TypeScript - Powering both frontend and API routes
-- **UI Components**: [Mantine](https://mantine.dev/) - For accessible UI elements
-- **Data Fetching**: Next.js API routes handling Google service integrations
-- **Containerization**: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
+Frontend: Next.js with TypeScript
+Backend: Golang (Go)
+UI Components: Mantine
+Containerization: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
 
 ---
 
