@@ -1,1 +1,27 @@
+# System files
 .DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build directories
+dist/
+build/
+tmp/
+
+# Log files
+*.log
+logs/
+
+# Dependency directories (redundant but as backup)
+node_modules/
+vendor/

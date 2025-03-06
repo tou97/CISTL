@@ -23,7 +23,8 @@ A modern, responsive web application serving the Church in St. Louis community. 
 ```
 CISTL/
 ├── .github/            # Github Actions deployment workflows
-├── src/                # Application source code
+├── backend/            # Golang backend code
+├── frontend/           # Next.js frontend code
 ├── docker-compose.yml  # Configuration for local development
 ├── Dockerfile          # Docker build instructions
 └── README.md           # This documentation

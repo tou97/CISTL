@@ -1,4 +1,18 @@
-src/node_modules
-src/.next
-*.log
-*.env
+# Version control
+.git/
+.gitignore
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+*.md
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Dev configs
+.editorconfig
+.prettierrc
