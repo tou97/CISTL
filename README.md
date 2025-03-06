@@ -12,10 +12,10 @@ A modern, responsive web application serving the Church in St. Louis community. 
 ---
 
 ## 🛠️ Technology Stack
-Frontend: Next.js with TypeScript
-Backend: Golang (Go)
-UI Components: Mantine
-Containerization: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
+- **Frontend**: Next.js with TypeScript
+- **Backend**: Golang (Go)
+- **UI Components**: Mantine
+- **Containerization**: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
 
 ---
 
@@ -23,7 +23,7 @@ Containerization: Docker and Docker Compose for environment packaging for consis
 ```
 CISTL/
 ├── .github/            # Github Actions deployment workflows
-├── backend/            # Golang backend code
+├── backend/            # Go backend code
 ├── frontend/           # Next.js frontend code
 ├── docker-compose.yml  # Configuration for local development
 ├── Dockerfile          # Docker build instructions
