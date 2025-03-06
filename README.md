@@ -1,6 +1,6 @@
 # 🙏 Church in St. Louis Web Application
 A modern, responsive web application serving the church in St. Louis.
-Built with Next.js and Golang (Go), this applications aims to provide a scalable and reusable architecture for all future needs.
+Built with Next.js and Golang (Go), this application aims to provide a scalable and reusable architecture for all future needs.
 
 ---
 
