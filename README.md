@@ -15,7 +15,9 @@ A modern, responsive web application serving the Church in St. Louis community. 
 - **Frontend**: Next.js with TypeScript
 - **Backend**: Golang (Go)
 - **UI Components**: Mantine
-- **Containerization**: Docker and Docker Compose for environment packaging for consistent deployment and streamlined local development experience
+- **Containerization**: Docker and Docker Compose
+
+...and yes, I know it's just a little excessive 🙃
 
 ---
 

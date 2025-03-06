@@ -60,7 +60,7 @@ jobs:
           
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
             
-            docker compose -f docker-compose.prod.yaml.pull
+            docker compose -f docker-compose.prod.yaml pull
             docker compose -f docker-compose.prod.yaml up -d --remove-orphans
 
             docker image prune -af
