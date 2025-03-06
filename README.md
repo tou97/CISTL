@@ -1,5 +1,6 @@
 # 🙏 Church in St. Louis Web Application
-A modern, responsive web application serving the Church in St. Louis community. Built with Next.js at its core, this application combines beautiful UI with powerful functionality, all while maintaining an efficient deployment pipeline through Docker.
+A modern, responsive web application serving the church in St. Louis.
+Built with Next.js and Golang (Go), this applications aims to provide a scalable and reusable architecture for all future needs.
 
 ---
 
@@ -13,23 +14,24 @@ A modern, responsive web application serving the Church in St. Louis community. 
 
 ## 🛠️ Technology Stack
 - **Frontend**: Next.js with TypeScript
-- **Backend**: Golang (Go)
+- **Backend**: Go
 - **UI Components**: Mantine
 - **Containerization**: Docker and Docker Compose
 
-...and yes, I know it's just a little excessive 🙃
+And yes, I recognize we're building a rocket ship to go to the grocery store 🙃
 
 ---
 
 ## 📦 Project Structure
 ```
 CISTL/
-├── .github/            # Github Actions deployment workflows
-├── backend/            # Go backend code
-├── frontend/           # Next.js frontend code
-├── docker-compose.yml  # Configuration for local development
-├── Dockerfile          # Docker build instructions
-└── README.md           # This documentation
+├── .github/                # Github Actions deployment workflows
+├── backend/                # Go backend code
+├── frontend/               # Next.js frontend code
+├── docker-compose.prod.yml # Orchestration for Hetzner VPS
+├── docker-compose.yml      # Configuration for local development
+├── Dockerfile              # Docker build instructions
+└── README.md               # This documentation
 ```
 
 ---
@@ -48,4 +50,5 @@ Visit http://localhost:3000 to see your application in action!
 ---
 
 ## 💡 Deployment
-This project embraces modern DevOps practices with GitHub Actions automatically deploying to a Hetzner VPS whenever changes are merged into the main branch. We follow trunk-based development methodology for streamlined collaboration and continuous delivery.
+This project embraces modern DevOps practices with GitHub Actions automatically deploying to a Hetzner VPS whenever changes are merged into the main branch.
+We follow trunk-based development methodology for streamlined collaboration and continuous delivery.
