@@ -38,8 +38,8 @@ Ensure the following are installed on your system:
 - Docker
 
 ### Local Development with Docker Compose
-- `docker compose up --build` to start the application.
-- `docker compose down` to remove the application.
+- `docker compose -f docker-compose.dev.yaml up --build` to start the application.
+- `docker compose -f docker-compose.dev.yaml down` to remove the application.
 
 Visit http://localhost:3000 to see your application in action!
 
