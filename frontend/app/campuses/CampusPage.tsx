@@ -1,3 +1,4 @@
+"use client"; 
 import {
   Center,
   Container,
@@ -10,8 +11,9 @@ import {
   Group,
   Badge,
   Text,
+  useMantineTheme, 
 } from "@mantine/core";
-import Image from "next/image";
+import Image from "next/image"; 
 import { IconClock, IconCalendar } from "@tabler/icons-react";
 
 // Schedule data structure
@@ -39,12 +41,26 @@ export interface CampusPageProps {
  */
 export default function CampusPage({
   imageSrc,
-  imageAlt = "Campus Image",
+  imageAlt,
   cardTitle,
   cardTitleColor,
   cardSubtitle,
   scheduleData,
 }: CampusPageProps) {
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
+
+  const imageStyle = {
+    borderRadius: largeRadius,
+    border: `2px solid ${borderColorValue}`,
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
+  };
+
+  const effectiveImageAlt = imageAlt || `${cardTitle} campus activity or gathering`;
+
   return (
     <Container
       fluid
@@ -58,6 +74,7 @@ export default function CampusPage({
       <Space bg={cardTitleColor} h="xl" />
       <Space bg={cardTitleColor} h="xl" />
       <Grid bg={cardTitleColor} align="center" gutter="xl">
+        {/* ... (Header Grid content remains unchanged) ... */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} c="offwhite" ta="center" px="xl">
             {cardTitle}
@@ -82,6 +99,7 @@ export default function CampusPage({
       {/* Content section */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
+          {/* ... (Schedule Card mapping remains unchanged) ... */}
           <Stack gap="md">
             {scheduleData.map((item, index) => (
               <Card
@@ -107,7 +125,13 @@ export default function CampusPage({
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src={imageSrc} width={600} height={400} alt={imageAlt} />
+            <Image
+              src={imageSrc}
+              width={600}
+              height={400}
+              alt={effectiveImageAlt}
+              style={imageStyle}
+            />
           </Center>
         </GridCol>
       </Grid>

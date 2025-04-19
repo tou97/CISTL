@@ -1,4 +1,4 @@
-// Organized imports by category and alphabetically
+"use client";
 import {
   Accordion,
   AccordionControl,
@@ -15,12 +15,14 @@ import {
   Space,
   Text,
   Title,
+  useMantineTheme,
 } from "@mantine/core";
 import Image from "next/image";
 import { IconCaretRightFilled } from "@tabler/icons-react";
 
 // Faith beliefs data - extracted outside component for better organization
 const BELIEFS = [
+  // ... (BELIEFS data remains unchanged)
   {
     value:
       "The Bible is the complete divine revelation inspired word by word by God through the Holy Spirit.",
@@ -149,6 +151,19 @@ const SectionTitle = ({ title }: { title: string }) => (
 
 // Main component
 const AboutUs = () => {
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+
+  // Define the common image style object
+  const imageStyle = {
+    borderRadius: largeRadius,
+    border: `2px solid ${woodColorValue}`,
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
+  };
+
   return (
     <Container
       fluid
@@ -162,7 +177,8 @@ const AboutUs = () => {
       <Space bg="olive" h="xl" />
       <Space bg="olive" h="xl" />
       <Grid bg="olive" align="center" gutter="xl">
-        <GridCol span={{ base: 12, md: 6 }}>
+        {/* ... (Banner content remains unchanged) ... */}
+         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             About Us
           </Title>
@@ -186,6 +202,7 @@ const AboutUs = () => {
       {/* Introduction Section */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
+          {/* ... (Text content remains unchanged) ... */}
           <Text size="xl" ta="justify" c="wood">
             <b>We treasure the Holy Bible</b> as God&apos;s revelation of
             Himself and His eternal purpose. Our beloved Jesus Christ is the
@@ -203,10 +220,11 @@ const AboutUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="/images/600_400.webp"
+              src="/images/about/about-us.webp"
               width={600}
               height={400}
-              alt="Placeholder"
+              alt="Church community gathering"
+              style={imageStyle}
             />
           </Center>
         </GridCol>
@@ -218,6 +236,7 @@ const AboutUs = () => {
       {/* Our Faith Section */}
       <SectionTitle title="Our faith" />
       <Space h="lg" />
+      {/* ... (Faith section content remains unchanged) ... */}
       <Title order={2} c="olive" ta="center">
         We hold the faith which is common to all the believers:
       </Title>
@@ -257,6 +276,7 @@ const AboutUs = () => {
         ))}
       </Accordion>
 
+
       <Space h="xl" />
       <Space h="xl" />
 
@@ -268,15 +288,17 @@ const AboutUs = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="/images/600_400.webp"
+              src="/images/about/our_name.webp"
               width={600}
               height={400}
-              alt="Placeholder"
+              alt="Symbol or illustration related to the church name/description"
+              style={imageStyle}
             />
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" ta="justify" c="wood">
+           {/* ... (Text content remains unchanged) ... */}
+           <Text size="xl" ta="justify" c="wood">
             <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
             description. As such, it&apos;s an inclusive title, not an exclusive
             one. We gather together simply as believers of the Lord in this

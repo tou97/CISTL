@@ -20,7 +20,7 @@ const scheduleData: CampusSchedule[] = [
 export default function SluPage() {
   return (
     <CampusPage
-      imageSrc="/images/slu_campus.webp"
+      imageSrc="/images/campuses/slu_biblestudy.webp"
       cardTitle="Saint Louis University"
       cardTitleColor="#003DA5"
       cardSubtitle="Christian Students on Campus"

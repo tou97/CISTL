@@ -13,12 +13,14 @@ import {
   Title,
   Text,
   Space,
+  useMantineTheme,
 } from "@mantine/core";
 import Image from "next/image";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 // Campus data for rendering cards
 const campusData = [
+  // ... (campusData remains unchanged)
   {
     id: "slu",
     name: "Saint Louis University",
@@ -54,6 +56,7 @@ interface Campus {
 }
 
 const CampusCard = ({ campus }: { campus: Campus }) => (
+  // ... (CampusCard component remains unchanged)
   <Card radius="lg" bd="1px solid wood">
     <CardSection>
       <Center>
@@ -89,6 +92,18 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 
 // Main component that displays information about Christian students on campuses
 const Campuses = () => {
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+
+  const imageStyle = {
+    borderRadius: largeRadius,
+    border: `2px solid ${woodColorValue}`,
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
+  };
+
   return (
     <Container
       fluid
@@ -101,8 +116,8 @@ const Campuses = () => {
       {/* Hero section */}
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
-
       <Grid bg="wood" align="center" gutter="xl">
+        {/* ... (Hero section content remains unchanged) ... */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             Christian Students on Campus
@@ -119,7 +134,6 @@ const Campuses = () => {
           </Text>
         </GridCol>
       </Grid>
-
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
 
@@ -129,6 +143,7 @@ const Campuses = () => {
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
+          {/* ... (Text content remains unchanged) ... */}
           <Text size="xl" ta="justify" c="wood">
             <b>Christian Students on Campus</b> is all about being a welcoming
             community for students like you across the St. Louis area!
@@ -144,10 +159,11 @@ const Campuses = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="/images/600_400.webp"
+              src="/images/campuses/family_time.webp"
               width={600}
               height={400}
-              alt="Placeholder"
+              alt="Students and families spending time together"
+              style={imageStyle}
             />
           </Center>
         </GridCol>
