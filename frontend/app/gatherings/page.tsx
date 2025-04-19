@@ -145,7 +145,7 @@ const Gatherings = () => {
               href="/children"
               className="font-bold underline inline-flex items-center text-[#FDFAF1] visited:text-[#FDFAF1]"
             >
-              children's
+              children&apos;s
             </a>{" "}
             page.
           </Text>
