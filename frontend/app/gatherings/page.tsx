@@ -102,13 +102,6 @@ const Gatherings = () => {
       description:
         "Get connected with a home group in your area and enjoy fellowship with others",
     },
-    {
-      title: "Young peoples meeting",
-      schedule: "Saturdays from 5:30 PM until 8:00 PM",
-      location: "Various homes",
-      description:
-        "Our middle and high schoolers enjoy singing hymns and getting into God's word together",
-    },
   ];
 
   return (
@@ -131,17 +124,30 @@ const Gatherings = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Text c="offwhite" ta="justify" size="xl" px="xl">
-            Gather with us! Explore the many ways we connect as a church family
-            - from Sunday services to small groups and special events. Find a
-            place to belong and grow with us. For campus related gatherings,
-            check out our{" "}
+            Gather with us and find your place in our church family! Explore the
+            many ways we connect, from Sunday service and small groups to
+            special events. Learn more about campus gatherings on our{" "}
             <a
               href="/campuses"
               className="font-bold underline inline-flex items-center text-[#FDFAF1] visited:text-[#FDFAF1]"
             >
-              campus page
-            </a>
-            .
+              campus
+            </a>{" "}
+            page, find ways for youth to connect on our{" "}
+            <a
+              href="/youth"
+              className="font-bold underline inline-flex items-center text-[#FDFAF1] visited:text-[#FDFAF1]"
+            >
+              youth
+            </a>{" "}
+            page, and discover activities for children on our{" "}
+            <a
+              href="/children"
+              className="font-bold underline inline-flex items-center text-[#FDFAF1] visited:text-[#FDFAF1]"
+            >
+              children's
+            </a>{" "}
+            page.
           </Text>
         </GridCol>
       </Grid>
