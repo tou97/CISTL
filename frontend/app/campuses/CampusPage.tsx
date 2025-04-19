@@ -1,3 +1,4 @@
+"use client"; 
 import {
   Center,
   Container,
@@ -10,8 +11,9 @@ import {
   Group,
   Badge,
   Text,
+  useMantineTheme, 
 } from "@mantine/core";
-import Image from "next/image";
+import Image from "next/image"; 
 import { IconClock, IconCalendar } from "@tabler/icons-react";
 
 // Schedule data structure
@@ -25,7 +27,7 @@ export type CampusSchedule = {
 // Component props
 export interface CampusPageProps {
   imageSrc: string;
-  imageAlt?: string;
+  imageAlt?: string; 
   cardTitle: string;
   cardTitleColor?: string;
   cardSubtitle: string;
@@ -39,12 +41,30 @@ export interface CampusPageProps {
  */
 export default function CampusPage({
   imageSrc,
-  imageAlt = "Campus Image",
+  imageAlt, // Keep receiving this prop
   cardTitle,
   cardTitleColor,
   cardSubtitle,
   scheduleData,
 }: CampusPageProps) {
+  // Get theme values
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  // Define border color (using wood[6] as before, with fallback)
+  const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
+
+  // Define the common image style object
+  const imageStyle = {
+    borderRadius: largeRadius,
+    border: `2px solid ${borderColorValue}`,
+    display: 'block', // Good practice
+    overflow: 'hidden', // Ensure content respects border radius
+    objectFit: 'cover' as const, // Ensures image covers the area nicely
+  };
+
+  // Use the passed imageAlt if provided, otherwise create a default one
+  const effectiveImageAlt = imageAlt || `${cardTitle} campus activity or gathering`;
+
   return (
     <Container
       fluid
@@ -58,6 +78,7 @@ export default function CampusPage({
       <Space bg={cardTitleColor} h="xl" />
       <Space bg={cardTitleColor} h="xl" />
       <Grid bg={cardTitleColor} align="center" gutter="xl">
+        {/* ... (Header Grid content remains unchanged) ... */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} c="offwhite" ta="center" px="xl">
             {cardTitle}
@@ -82,6 +103,7 @@ export default function CampusPage({
       {/* Content section */}
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
+          {/* ... (Schedule Card mapping remains unchanged) ... */}
           <Stack gap="md">
             {scheduleData.map((item, index) => (
               <Card
@@ -107,7 +129,14 @@ export default function CampusPage({
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            <Image src={imageSrc} width={600} height={400} alt={imageAlt} />
+            {/* Apply the style to the Image component */}
+            <Image
+              src={imageSrc}
+              width={600}
+              height={400}
+              alt={effectiveImageAlt} // Use the determined alt text
+              style={imageStyle} // Apply the style object here
+            />
           </Center>
         </GridCol>
       </Grid>

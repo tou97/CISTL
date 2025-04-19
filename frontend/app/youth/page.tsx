@@ -105,14 +105,14 @@ const Youth = () => {
       schedule: "Saturdays from 5:30 PM until 8:00 PM",
       location: "Various homes",
       description: "A time to gather weekly",
-      imgSrc: "/images/youth/ssot.webp",
+      imgSrc: "/images/youth/yp_meeting.webp",
     },
     {
       title: "Winter Getaway",
       schedule: "February (Weekend TBD)",
       location: "Grafton Getaway",
       description: "A time to get away from our normal schedules and concecrate to the Lord",
-      imgSrc: "/images/youth/ssot.webp",
+      imgSrc: "/images/youth/getaway.webp",
     },
     {
       title: "SSOT",
@@ -176,7 +176,7 @@ const Youth = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="/images/youth/ssot.webp"
+              src="/images/youth/youth.webp"
               width={600}
               height={400}
               alt="Youth group gathering" // More descriptive alt text

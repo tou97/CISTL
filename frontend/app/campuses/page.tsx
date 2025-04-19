@@ -1,5 +1,6 @@
 "use client";
 
+// Organized imports
 import {
   Button,
   Card,
@@ -13,12 +14,14 @@ import {
   Title,
   Text,
   Space,
+  useMantineTheme, // Import useMantineTheme
 } from "@mantine/core";
-import Image from "next/image";
+import Image from "next/image"; // Keep using Next.js Image
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 // Campus data for rendering cards
 const campusData = [
+  // ... (campusData remains unchanged)
   {
     id: "slu",
     name: "Saint Louis University",
@@ -54,6 +57,7 @@ interface Campus {
 }
 
 const CampusCard = ({ campus }: { campus: Campus }) => (
+  // ... (CampusCard component remains unchanged)
   <Card radius="lg" bd="1px solid wood">
     <CardSection>
       <Center>
@@ -89,6 +93,21 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 
 // Main component that displays information about Christian students on campuses
 const Campuses = () => {
+  // Get theme values
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  // Define wood color, using a fallback. Adjust 'wood' and shade [6] if needed.
+  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+
+  // Define the common image style object
+  const imageStyle = {
+    borderRadius: largeRadius,
+    border: `2px solid ${woodColorValue}`,
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
+  };
+
   return (
     <Container
       fluid
@@ -101,8 +120,8 @@ const Campuses = () => {
       {/* Hero section */}
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
-
       <Grid bg="wood" align="center" gutter="xl">
+        {/* ... (Hero section content remains unchanged) ... */}
         <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             Christian Students on Campus
@@ -119,7 +138,6 @@ const Campuses = () => {
           </Text>
         </GridCol>
       </Grid>
-
       <Space bg="wood" h="xl" />
       <Space bg="wood" h="xl" />
 
@@ -129,6 +147,7 @@ const Campuses = () => {
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
+          {/* ... (Text content remains unchanged) ... */}
           <Text size="xl" ta="justify" c="wood">
             <b>Christian Students on Campus</b> is all about being a welcoming
             community for students like you across the St. Louis area!
@@ -143,11 +162,13 @@ const Campuses = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
+            {/* Update Image component */}
             <Image
-              src="/images/600_400.webp"
+              src="/images/campuses/family_time.webp" // Updated src
               width={600}
               height={400}
-              alt="Placeholder"
+              alt="Students and families spending time together" // Updated alt text
+              style={imageStyle} // Apply the defined style
             />
           </Center>
         </GridCol>

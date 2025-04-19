@@ -1,4 +1,5 @@
-import CampusPage, { CampusSchedule } from "../CampusPage";
+// src/app/campuses/slu/page.tsx (or similar path)
+import CampusPage, { CampusSchedule } from "../CampusPage"; // Assuming CampusPage is one level up
 
 const scheduleData: CampusSchedule[] = [
   {
@@ -20,7 +21,8 @@ const scheduleData: CampusSchedule[] = [
 export default function SluPage() {
   return (
     <CampusPage
-      imageSrc="/images/slu_campus.webp"
+      // --- This is the only change we can make here ---
+      imageSrc="/images/campuses/slu_biblestudy.webp"
       cardTitle="Saint Louis University"
       cardTitleColor="#003DA5"
       cardSubtitle="Christian Students on Campus"
