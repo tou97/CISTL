@@ -24,7 +24,6 @@ export default function SluPage() {
       cardTitle="Saint Louis University"
       cardTitleColor="#003DA5"
       cardSubtitle="Christian Students on Campus"
-      // cardSubtitleColor="#C8C9C7"
       scheduleData={scheduleData}
     />
   );

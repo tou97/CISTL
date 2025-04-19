@@ -39,7 +39,7 @@ const EventItem = ({
 }: EventItemProps) => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColor = minimal_theme.colors?.wood?.[6] || "#A47D5E";
+  const borderColor = minimal_theme.colors?.wood?.[6];
 
   return (
     <Grid gutter="xl" px="xl">
@@ -52,7 +52,7 @@ const EventItem = ({
             alt={`${title} event image`}
             style={{
               borderRadius: largeRadius,
-              border: `2px solid ${woodColor}`,
+              border: `2px solid ${borderColor}`,
               display: "block",
               overflow: "hidden",
             }}
@@ -61,33 +61,33 @@ const EventItem = ({
       </GridCol>
       <GridCol span={{ base: 12, md: 6 }}>
         <Stack gap="md">
-          <Title order={2} c="rose">
+          <Title order={2} c="wood">
             {title}
           </Title>
           <Group gap="sm" wrap="nowrap">
             <IconCalendar
-              color={minimal_theme.colors!.rose![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="rose">
+            <Text size="xl" c="wood">
               {schedule}
             </Text>
           </Group>
           <Group gap="sm" wrap="nowrap">
             <IconMapPin
-              color={minimal_theme.colors!.rose![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="rose">
+            <Text size="xl" c="wood">
               {location}
             </Text>
           </Group>
           <Group gap="sm" wrap="nowrap" align="flex-start">
             <IconFileDescription
-              color={minimal_theme.colors!.rose![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="rose">
+            <Text size="xl" c="wood">
               {description}
             </Text>
           </Group>
@@ -100,7 +100,7 @@ const EventItem = ({
 const Children = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColor = minimal_theme.colors?.wood?.[6] || "#A47D5E";
+  const borderColor = minimal_theme.colors?.wood?.[6];
 
   // Data for the events
   const eventsData = [
@@ -151,7 +151,7 @@ const Children = () => {
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" ta="justify" c="rose">
+          <Text size="xl" ta="justify" c="wood">
             <b>Growing together</b> — Each week, our children come together for
             a special time of fun, faith, and friendship. We sing joyful songs,
             engage in creative activities, and explore wonderful Bible stories
@@ -172,7 +172,7 @@ const Children = () => {
               alt="Children's meeting"
               style={{
                 borderRadius: largeRadius,
-                border: `2px solid ${woodColor}`,
+                border: `2px solid ${borderColor}`,
                 display: "block",
                 overflow: "hidden",
               }}

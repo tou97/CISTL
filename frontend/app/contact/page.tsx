@@ -4,6 +4,7 @@ import {
   Container,
   Grid,
   GridCol,
+  Notification,
   Paper,
   Title,
   Text,
@@ -15,20 +16,26 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import Image from "next/image";
-import { IconMessages } from "@tabler/icons-react";
+import { IconMessages, IconCheck, IconX } from "@tabler/icons-react";
+import { useState } from "react";
 
 // Contact page component
 const ContactUs = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
+  const borderColorValue = theme.colors.wood?.[6];
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${borderColorValue}`,
-    display: 'block',
-    overflow: 'hidden',
-    objectFit: 'cover' as const,
+    display: "block",
+    overflow: "hidden",
+    objectFit: "cover" as const,
   };
 
   // Form setup and validation
@@ -47,14 +54,51 @@ const ContactUs = () => {
   });
 
   // Handle form submission
-  const handleSubmit = (values: {
+  const handleSubmit = async (values: {
     name: string;
     email: string;
     message: string;
   }) => {
-    console.log("Form submitted:", values);
-    alert("Message sent! (Check console for details)");
-    form.reset();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    console.log("Attempting to send form:", values);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        let errorMessage = `HTTP error! Status: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorMessage;
+        } catch (e) {}
+        throw new Error(errorMessage);
+      }
+      console.log("Form submitted successfully");
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully!",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+      const message =
+        error instanceof Error
+          ? error.message
+          : "An unknown error occurred. Please try again.";
+      setSubmitStatus({
+        type: "error",
+        message: `Failed to send message: ${message}`,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,24 +135,38 @@ const ContactUs = () => {
       <Space h="xl" />
 
       {/* Contact Form and Image */}
-      <Grid align="center" gutter="xl" px="xl">
+      <Grid align="flex-start" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          {/* ... (Form Paper content remains unchanged) ... */}
-          <Paper p="lg" radius="lg" withBorder bd="1px solid wood">
+          <Paper p="lg" radius="lg" withBorder bd="2px solid wood">
+            {submitStatus && (
+              <Notification
+                icon={
+                  submitStatus.type == "success" ? <IconCheck /> : <IconX />
+                }
+                color={submitStatus.type == "success" ? "teal" : "red"}
+                title={submitStatus.type == "success" ? "Success!" : "Error"}
+                onClose={() => setSubmitStatus(null)}
+                mb="md"
+              >
+                {submitStatus.message}
+              </Notification>
+            )}
             <form onSubmit={form.onSubmit(handleSubmit)}>
               <TextInput
                 label="Name"
                 placeholder="Your name"
                 mb="md"
                 required
+                disabled={isSubmitting}
                 {...form.getInputProps("name")}
               />
               <TextInput
                 label="Email"
                 placeholder="your@email.com"
                 mb="md"
-              required
-              type="email"
+                required
+                type="email"
+                disabled={isSubmitting}
                 {...form.getInputProps("email")}
               />
               <Textarea
@@ -117,6 +175,7 @@ const ContactUs = () => {
                 minRows={4}
                 mb="xl"
                 required
+                disabled={isSubmitting}
                 {...form.getInputProps("message")}
               />
               <Center>
@@ -124,11 +183,13 @@ const ContactUs = () => {
                   type="submit"
                   bg="offwhite"
                   c="wood"
-                  bd="1px solid wood"
+                  bd="2px solid wood"
                   radius="lg"
                   w="75%"
                   leftSection={<IconMessages />}
                   className="standard-button"
+                  loading={isSubmitting}
+                  disabled={isSubmitting}
                 >
                   Send Message
                 </Button>

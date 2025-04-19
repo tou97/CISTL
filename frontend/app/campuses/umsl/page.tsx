@@ -31,7 +31,6 @@ export default function UmslPage() {
       cardTitle="University of Missouri - St. Louis"
       cardTitleColor="#BD302C"
       cardSubtitle="Christian Students on Campus"
-      // cardSubtitleColor="#F5B324"
       scheduleData={scheduleData}
     />
   );

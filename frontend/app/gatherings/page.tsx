@@ -18,6 +18,7 @@ import {
   IconMapPin,
   IconFileDescription,
 } from "@tabler/icons-react";
+import { minimal_theme } from "../palette";
 
 // GatheringItem component props updated to include image source
 interface GatheringItemProps {
@@ -39,14 +40,14 @@ const GatheringItem = ({
 }: GatheringItemProps) => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+  const woodColorValue = theme.colors.wood?.[6];
 
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${woodColorValue}`,
-    display: 'block',
-    overflow: 'hidden',
-    objectFit: 'cover' as const,
+    display: "block",
+    overflow: "hidden",
+    objectFit: "cover" as const,
   };
 
   return (
@@ -69,7 +70,7 @@ const GatheringItem = ({
           </Title>
           <Group gap="sm" wrap="nowrap">
             <IconCalendar
-              color="#A58870"
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -78,7 +79,7 @@ const GatheringItem = ({
           </Group>
           <Group gap="sm" wrap="nowrap">
             <IconMapPin
-              color="#A58870"
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -87,7 +88,7 @@ const GatheringItem = ({
           </Group>
           <Group gap="sm" wrap="nowrap" align="flex-start">
             <IconFileDescription
-              color="#A58870"
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -108,15 +109,18 @@ const Gatherings = () => {
       title: "Sunday service",
       schedule: "Sundays from 10:00 AM until 12:00 PM",
       location: "Meeting hall",
-      description: "Our main weekly gathering for worship, teaching, and fellowship, centered on remembering the Lord Jesus.",
+      description:
+        "Our main weekly gathering for worship, teaching, and fellowship, centered on remembering the Lord Jesus.",
       imgSrc: "/images/gatherings/lords_table.webp",
-      imgAlt: "Bread and cup representing the Lord's Table during Sunday service",
+      imgAlt:
+        "Bread and cup representing the Lord's Table during Sunday service",
     },
     {
       title: "Prayer meeting",
       schedule: "Tuesdays from 7:30 PM until 8:30 PM",
       location: "Various homes",
-      description: "Gather with others to petition and pray together for the Lord's interests on the earth.",
+      description:
+        "Gather with others to petition and pray together for the Lord's interests on the earth.",
       imgSrc: "/images/gatherings/prayer_meeting.webp",
       imgAlt: "Group of people praying together",
     },
@@ -124,7 +128,8 @@ const Gatherings = () => {
       title: "Small group meetings",
       schedule: "Fridays, times vary depending on group",
       location: "Various homes",
-      description: "Connect with a home group in your area for fellowship, Bible study, and mutual encouragement.",
+      description:
+        "Connect with a home group in your area for fellowship, Bible study, and mutual encouragement.",
       imgSrc: "/images/gatherings/home_meeting.webp",
       imgAlt: "People meeting and discussing in a home setting",
     },
@@ -144,7 +149,7 @@ const Gatherings = () => {
       <Space bg="sky" h="xl" />
       <Grid bg="sky" align="center" gutter="xl">
         {/* ... (Header content remains unchanged) ... */}
-         <GridCol span={{ base: 12, md: 6 }}>
+        <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             Our gatherings
           </Title>

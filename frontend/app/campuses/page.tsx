@@ -52,7 +52,7 @@ interface Campus {
 
 const CampusCard = ({ campus }: { campus: Campus }) => (
   // ... (CampusCard component remains unchanged)
-  <Card radius="lg" bd="1px solid wood">
+  <Card radius="lg" bd="2px solid wood">
     <CardSection>
       <Center>
         <Image src={campus.image} alt={campus.name} height={160} width={300} />
@@ -66,7 +66,7 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
       <Button
         bg="offwhite"
         c="wood"
-        bd="1px solid wood"
+        bd="2px solid wood"
         radius="lg"
         component="a"
         href={`/campuses/${campus.id}`}

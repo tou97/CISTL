@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import {
   Center,
   Container,
@@ -11,9 +11,9 @@ import {
   Group,
   Badge,
   Text,
-  useMantineTheme, 
+  useMantineTheme,
 } from "@mantine/core";
-import Image from "next/image"; 
+import Image from "next/image";
 import { IconClock, IconCalendar } from "@tabler/icons-react";
 
 // Schedule data structure
@@ -49,17 +49,18 @@ export default function CampusPage({
 }: CampusPageProps) {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
+  const borderColorValue = theme.colors.wood?.[6] || "#A47D5E";
 
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${borderColorValue}`,
-    display: 'block',
-    overflow: 'hidden',
-    objectFit: 'cover' as const,
+    display: "block",
+    overflow: "hidden",
+    objectFit: "cover" as const,
   };
 
-  const effectiveImageAlt = imageAlt || `${cardTitle} campus activity or gathering`;
+  const effectiveImageAlt =
+    imageAlt || `${cardTitle} campus activity or gathering`;
 
   return (
     <Container

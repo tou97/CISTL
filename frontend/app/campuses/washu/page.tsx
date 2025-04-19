@@ -24,7 +24,6 @@ export default function HomePage() {
       cardTitle="The Washington University"
       cardTitleColor="#BA0C2F"
       cardSubtitle="Christian Students on Campus"
-      // cardSubtitleColor="#215732"
       scheduleData={scheduleData}
     />
   );

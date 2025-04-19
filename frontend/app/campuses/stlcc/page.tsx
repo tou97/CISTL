@@ -24,7 +24,6 @@ export default function StlccPage() {
       cardTitle="St. Louis Community College - Meramec"
       cardTitleColor="#003A70"
       cardSubtitle="Christian Students on Campus"
-      // cardSubtitleColor="#00CCFF"
       scheduleData={scheduleData}
     />
   );

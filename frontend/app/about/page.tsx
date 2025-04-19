@@ -153,15 +153,15 @@ const SectionTitle = ({ title }: { title: string }) => (
 const AboutUs = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+  const woodColorValue = theme.colors.wood?.[6];
 
   // Define the common image style object
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${woodColorValue}`,
-    display: 'block',
-    overflow: 'hidden',
-    objectFit: 'cover' as const,
+    display: "block",
+    overflow: "hidden",
+    objectFit: "cover" as const,
   };
 
   return (
@@ -178,7 +178,7 @@ const AboutUs = () => {
       <Space bg="olive" h="xl" />
       <Grid bg="olive" align="center" gutter="xl">
         {/* ... (Banner content remains unchanged) ... */}
-         <GridCol span={{ base: 12, md: 6 }}>
+        <GridCol span={{ base: 12, md: 6 }}>
           <Title order={1} ta="center" c="offwhite">
             About Us
           </Title>
@@ -276,7 +276,6 @@ const AboutUs = () => {
         ))}
       </Accordion>
 
-
       <Space h="xl" />
       <Space h="xl" />
 
@@ -297,8 +296,8 @@ const AboutUs = () => {
           </Center>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
-           {/* ... (Text content remains unchanged) ... */}
-           <Text size="xl" ta="justify" c="wood">
+          {/* ... (Text content remains unchanged) ... */}
+          <Text size="xl" ta="justify" c="wood">
             <b>The church in St. Louis</b> isn&apos;t our name - it&apos;s our
             description. As such, it&apos;s an inclusive title, not an exclusive
             one. We gather together simply as believers of the Lord in this

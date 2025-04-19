@@ -29,10 +29,16 @@ interface EventItemProps {
   imgSrc: string;
 }
 
-const EventItem = ({ title, schedule, location, description, imgSrc }: EventItemProps) => {
+const EventItem = ({
+  title,
+  schedule,
+  location,
+  description,
+  imgSrc,
+}: EventItemProps) => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E';
+  const borderColor = minimal_theme.colors?.wood?.[6];
 
   return (
     <Grid gutter="xl" px="xl">
@@ -45,42 +51,42 @@ const EventItem = ({ title, schedule, location, description, imgSrc }: EventItem
             alt={`${title} event image`}
             style={{
               borderRadius: largeRadius,
-              border: `2px solid ${woodColor}`,
-              display: 'block',
-              overflow: 'hidden',
+              border: `2px solid ${borderColor}`,
+              display: "block",
+              overflow: "hidden",
             }}
           />
         </Center>
       </GridCol>
       <GridCol span={{ base: 12, md: 6 }}>
         <Stack gap="md">
-          <Title order={2} c="lavender">
+          <Title order={2} c="wood">
             {title}
           </Title>
           <Group gap="sm" wrap="nowrap">
             <IconCalendar
-              color={minimal_theme.colors!.lavender![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="lavender">
+            <Text size="xl" c="wood">
               {schedule}
             </Text>
           </Group>
           <Group gap="sm" wrap="nowrap">
             <IconMapPin
-              color={minimal_theme.colors!.lavender![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="lavender">
+            <Text size="xl" c="wood">
               {location}
             </Text>
           </Group>
           <Group gap="sm" wrap="nowrap" align="flex-start">
             <IconFileDescription
-              color={minimal_theme.colors!.lavender![5]}
+              color={minimal_theme.colors!.wood![5]}
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
-            <Text size="xl" c="lavender">
+            <Text size="xl" c="wood">
               {description}
             </Text>
           </Group>
@@ -93,7 +99,7 @@ const EventItem = ({ title, schedule, location, description, imgSrc }: EventItem
 const Youth = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E';
+  const borderColor = minimal_theme.colors?.wood?.[6];
 
   // Data for the events
   const eventsData = [
@@ -108,7 +114,8 @@ const Youth = () => {
       title: "Winter Getaway",
       schedule: "February (Weekend TBD)",
       location: "Grafton Getaway",
-      description: "A time to get away from our normal schedules and concecrate to the Lord",
+      description:
+        "A time to get away from our normal schedules and concecrate to the Lord",
       imgSrc: "/images/youth/getaway.webp",
     },
     {
@@ -159,15 +166,15 @@ const Youth = () => {
 
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
-          <Text size="xl" ta="justify" c="lavender">
+          <Text size="xl" ta="justify" c="wood">
             <b>Staying Connected</b> — each week, we come together to enjoy
             dinner, sing, and explore spiritual and practical topics that are
             meaningful and relevant to our youth. These gatherings provide a
             welcoming, supportive space where youth can form connections, share
-            experiences, and encourage one another. Whether it&apos;s through music,
-            sharing takeaways, or simply being there for one another, our aim is
-            to create a gathering where each young person feels at home and able
-            to grow spiritually and personally.
+            experiences, and encourage one another. Whether it&apos;s through
+            music, sharing takeaways, or simply being there for one another, our
+            aim is to create a gathering where each young person feels at home
+            and able to grow spiritually and personally.
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
@@ -179,9 +186,9 @@ const Youth = () => {
               alt="Youth group gathering"
               style={{
                 borderRadius: largeRadius,
-                border: `2px solid ${woodColor}`,
-                display: 'block',
-                overflow: 'hidden',
+                border: `2px solid ${borderColor}`,
+                display: "block",
+                overflow: "hidden",
               }}
             />
           </Center>
