@@ -24,22 +24,22 @@ const campusData = [
   {
     id: "slu",
     name: "Saint Louis University",
-    image: "/images/slu.webp",
+    image: "/images/campuses/slu.webp",
   },
   {
     id: "stlcc",
     name: "St. Louis Community College - Meramec",
-    image: "/images/stlcc.webp",
+    image: "/images/campuses/stlcc.webp",
   },
   {
     id: "washu",
     name: "The Washington University",
-    image: "/images/washu.webp",
+    image: "/images/campuses/washu.webp",
   },
   {
     id: "umsl",
     name: "University of Missouri - St. Louis",
-    image: "/images/umsl.webp",
+    image: "/images/campuses/umsl.webp",
   },
 ];
 
