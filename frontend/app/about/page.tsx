@@ -15,9 +15,9 @@ import {
   Space,
   Text,
   Title,
-  useMantineTheme, // Import useMantineTheme
+  useMantineTheme,
 } from "@mantine/core";
-import Image from "next/image"; // Keep using Next.js Image
+import Image from "next/image";
 import { IconCaretRightFilled } from "@tabler/icons-react";
 
 // Faith beliefs data - extracted outside component for better organization
@@ -151,9 +151,8 @@ const SectionTitle = ({ title }: { title: string }) => (
 
 // Main component
 const AboutUs = () => {
-  const theme = useMantineTheme(); // Get theme object
-  const largeRadius = theme.radius.lg; // Get large radius value
-  // Define wood color, using a fallback. Adjust 'wood' and shade [6] if needed.
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
   const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
 
   // Define the common image style object
@@ -162,7 +161,7 @@ const AboutUs = () => {
     border: `2px solid ${woodColorValue}`,
     display: 'block',
     overflow: 'hidden',
-    objectFit: 'cover' as const, // Use 'as const' for type safety
+    objectFit: 'cover' as const,
   };
 
   return (
@@ -220,13 +219,12 @@ const AboutUs = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            {/* Apply style to the first image */}
             <Image
-              src="/images/about/about-us.webp" // Updated src
+              src="/images/about/about-us.webp"
               width={600}
               height={400}
-              alt="Church community gathering" // Updated alt text
-              style={imageStyle} // Apply the defined style
+              alt="Church community gathering"
+              style={imageStyle}
             />
           </Center>
         </GridCol>
@@ -289,13 +287,12 @@ const AboutUs = () => {
       <Grid align="center" px="xl" gutter="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            {/* Apply style to the second image */}
             <Image
-              src="/images/about/our_name.webp" // Updated src
+              src="/images/about/our_name.webp"
               width={600}
               height={400}
-              alt="Symbol or illustration related to the church name/description" // Updated alt text
-              style={imageStyle} // Apply the defined style
+              alt="Symbol or illustration related to the church name/description"
+              style={imageStyle}
             />
           </Center>
         </GridCol>

@@ -20,7 +20,7 @@ const scheduleData: CampusSchedule[] = [
 export default function StlccPage() {
   return (
     <CampusPage
-      imageSrc="/images/campuses/stlcc_biblestudy.webp" // Updated image source
+      imageSrc="/images/campuses/stlcc_biblestudy.webp"
       cardTitle="St. Louis Community College - Meramec"
       cardTitleColor="#003A70"
       cardSubtitle="Christian Students on Campus"

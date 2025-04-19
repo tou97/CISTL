@@ -27,7 +27,7 @@ export type CampusSchedule = {
 // Component props
 export interface CampusPageProps {
   imageSrc: string;
-  imageAlt?: string; 
+  imageAlt?: string;
   cardTitle: string;
   cardTitleColor?: string;
   cardSubtitle: string;
@@ -41,28 +41,24 @@ export interface CampusPageProps {
  */
 export default function CampusPage({
   imageSrc,
-  imageAlt, // Keep receiving this prop
+  imageAlt,
   cardTitle,
   cardTitleColor,
   cardSubtitle,
   scheduleData,
 }: CampusPageProps) {
-  // Get theme values
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  // Define border color (using wood[6] as before, with fallback)
   const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
 
-  // Define the common image style object
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${borderColorValue}`,
-    display: 'block', // Good practice
-    overflow: 'hidden', // Ensure content respects border radius
-    objectFit: 'cover' as const, // Ensures image covers the area nicely
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
   };
 
-  // Use the passed imageAlt if provided, otherwise create a default one
   const effectiveImageAlt = imageAlt || `${cardTitle} campus activity or gathering`;
 
   return (
@@ -129,13 +125,12 @@ export default function CampusPage({
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            {/* Apply the style to the Image component */}
             <Image
               src={imageSrc}
               width={600}
               height={400}
-              alt={effectiveImageAlt} // Use the determined alt text
-              style={imageStyle} // Apply the style object here
+              alt={effectiveImageAlt}
+              style={imageStyle}
             />
           </Center>
         </GridCol>

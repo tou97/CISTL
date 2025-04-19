@@ -1,6 +1,5 @@
 "use client";
 
-// Organized imports
 import {
   Button,
   Card,
@@ -14,9 +13,9 @@ import {
   Title,
   Text,
   Space,
-  useMantineTheme, // Import useMantineTheme
+  useMantineTheme,
 } from "@mantine/core";
-import Image from "next/image"; // Keep using Next.js Image
+import Image from "next/image";
 import { IconArrowRight, IconSchool } from "@tabler/icons-react";
 
 // Campus data for rendering cards
@@ -93,13 +92,10 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 
 // Main component that displays information about Christian students on campuses
 const Campuses = () => {
-  // Get theme values
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  // Define wood color, using a fallback. Adjust 'wood' and shade [6] if needed.
   const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
 
-  // Define the common image style object
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${woodColorValue}`,
@@ -162,13 +158,12 @@ const Campuses = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            {/* Update Image component */}
             <Image
-              src="/images/campuses/family_time.webp" // Updated src
+              src="/images/campuses/family_time.webp"
               width={600}
               height={400}
-              alt="Students and families spending time together" // Updated alt text
-              style={imageStyle} // Apply the defined style
+              alt="Students and families spending time together"
+              style={imageStyle}
             />
           </Center>
         </GridCol>

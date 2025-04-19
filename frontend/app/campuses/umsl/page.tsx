@@ -27,7 +27,7 @@ const scheduleData: CampusSchedule[] = [
 export default function UmslPage() {
   return (
     <CampusPage
-      imageSrc="/images/campuses/umsl_biblestudy.webp" // Updated image source
+      imageSrc="/images/campuses/umsl_biblestudy.webp"
       cardTitle="University of Missouri - St. Louis"
       cardTitleColor="#BD302C"
       cardSubtitle="Christian Students on Campus"

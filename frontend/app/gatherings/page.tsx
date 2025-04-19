@@ -1,6 +1,5 @@
-"use client"; // Add the client directive
+"use client";
 
-// Organized imports
 import {
   Center,
   Container,
@@ -11,9 +10,9 @@ import {
   Title,
   Text,
   Space,
-  useMantineTheme, // Import useMantineTheme
+  useMantineTheme,
 } from "@mantine/core";
-import Image from "next/image"; // Keep using Next.js Image
+import Image from "next/image";
 import {
   IconCalendar,
   IconMapPin,
@@ -26,8 +25,8 @@ interface GatheringItemProps {
   schedule: string;
   location: string;
   description: string;
-  imgSrc: string; // Add image source prop
-  imgAlt: string; // Add image alt text prop
+  imgSrc: string;
+  imgAlt: string;
 }
 
 const GatheringItem = ({
@@ -35,16 +34,13 @@ const GatheringItem = ({
   schedule,
   location,
   description,
-  imgSrc, // Receive image source
-  imgAlt, // Receive image alt text
+  imgSrc,
+  imgAlt,
 }: GatheringItemProps) => {
-  // Get theme values inside the component where they are used
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  // Define wood color, using a fallback. Adjust 'wood' and shade [6] if needed.
   const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
 
-  // Define the common image style object
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${woodColorValue}`,
@@ -57,13 +53,12 @@ const GatheringItem = ({
     <Grid gutter="xl" px="xl">
       <GridCol span={{ base: 12, md: 6 }}>
         <Center>
-          {/* Use Next.js Image with dynamic src, alt, and applied style */}
           <Image
-            src={imgSrc} // Use dynamic src
+            src={imgSrc}
             width={600}
             height={400}
-            alt={imgAlt} // Use dynamic alt text
-            style={imageStyle} // Apply the defined style
+            alt={imgAlt}
+            style={imageStyle}
           />
         </Center>
       </GridCol>
@@ -74,7 +69,7 @@ const GatheringItem = ({
           </Title>
           <Group gap="sm" wrap="nowrap">
             <IconCalendar
-              color="#A58870" // Consider using theme.colors.wood[4] or similar
+              color="#A58870"
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -83,7 +78,7 @@ const GatheringItem = ({
           </Group>
           <Group gap="sm" wrap="nowrap">
             <IconMapPin
-              color="#A58870" // Consider using theme.colors.wood[4] or similar
+              color="#A58870"
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -92,7 +87,7 @@ const GatheringItem = ({
           </Group>
           <Group gap="sm" wrap="nowrap" align="flex-start">
             <IconFileDescription
-              color="#A58870" // Consider using theme.colors.wood[4] or similar
+              color="#A58870"
               style={{ flexShrink: 0, marginTop: "0.25rem" }}
             />
             <Text size="xl" c="wood">
@@ -113,24 +108,24 @@ const Gatherings = () => {
       title: "Sunday service",
       schedule: "Sundays from 10:00 AM until 12:00 PM",
       location: "Meeting hall",
-      description: "Our main weekly gathering for worship, teaching, and fellowship, centered on remembering the Lord Jesus.", // Updated description
-      imgSrc: "/images/gatherings/lords_table.webp", // Image for Sunday service
+      description: "Our main weekly gathering for worship, teaching, and fellowship, centered on remembering the Lord Jesus.",
+      imgSrc: "/images/gatherings/lords_table.webp",
       imgAlt: "Bread and cup representing the Lord's Table during Sunday service",
     },
     {
       title: "Prayer meeting",
       schedule: "Tuesdays from 7:30 PM until 8:30 PM",
       location: "Various homes",
-      description: "Gather with others to petition and pray together for the Lord's interests on the earth.", // Slightly updated description
-      imgSrc: "/images/gatherings/prayer_meeting.webp", // Image for prayer meeting
+      description: "Gather with others to petition and pray together for the Lord's interests on the earth.",
+      imgSrc: "/images/gatherings/prayer_meeting.webp",
       imgAlt: "Group of people praying together",
     },
     {
       title: "Small group meetings",
       schedule: "Fridays, times vary depending on group",
       location: "Various homes",
-      description: "Connect with a home group in your area for fellowship, Bible study, and mutual encouragement.", // Updated description
-      imgSrc: "/images/gatherings/home_meeting.webp", // Image for small group/home meetings
+      description: "Connect with a home group in your area for fellowship, Bible study, and mutual encouragement.",
+      imgSrc: "/images/gatherings/home_meeting.webp",
       imgAlt: "People meeting and discussing in a home setting",
     },
   ];
@@ -198,8 +193,8 @@ const Gatherings = () => {
             schedule={gathering.schedule}
             location={gathering.location}
             description={gathering.description}
-            imgSrc={gathering.imgSrc} // Pass image source
-            imgAlt={gathering.imgAlt} // Pass image alt text
+            imgSrc={gathering.imgSrc}
+            imgAlt={gathering.imgAlt}
           />
           {/* Add spacing between items */}
           {index < gatheringsData.length - 1 && (

@@ -43,20 +43,18 @@ export default function Home() {
 
       {/* Church Group Photo (Banner Image) - Using MantineImage */}
 
-      <Box px={SPACING_XL}> {/* Apply horizontal padding to the Box */}
+      <Box px={SPACING_XL}>
   <MantineImage
-
     src="/images/index/stl-arch-2.webp"
     alt="Church members gather near the St. Louis Arch"
-    // No 'px' prop on MantineImage itself
     style={{
-      display: 'block', // Helps prevent extra space and ensures block layout
-      width: '100%',   // Image takes the full width of the containing Box
-      height: isMobile ? 'auto' : 600, // Fixed height on desktop, auto on mobile
-      aspectRatio: isMobile ? '1 / 1' : undefined, // Enforce 1:1 aspect ratio ONLY on mobile
+      display: 'block',
+      width: '100%',
+      height: isMobile ? 'auto' : 600,
+      aspectRatio: isMobile ? '1 / 1' : undefined,
       objectFit: 'cover',
-      objectPosition: 'center 70%', // Keep your desired image positioning
-      overflow: 'hidden', // Ensure content respects the radius/bounds
+      objectPosition: 'center 70%',
+      overflow: 'hidden',
     }}
   />
 </Box>
@@ -130,31 +128,27 @@ function WhoWeAreSection() {
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.md})`); // Use theme breakpoint for consistency
 
   return (
-    // Apply horizontal padding to the Grid itself
-    <Grid px={SPACING_XL} gutter={SPACING_XL}> {/* Add gutter for spacing between columns */}
+    <Grid px={SPACING_XL} gutter={SPACING_XL}>
 
       {/* Image Column */}
       <GridCol
         span={{ base: 12, md: 6 }}
-        // On mobile (base), this column comes second (order: 2)
-        // On desktop (md), this column comes first (order: 1)
         order={{ base: 2, md: 1 }}
       >
         <Center>
-           {/* Use NextImage with direct inline styles */}
            <NextImage
             src="/images/index/who-we-are.webp"
-            width={600} // Required for NextImage without fill
-            height={400} // Required for NextImage without fill
-            alt="Group photo illustrating 'Who We Are'" // More descriptive alt text
-            style={{ // Apply styles directly using the style prop
+            width={600}
+            height={400}
+            alt="Group photo illustrating 'Who We Are'"
+            style={{
               borderRadius: largeRadius,
-              border: `2px solid ${woodColorValue}`, // Use the retrieved color value
-              display: 'block', // Good practice for images
-              overflow: 'hidden', // Ensures the image content respects the border radius
-              objectFit: 'cover', // Optional: Ensure image covers dimensions if aspect ratio differs
-              maxWidth: '100%', // Ensure image scales down on smaller screens
-              height: 'auto', // Maintain aspect ratio when scaling
+              border: `2px solid ${woodColorValue}`,
+              display: 'block',
+              overflow: 'hidden',
+              objectFit: 'cover',
+              maxWidth: '100%',
+              height: 'auto',
             }}
           />
         </Center>
@@ -163,11 +157,8 @@ function WhoWeAreSection() {
       {/* Text Column */}
       <GridCol
         span={{ base: 12, md: 6 }}
-         // On mobile (base), this column comes first (order: 1)
-         // On desktop (md), this column comes second (order: 2)
         order={{ base: 1, md: 2 }}
       >
-        {/* Add vertical space above text ONLY on mobile */}
         {isMobile && <Space h={SPACING_LG} />}
 
         <Group wrap="nowrap">
@@ -184,7 +175,6 @@ function WhoWeAreSection() {
           guests and visitors.
         </Text>
 
-         {/* Add vertical space below text ONLY on mobile before the image appears */}
          {isMobile && <Space h={SPACING_XL} />}
       </GridCol>
 

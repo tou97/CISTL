@@ -11,29 +11,25 @@ import {
   TextInput,
   Textarea,
   Button,
-  useMantineTheme, // Import the hook
+  useMantineTheme,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import Image from "next/image"; // Keep using Next.js Image
+import Image from "next/image";
 import { IconMessages } from "@tabler/icons-react";
 
 // Contact page component
 const ContactUs = () => {
-  // --- Get theme values ---
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  // Define border color (using wood[6] as before, with fallback)
   const borderColorValue = theme.colors.wood?.[6] || '#A47D5E';
 
-  // --- Define the common image style object ---
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${borderColorValue}`,
-    display: 'block', // Good practice
-    overflow: 'hidden', // Ensure content respects border radius
-    objectFit: 'cover' as const, // Ensures image covers the area nicely
+    display: 'block',
+    overflow: 'hidden',
+    objectFit: 'cover' as const,
   };
-  // --------------------------
 
   // Form setup and validation
   const form = useForm({
@@ -56,9 +52,8 @@ const ContactUs = () => {
     email: string;
     message: string;
   }) => {
-    console.log("Form submitted:", values); // Log submitted values
-    // Add actual submission logic here (e.g., API call)
-    alert("Message sent! (Check console for details)"); // Placeholder feedback
+    console.log("Form submitted:", values);
+    alert("Message sent! (Check console for details)");
     form.reset();
   };
 
@@ -105,15 +100,15 @@ const ContactUs = () => {
                 label="Name"
                 placeholder="Your name"
                 mb="md"
-                required // Added required attribute
+                required
                 {...form.getInputProps("name")}
               />
               <TextInput
                 label="Email"
                 placeholder="your@email.com"
                 mb="md"
-                required // Added required attribute
-                type="email" // Use email type for better validation
+              required
+              type="email"
                 {...form.getInputProps("email")}
               />
               <Textarea
@@ -121,7 +116,7 @@ const ContactUs = () => {
                 placeholder="Your message"
                 minRows={4}
                 mb="xl"
-                required // Added required attribute
+                required
                 {...form.getInputProps("message")}
               />
               <Center>
@@ -143,15 +138,13 @@ const ContactUs = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
-            {/* --- Update Image component --- */}
             <Image
-              src="/images/contact/contact_us.webp" // Updated src
+              src="/images/contact/contact_us.webp"
               width={600}
               height={400}
-              alt="Stylized image representing communication or contact" // Updated alt text
-              style={imageStyle} // Apply the style object here
+              alt="Stylized image representing communication or contact"
+              style={imageStyle}
             />
-            {/* ----------------------------- */}
           </Center>
         </GridCol>
       </Grid>

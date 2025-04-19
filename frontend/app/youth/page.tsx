@@ -10,7 +10,7 @@ import {
   Divider,
   Group,
   Stack,
-  useMantineTheme, // Import the hook to access theme values
+  useMantineTheme,
 } from "@mantine/core";
 import Image from "next/image";
 import {
@@ -18,7 +18,7 @@ import {
   IconMapPin,
   IconFileDescription,
 } from "@tabler/icons-react";
-import { minimal_theme } from "../palette"; // Assuming this theme includes your custom colors
+import { minimal_theme } from "../palette";
 
 // EventItem component for rendering individual events
 interface EventItemProps {
@@ -30,10 +30,9 @@ interface EventItemProps {
 }
 
 const EventItem = ({ title, schedule, location, description, imgSrc }: EventItemProps) => {
-  const theme = useMantineTheme(); // Get the theme object
-  const largeRadius = theme.radius.lg; // Get Mantine's large radius value
-  // Define wood color, using a fallback if not in the theme
-  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E'; // Using shade 6 as an example, or a fallback brown
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E';
 
   return (
     <Grid gutter="xl" px="xl">
@@ -43,12 +42,12 @@ const EventItem = ({ title, schedule, location, description, imgSrc }: EventItem
             src={imgSrc}
             width={600}
             height={400}
-            alt={`${title} event image`} // More descriptive alt text
-            style={{ // Apply styles directly using the style prop
+            alt={`${title} event image`}
+            style={{
               borderRadius: largeRadius,
               border: `2px solid ${woodColor}`,
-              display: 'block', // Good practice for images
-              overflow: 'hidden', // Ensures the image content respects the border radius
+              display: 'block',
+              overflow: 'hidden',
             }}
           />
         </Center>
@@ -92,11 +91,9 @@ const EventItem = ({ title, schedule, location, description, imgSrc }: EventItem
 };
 
 const Youth = () => {
-  const theme = useMantineTheme(); // Get the theme object
-  const largeRadius = theme.radius.lg; // Get Mantine's large radius value
-  // Define wood color, using a fallback if not in the theme
-  // Ensure minimal_theme is correctly defined and imported if it contains 'wood' color
-  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E'; // Using shade 6 as an example, or a fallback brown
+  const theme = useMantineTheme();
+  const largeRadius = theme.radius.lg;
+  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E';
 
   // Data for the events
   const eventsData = [
@@ -179,12 +176,12 @@ const Youth = () => {
               src="/images/youth/youth.webp"
               width={600}
               height={400}
-              alt="Youth group gathering" // More descriptive alt text
-              style={{ // Apply styles directly using the style prop
+              alt="Youth group gathering"
+              style={{
                 borderRadius: largeRadius,
                 border: `2px solid ${woodColor}`,
                 display: 'block',
-                overflow: 'hidden', // Ensures the image content respects the border radius
+                overflow: 'hidden',
               }}
             />
           </Center>
