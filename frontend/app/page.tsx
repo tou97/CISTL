@@ -42,11 +42,11 @@ export default function Home() {
       <Image
         px={SPACING_XL}
         radius="lg"
-        src="/images/index_main.webp"
+        src="/images/index/stl-arch-2.webp"
         alt="Index Main"
-        h={800}
+        h={600}
+        style={{ objectFit: 'cover', objectPosition: 'center 70%' }}
       />
-
       <Space h={SPACING_XL} my={SPACING_XL} />
 
       {/* Who We Are Section */}

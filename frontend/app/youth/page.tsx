@@ -1,3 +1,4 @@
+"use client";
 import {
   Container,
   Grid,
@@ -9,6 +10,7 @@ import {
   Divider,
   Group,
   Stack,
+  useMantineTheme, // Import the hook to access theme values
 } from "@mantine/core";
 import Image from "next/image";
 import {
@@ -16,7 +18,7 @@ import {
   IconMapPin,
   IconFileDescription,
 } from "@tabler/icons-react";
-import { minimal_theme } from "../palette";
+import { minimal_theme } from "../palette"; // Assuming this theme includes your custom colors
 
 // EventItem component for rendering individual events
 interface EventItemProps {
@@ -24,58 +26,78 @@ interface EventItemProps {
   schedule: string;
   location: string;
   description: string;
+  imgSrc: string;
 }
 
-const EventItem = ({ title, schedule, location, description }: EventItemProps) => (
-  <Grid gutter="xl" px="xl">
-    <GridCol span={{ base: 12, md: 6 }}>
-      <Center>
-        <Image
-          src="/images/600_400.webp"
-          width={600}
-          height={400}
-          alt="Event Placeholder"
-        />
-      </Center>
-    </GridCol>
-    <GridCol span={{ base: 12, md: 6 }}>
-      <Stack gap="md">
-        <Title order={2} c="lavender">
-          {title}
-        </Title>
-        <Group gap="sm" wrap="nowrap">
-          <IconCalendar
-            color={minimal_theme.colors!.lavender![5]} 
-            style={{ flexShrink: 0, marginTop: "0.25rem" }}
+const EventItem = ({ title, schedule, location, description, imgSrc }: EventItemProps) => {
+  const theme = useMantineTheme(); // Get the theme object
+  const largeRadius = theme.radius.lg; // Get Mantine's large radius value
+  // Define wood color, using a fallback if not in the theme
+  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E'; // Using shade 6 as an example, or a fallback brown
+
+  return (
+    <Grid gutter="xl" px="xl">
+      <GridCol span={{ base: 12, md: 6 }}>
+        <Center>
+          <Image
+            src={imgSrc}
+            width={600}
+            height={400}
+            alt={`${title} event image`} // More descriptive alt text
+            style={{ // Apply styles directly using the style prop
+              borderRadius: largeRadius,
+              border: `2px solid ${woodColor}`,
+              display: 'block', // Good practice for images
+              overflow: 'hidden', // Ensures the image content respects the border radius
+            }}
           />
-          <Text size="xl" c="lavender">
-            {schedule}
-          </Text>
-        </Group>
-        <Group gap="sm" wrap="nowrap">
-          <IconMapPin
-            color={minimal_theme.colors!.lavender![5]} 
-            style={{ flexShrink: 0, marginTop: "0.25rem" }}
-          />
-          <Text size="xl" c="lavender">
-            {location}
-          </Text>
-        </Group>
-        <Group gap="sm" wrap="nowrap" align="flex-start">
-          <IconFileDescription
-            color={minimal_theme.colors!.lavender![5]} 
-            style={{ flexShrink: 0, marginTop: "0.25rem" }}
-          />
-          <Text size="xl" c="lavender">
-            {description}
-          </Text>
-        </Group>
-      </Stack>
-    </GridCol>
-  </Grid>
-);
+        </Center>
+      </GridCol>
+      <GridCol span={{ base: 12, md: 6 }}>
+        <Stack gap="md">
+          <Title order={2} c="lavender">
+            {title}
+          </Title>
+          <Group gap="sm" wrap="nowrap">
+            <IconCalendar
+              color={minimal_theme.colors!.lavender![5]}
+              style={{ flexShrink: 0, marginTop: "0.25rem" }}
+            />
+            <Text size="xl" c="lavender">
+              {schedule}
+            </Text>
+          </Group>
+          <Group gap="sm" wrap="nowrap">
+            <IconMapPin
+              color={minimal_theme.colors!.lavender![5]}
+              style={{ flexShrink: 0, marginTop: "0.25rem" }}
+            />
+            <Text size="xl" c="lavender">
+              {location}
+            </Text>
+          </Group>
+          <Group gap="sm" wrap="nowrap" align="flex-start">
+            <IconFileDescription
+              color={minimal_theme.colors!.lavender![5]}
+              style={{ flexShrink: 0, marginTop: "0.25rem" }}
+            />
+            <Text size="xl" c="lavender">
+              {description}
+            </Text>
+          </Group>
+        </Stack>
+      </GridCol>
+    </Grid>
+  );
+};
 
 const Youth = () => {
+  const theme = useMantineTheme(); // Get the theme object
+  const largeRadius = theme.radius.lg; // Get Mantine's large radius value
+  // Define wood color, using a fallback if not in the theme
+  // Ensure minimal_theme is correctly defined and imported if it contains 'wood' color
+  const woodColor = minimal_theme.colors?.wood?.[6] || '#A47D5E'; // Using shade 6 as an example, or a fallback brown
+
   // Data for the events
   const eventsData = [
     {
@@ -83,18 +105,21 @@ const Youth = () => {
       schedule: "Saturdays from 5:30 PM until 8:00 PM",
       location: "Various homes",
       description: "A time to gather weekly",
+      imgSrc: "/images/youth/ssot.webp",
     },
     {
       title: "Winter Getaway",
       schedule: "February (Weekend TBD)",
       location: "Grafton Getaway",
       description: "A time to get away from our normal schedules and concecrate to the Lord",
+      imgSrc: "/images/youth/ssot.webp",
     },
     {
       title: "SSOT",
       schedule: "July (Full Week)",
       location: "Campground",
       description: "A week of enjoyment and training in spiritual capacity",
+      imgSrc: "/images/youth/ssot.webp",
     },
   ];
 
@@ -138,23 +163,29 @@ const Youth = () => {
       <Grid align="center" gutter="xl" px="xl">
         <GridCol span={{ base: 12, md: 6 }}>
           <Text size="xl" ta="justify" c="lavender">
-            <b>Staying Connected</b> — each week, we come together to enjoy 
-            dinner, sing, and explore spiritual and practical topics that are 
-            meaningful and relevant to our youth. These gatherings provide a 
-            welcoming, supportive space where youth can form connections, share 
-            experiences, and encourage one another. Whether it&apos;s through music, 
-            sharing takeaways, or simply being there for one another, our aim is 
-            to create a gathering where each young person feels at home and able 
+            <b>Staying Connected</b> — each week, we come together to enjoy
+            dinner, sing, and explore spiritual and practical topics that are
+            meaningful and relevant to our youth. These gatherings provide a
+            welcoming, supportive space where youth can form connections, share
+            experiences, and encourage one another. Whether it&apos;s through music,
+            sharing takeaways, or simply being there for one another, our aim is
+            to create a gathering where each young person feels at home and able
             to grow spiritually and personally.
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Center>
             <Image
-              src="/images/600_400.webp"
+              src="/images/youth/ssot.webp"
               width={600}
               height={400}
-              alt="Placeholder"
+              alt="Youth group gathering" // More descriptive alt text
+              style={{ // Apply styles directly using the style prop
+                borderRadius: largeRadius,
+                border: `2px solid ${woodColor}`,
+                display: 'block',
+                overflow: 'hidden', // Ensures the image content respects the border radius
+              }}
             />
           </Center>
         </GridCol>
@@ -183,6 +214,7 @@ const Youth = () => {
             schedule={event.schedule}
             location={event.location}
             description={event.description}
+            imgSrc={event.imgSrc}
           />
           {index < eventsData.length - 1 && (
             <>
