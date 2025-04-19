@@ -25,25 +25,21 @@ const campusData = [
     id: "slu",
     name: "Saint Louis University",
     image: "/images/slu.webp",
-    description: "Filler text about the school or club goes here",
   },
   {
     id: "stlcc",
     name: "St. Louis Community College - Meramec",
     image: "/images/stlcc.webp",
-    description: "Filler text about the school or club goes here",
   },
   {
     id: "washu",
     name: "The Washington University",
     image: "/images/washu.webp",
-    description: "Filler text about the school or club goes here",
   },
   {
     id: "umsl",
     name: "University of Missouri - St. Louis",
     image: "/images/umsl.webp",
-    description: "Filler text about the school or club goes here",
   },
 ];
 
@@ -52,7 +48,6 @@ interface Campus {
   id: string;
   name: string;
   image: string;
-  description: string;
 }
 
 const CampusCard = ({ campus }: { campus: Campus }) => (
@@ -66,9 +61,6 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
     <Title c="wood" ta="center" order={3}>
       {campus.name}
     </Title>
-    <Text c="wood" ta="center" size="lg">
-      {campus.description}
-    </Text>
     <Space h="lg" />
     <Center>
       <Button
@@ -94,14 +86,14 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 const Campuses = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6] || '#A47D5E';
+  const woodColorValue = theme.colors.wood?.[6] || "#A47D5E";
 
   const imageStyle = {
     borderRadius: largeRadius,
     border: `2px solid ${woodColorValue}`,
-    display: 'block',
-    overflow: 'hidden',
-    objectFit: 'cover' as const,
+    display: "block",
+    overflow: "hidden",
+    objectFit: "cover" as const,
   };
 
   return (
