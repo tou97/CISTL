@@ -108,7 +108,7 @@ const Gatherings = () => {
       schedule: "Sundays from 10:00 AM until 12:00 PM",
       location: "Meeting hall",
       description:
-        "Our main weekly gathering for worship, teaching, and fellowship, centered on remembering the Lord Jesus.",
+        "Each week, our community gathers here in St. Louis for our primary meeting. It's a special time dedicated to worshipping God and enjoying genuine fellowship. At the heart of this gathering is our focus on remembering the Lord Jesus Christ and all He has done for us. We invite you to experience it with us!",
       imgSrc: "/images/gatherings/lords_table.webp",
       imgAlt:
         "Bread and cup representing the Lord's Table during Sunday service",
@@ -118,7 +118,7 @@ const Gatherings = () => {
       schedule: "Tuesdays from 7:30 PM until 8:30 PM",
       location: "Various homes",
       description:
-        "Gather with others to petition and pray together for the Lord's interests on the earth.",
+        "Join us for our regular prayer gathering in St. Louis. We meeting specifically to pray together, bringing various needs and requests before the Lord, particularly focusing on His interests and work throughout the world. All are welcome to participate in this vital time of corporate prayer.",
       imgSrc: "/images/gatherings/prayer_meeting.webp",
       imgAlt: "Group of people praying together",
     },
@@ -127,7 +127,7 @@ const Gatherings = () => {
       schedule: "Fridays, times vary depending on group",
       location: "Various homes",
       description:
-        "Connect with a home group in your area for fellowship, Bible study, and mutual encouragement.",
+        "Get connected with believers right in your neighborhood! Our home groups meet locally throughout the greater St. Louis area, offering a welcoming space for fellowship and supporting one another through mututal encouragement. Find a group and get connected!",
       imgSrc: "/images/gatherings/home_meeting.webp",
       imgAlt: "People meeting and discussing in a home setting",
     },

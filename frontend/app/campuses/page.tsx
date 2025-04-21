@@ -115,12 +115,13 @@ const Campuses = () => {
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
           <Text c="offwhite" ta="justify" size="xl" px="xl">
-            Hey students! We&apos;re a community of college students across the
-            St. Louis area who are exploring life and faith together. We&apos;re
-            simply students who believe in Jesus and want to connect with others
-            on campus. Wherever you are in your journey - curious, questioning,
-            or committed - you&apos;re welcome to join us and find friends,
-            support, and a place to belong.
+            Connect with fellow college students across St. Louis area campuses!
+            We&apos;re a group of students united by faith in Jesus and
+            navigating college life together. We focus on building genuine
+            friendships, providing mututal support, and exploring what it means
+            to follow Christ. Whether you&apos;re just checking things out, have
+            lots of questions, or are looking for Christian community, you
+            belong here.
           </Text>
         </GridCol>
       </Grid>
@@ -135,15 +136,14 @@ const Campuses = () => {
         <GridCol span={{ base: 12, md: 6 }}>
           {/* ... (Text content remains unchanged) ... */}
           <Text size="xl" ta="justify" c="wood">
-            <b>Christian Students on Campus</b> is all about being a welcoming
-            community for students like you across the St. Louis area!
-            We&apos;re just students exploring what it means to follow Jesus and
-            do life together in college. Whether you&apos;re curious about
-            faith, have lots of questions, or are already committed to following
-            Christ, you&apos;ll find a place with us. We connect through things
-            like hanging out, studying the Bible, serving our campuses, and just
-            supporting each other as we navigate college. Our aim is simple: to
-            create a space where everyone feels welcome to explore their faith.
+            <b>Christian Students on Campus</b> is a welcoming community for
+            college students across the St. Louis area who are exploring faith
+            and navigating university life together. As students who follow
+            Jesus, we connect through genuine fellowship, engaging Bible study,
+            and providing mututal suport. Wherever you are in your spiritual
+            journey - curious, questioning, or committed - you have a place
+            here. We aim to create an environment where all students feel
+            welcome to explore and belong.
           </Text>
         </GridCol>
         <GridCol span={{ base: 12, md: 6 }}>
