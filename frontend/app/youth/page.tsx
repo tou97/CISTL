@@ -38,7 +38,6 @@ const EventItem = ({
 }: EventItemProps) => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColor = minimal_theme.colors?.wood?.[6];
 
   return (
     <Grid gutter="xl" px="xl">
@@ -51,7 +50,6 @@ const EventItem = ({
             alt={`${title} event image`}
             style={{
               borderRadius: largeRadius,
-              border: `2px solid ${borderColor}`,
               display: "block",
               overflow: "hidden",
             }}
@@ -99,7 +97,6 @@ const EventItem = ({
 const Youth = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColor = minimal_theme.colors?.wood?.[6];
 
   // Data for the events
   const eventsData = [
@@ -186,7 +183,6 @@ const Youth = () => {
               alt="Youth group gathering"
               style={{
                 borderRadius: largeRadius,
-                border: `2px solid ${borderColor}`,
                 display: "block",
                 overflow: "hidden",
               }}

@@ -23,7 +23,6 @@ import { useState } from "react";
 const ContactUs = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColorValue = theme.colors.wood?.[6];
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error";
@@ -32,7 +31,6 @@ const ContactUs = () => {
 
   const imageStyle = {
     borderRadius: largeRadius,
-    border: `2px solid ${borderColorValue}`,
     display: "block",
     overflow: "hidden",
     objectFit: "cover" as const,
@@ -77,7 +75,9 @@ const ContactUs = () => {
         try {
           const errorData = await response.json();
           errorMessage = errorData.error || errorMessage;
-        } catch (e) {}
+        } catch (error) {
+          console.error("Response Error:", error);
+        }
         throw new Error(errorMessage);
       }
       console.log("Form submitted successfully");

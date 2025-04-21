@@ -70,7 +70,7 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
         radius="lg"
         component="a"
         href={`/campuses/${campus.id}`}
-        w="75%"
+        w="50%"
         leftSection={<IconSchool />}
         rightSection={<IconArrowRight />}
         variant="outline"
@@ -86,11 +86,9 @@ const CampusCard = ({ campus }: { campus: Campus }) => (
 const Campuses = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6] || "#A47D5E";
 
   const imageStyle = {
     borderRadius: largeRadius,
-    border: `2px solid ${woodColorValue}`,
     display: "block",
     overflow: "hidden",
     objectFit: "cover" as const,

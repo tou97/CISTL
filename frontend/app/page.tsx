@@ -44,20 +44,20 @@ export default function Home() {
       {/* Church Group Photo (Banner Image) - Using MantineImage */}
 
       <Box px={SPACING_XL}>
-  <MantineImage
-    src="/images/index/stl-arch-2.webp"
-    alt="Church members gather near the St. Louis Arch"
-    style={{
-      display: 'block',
-      width: '100%',
-      height: isMobile ? 'auto' : 600,
-      aspectRatio: isMobile ? '1 / 1' : undefined,
-      objectFit: 'cover',
-      objectPosition: 'center 70%',
-      overflow: 'hidden',
-    }}
-  />
-</Box>
+        <MantineImage
+          src="/images/index/stl-arch-2.webp"
+          alt="Church members gather near the St. Louis Arch"
+          style={{
+            display: "block",
+            width: "100%",
+            height: isMobile ? "auto" : 600,
+            aspectRatio: isMobile ? "1 / 1" : undefined,
+            objectFit: "cover",
+            objectPosition: "center 70%",
+            overflow: "hidden",
+          }}
+        />
+      </Box>
 
       <Space h={SPACING_XL} my={SPACING_XL} />
 
@@ -71,7 +71,7 @@ export default function Home() {
 
 // Banner component remains the same structurally
 function Banner({ titleSize }: { titleSize: string }) {
-    return (
+  return (
     <>
       <Grid align="center" px={SPACING_XL}>
         <GridCol span={{ base: 0, md: "auto" }}>
@@ -116,49 +116,38 @@ function Banner({ titleSize }: { titleSize: string }) {
   );
 }
 
-
 /**
  * Renders the "Who We Are" section with image and text
  */
 function WhoWeAreSection() {
   const theme = useMantineTheme(); // Get the theme object
   const largeRadius = theme.radius.lg; // Get Mantine's large radius value
-  // Get the actual color value from the theme, using a fallback
-  const woodColorValue = theme.colors[WOOD_COLOR]?.[6] || '#A47D5E'; // Assuming shade 6
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.md})`); // Use theme breakpoint for consistency
 
   return (
     <Grid px={SPACING_XL} gutter={SPACING_XL}>
-
       {/* Image Column */}
-      <GridCol
-        span={{ base: 12, md: 6 }}
-        order={{ base: 2, md: 1 }}
-      >
+      <GridCol span={{ base: 12, md: 6 }} order={{ base: 2, md: 1 }}>
         <Center>
-           <NextImage
+          <NextImage
             src="/images/index/who-we-are.webp"
             width={600}
             height={400}
             alt="Group photo illustrating 'Who We Are'"
             style={{
               borderRadius: largeRadius,
-              border: `2px solid ${woodColorValue}`,
-              display: 'block',
-              overflow: 'hidden',
-              objectFit: 'cover',
-              maxWidth: '100%',
-              height: 'auto',
+              display: "block",
+              overflow: "hidden",
+              objectFit: "cover",
+              maxWidth: "100%",
+              height: "auto",
             }}
           />
         </Center>
       </GridCol>
 
       {/* Text Column */}
-      <GridCol
-        span={{ base: 12, md: 6 }}
-        order={{ base: 1, md: 2 }}
-      >
+      <GridCol span={{ base: 12, md: 6 }} order={{ base: 1, md: 2 }}>
         {isMobile && <Space h={SPACING_LG} />}
 
         <Group wrap="nowrap">
@@ -175,9 +164,8 @@ function WhoWeAreSection() {
           guests and visitors.
         </Text>
 
-         {isMobile && <Space h={SPACING_XL} />}
+        {isMobile && <Space h={SPACING_XL} />}
       </GridCol>
-
     </Grid>
   );
 }

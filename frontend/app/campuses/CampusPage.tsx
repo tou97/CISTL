@@ -49,11 +49,9 @@ export default function CampusPage({
 }: CampusPageProps) {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const borderColorValue = theme.colors.wood?.[6] || "#A47D5E";
 
   const imageStyle = {
     borderRadius: largeRadius,
-    border: `2px solid ${borderColorValue}`,
     display: "block",
     overflow: "hidden",
     objectFit: "cover" as const,
@@ -108,7 +106,7 @@ export default function CampusPage({
                 p="md"
                 radius="lg"
                 withBorder
-                bd="1px solid wood"
+                bd="2px solid wood"
               >
                 <Group mb="xs">
                   <IconCalendar />

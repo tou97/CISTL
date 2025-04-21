@@ -40,11 +40,9 @@ const GatheringItem = ({
 }: GatheringItemProps) => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6];
 
   const imageStyle = {
     borderRadius: largeRadius,
-    border: `2px solid ${woodColorValue}`,
     display: "block",
     overflow: "hidden",
     objectFit: "cover" as const,

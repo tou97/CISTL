@@ -153,12 +153,10 @@ const SectionTitle = ({ title }: { title: string }) => (
 const AboutUs = () => {
   const theme = useMantineTheme();
   const largeRadius = theme.radius.lg;
-  const woodColorValue = theme.colors.wood?.[6];
 
   // Define the common image style object
   const imageStyle = {
     borderRadius: largeRadius,
-    border: `2px solid ${woodColorValue}`,
     display: "block",
     overflow: "hidden",
     objectFit: "cover" as const,
