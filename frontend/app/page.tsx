@@ -43,7 +43,6 @@ export default function Home() {
 
       {/* Church Group Photo (Banner Image) - Using MantineImage */}
 
-      <Box px={SPACING_XL}>
         <MantineImage
           src="/images/index/stl-arch-2.webp"
           alt="Church members gather near the St. Louis Arch"
@@ -57,7 +56,6 @@ export default function Home() {
             overflow: "hidden",
           }}
         />
-      </Box>
 
       <Space h={SPACING_XL} my={SPACING_XL} />
 
