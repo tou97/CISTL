@@ -11,7 +11,6 @@ import {
   Title,
   Image as MantineImage, // Import Mantine Image with a specific name
   useMantineTheme,
-  Box, // Import Box for potential layout adjustments if needed
 } from "@mantine/core";
 import NextImage from "next/image"; // Import Next.js Image with a specific name
 import { useMediaQuery } from "@mantine/hooks";
@@ -43,19 +42,19 @@ export default function Home() {
 
       {/* Church Group Photo (Banner Image) - Using MantineImage */}
 
-        <MantineImage
-          src="/images/index/stl-arch-2.webp"
-          alt="Church members gather near the St. Louis Arch"
-          style={{
-            display: "block",
-            width: "100%",
-            height: isMobile ? "auto" : 600,
-            aspectRatio: isMobile ? "1 / 1" : undefined,
-            objectFit: "cover",
-            objectPosition: "center 70%",
-            overflow: "hidden",
-          }}
-        />
+      <MantineImage
+        src="/images/index/stl-arch-2.webp"
+        alt="Church members gather near the St. Louis Arch"
+        style={{
+          display: "block",
+          width: "100%",
+          height: isMobile ? "auto" : 600,
+          aspectRatio: isMobile ? "1 / 1" : undefined,
+          objectFit: "cover",
+          objectPosition: "center 70%",
+          overflow: "hidden",
+        }}
+      />
 
       <Space h={SPACING_XL} my={SPACING_XL} />
 
